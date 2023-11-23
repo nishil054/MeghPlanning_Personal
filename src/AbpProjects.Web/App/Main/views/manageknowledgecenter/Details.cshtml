@@ -1,0 +1,86 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <h4 class="modal-title">@L("DetailData")</h4>
+</div>
+<div class="modal-body detailmodal">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="team" class="form-label">Team</label>
+            <div> {{vm.items.team}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="title" class="form-label">Title</label>
+            <div> {{vm.items.title}}</div>
+        </div>
+    </div>
+    @*<div class="row">
+            <div class="col-md-6">
+                <label for="isDocument" class="form-label">Is Document Requied</label>
+                <div> {{vm.items.isDocument}}</div>
+            </div>
+        </div>*@
+    <div class="row">
+        <div class="col-md-6">
+            <label for="url" class="form-label">Url</label>
+            <div>
+                <a href="http://{{vm.items.url}}" target="_blank">{{vm.items.url}}</a>
+            </div>
+        </div>
+        @*<div class="col-md-6">
+                <label for="comment" class="form-label">Comment</label>
+                <div> {{vm.items.comment}}</div>
+            </div>*@
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="comment" class="form-label">Comment</label>
+            <div> {{vm.items.comment}}</div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-sm-12" ng-if="vm.knowledgeCenterAttachments.length > 0 && vm.items.isDocument == true">
+            <div class="titleplusbtn">
+                <label for="attachment" class="form-label">Uploaded Documents</label>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="col-md-12">
+                        <div class="body table-responsive">
+                            <table class="table table-hover table-striped">
+                                @*<thead>
+                                        <tr>
+                                            <th>@L("filename")</th>
+                                        </tr>
+                                    </thead>*@
+                                <tbody>
+                                    <tr ng-repeat="item in vm.knowledgeCenterAttachments">
+                                        <td style="width:300px; word-break:break-all;">{{item.fileName}}</td>
+                                        <td style="width:100px; text-align:center;">
+                                            <a href="javascript:void(0);" ng-click="vm.downloadFile(item.documentName)"><i class="fa fa-download" style="font-size:large" aria-hidden="true"></i></a>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+        @L("Cancel")
+    </button>
+</div>
+
+
+
+

@@ -1,0 +1,99 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Sales Person</th><th scope="col">Company Name</th><th scope="col">Person Name</th><th scope="col">Services</th><th scope="col">Quote Amt in AED</th><th scope="col">Status</th><th scope="col">Closed amt</th><th scope="col">Expected in </th><th scope="col">Reason</th>
+		</tr><tr>
+			<td>market market</td><td>Test3</td><td>dsd</td><td>AMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>sddsd</td>
+		</tr><tr>
+			<td>market market</td><td>Test2</td><td>aaanL</td><td>AMS,DMS,</td><td>0.00</td><td>Warm</td><td>0.00</td><td>&nbsp;</td><td>dsdsf</td>
+		</tr><tr>
+			<td>market market</td><td>Megh</td><td>Vikas</td><td>AMS,DMS,</td><td>0.00</td><td>Cold</td><td>0.00</td><td>&nbsp;</td><td>dsdsd</td>
+		</tr><tr>
+			<td>market market</td><td>Test3</td><td>dsd</td><td>AMS,DMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>cxcx</td>
+		</tr><tr>
+			<td>market market</td><td>Test1</td><td>aaK</td><td>AMS,DMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>sdsd</td>
+		</tr><tr>
+			<td>market market</td><td>Test2</td><td>aaanL</td><td>AMS,DMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>dsads</td>
+		</tr><tr>
+			<td>market market</td><td>Test2</td><td>aaanL</td><td>AMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>ffdfdsf</td>
+		</tr><tr>
+			<td>market market</td><td>Test3</td><td>dsd</td><td>AMS,DMS,</td><td>0.00</td><td>Dead</td><td>0.00</td><td>&nbsp;</td><td>xcxzc</td>
+		</tr><tr>
+			<td>market market</td><td>Test1</td><td>aaK</td><td>AMS,DMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>Check Inquiry also telemarketing</td>
+		</tr><tr>
+			<td>market market</td><td>Heer</td><td>Sneha</td><td>AMS,DMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>Convert to Inquiry</td>
+		</tr><tr>
+			<td>market market</td><td>chirag company</td><td>chirag</td><td>AMS,</td><td>0.00</td><td>Inquiry</td><td>0.00</td><td>&nbsp;</td><td>chirag test add foloup</td>
+		</tr><tr>
+			<td>market market</td><td>ANIL company</td><td>ANIL</td><td>AMS,DMS,</td><td>555.55</td><td>Inquiry</td><td>555.55</td><td>&nbsp;</td><td>safsd fsdfds fsdfsdf</td>
+		</tr><tr>
+			<td>admin admin</td><td>Xylem Water Solutions</td><td>Niharika Thadesar</td><td>DMS,</td><td>45000.00</td><td>Cold</td><td>45000.00</td><td>&nbsp;</td><td>think and get back</td>
+		</tr><tr>
+			<td>market market</td><td>csfds</td><td>fdvg</td><td>DMS,</td><td>123456.00</td><td>Inquiry</td><td>123456.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>operator operator</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test category hot</td>
+		</tr><tr>
+			<td>tele tele</td><td>APS</td><td>Mosmi Soni</td><td>DMS,</td><td>800000.00</td><td>Inquiry</td><td>800000.00</td><td>&nbsp;</td><td>fgy ferbg brfuer</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>1000.00</td><td>Lost</td><td>1000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>AMS,DMS,NEW,</td><td>700000.00</td><td>Hot</td><td>700000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>admin admin</td><td>hfvd</td><td>efw</td><td>AMS,DMS,</td><td>45000.00</td><td>Hot</td><td>45000.00</td><td>&nbsp;</td><td>fdscx dv</td>
+		</tr><tr>
+			<td>tele tele</td><td>UCR</td><td>Vikas Gupta</td><td>AMS,DMS,NEW,</td><td>123456.00</td><td>Inquiry</td><td>123456.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>admin admin</td><td>TBEA</td><td>Sneha Patel</td><td>AMS,</td><td>45000.00</td><td>Hot</td><td>45000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>operator operator</td><td>cdv</td><td>vd</td><td>DMS,</td><td>45000.00</td><td>Inquiry</td><td>45000.00</td><td>&nbsp;</td><td>vff</td>
+		</tr><tr>
+			<td>admin admin</td><td>UCR</td><td>Sneha Patel</td><td>AMS,</td><td>800000.00</td><td>Lost</td><td>800000.00</td><td>&nbsp;</td><td>test followup</td>
+		</tr><tr>
+			<td>operator operator</td><td>TBEA</td><td>Sneha Patel</td><td>DMS,</td><td>45000.00</td><td>Warm</td><td>45000.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>admin admin</td><td>Chirag and cmpany</td><td>Chirag gurjar</td><td>AMS,</td><td>123456.00</td><td>Lost</td><td>123456.00</td><td>&nbsp;</td><td>changed 45000 to 700000</td>
+		</tr><tr>
+			<td>admin admin</td><td>verma company</td><td>verma</td><td>AMS,</td><td>50000.00</td><td>Closed</td><td>50000.00</td><td>&nbsp;</td><td>fasfd</td>
+		</tr><tr>
+			<td>admin admin</td><td>chirag company</td><td>Chirag gurjar</td><td>AMS,DMS,NEW,</td><td>1000.00</td><td>Closed</td><td>1000.00</td><td>&nbsp;</td><td>asdfsafds test</td>
+		</tr><tr>
+			<td>admin admin</td><td>TBEA</td><td>Vikas Gupta</td><td>DMS,NEW,</td><td>123456.00</td><td>Lost</td><td>123456.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>admin admin</td><td>ABC company</td><td>sdaf</td><td>AMS,</td><td>123456.00</td><td>Closed</td><td>123456.00</td><td>&nbsp;</td><td>sac</td>
+		</tr><tr>
+			<td>admin admin</td><td>kghmjbn</td><td>jjnb</td><td>DMS,</td><td>45000.00</td><td>Lost</td><td>45000.00</td><td>&nbsp;</td><td>jgggggggbn</td>
+		</tr><tr>
+			<td>tele tele</td><td>Chirag and cmpany</td><td>Chirag gurjar</td><td>DMS,NEW,</td><td>123456.00</td><td>Dead</td><td>123456.00</td><td>&nbsp;</td><td>gyug uhjn nn</td>
+		</tr><tr>
+			<td>tele tele</td><td>TechHeer</td><td>Prakash</td><td>DMS,</td><td>4000.00</td><td>Closed</td><td>4000.00</td><td>14/06/2023</td><td>test 4000</td>
+		</tr><tr>
+			<td>admin admin</td><td>UCR</td><td>Sneha Patel</td><td>DMS,</td><td>2500.00</td><td>Lost</td><td>2500.00</td><td>&nbsp;</td><td>test</td>
+		</tr><tr>
+			<td>market market</td><td>APS</td><td>Prima Patel</td><td>AMS,</td><td>45000.00</td><td>Inquiry</td><td>45000.00</td><td>&nbsp;</td><td>test</td>
+		</tr>
+	</table>
+</div>

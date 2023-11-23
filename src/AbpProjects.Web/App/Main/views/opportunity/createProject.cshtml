@@ -1,0 +1,232 @@
+﻿<form id="frm_create_project" name="projectCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateNewProject")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlcom" class="form-label">
+                        Company <span class="abp_required"
+                                      style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.project.beneficiaryCompanyId">
+                            <option value="">-Select Company-</option>
+                            <option ng-repeat="company in vm.companylist" value="{{company.id}}">
+                                {{company.beneficial_Company_Name}}
+                            </option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div> @*pattern="/^(?:[a-zA-Z0-9\s]+)?$/" ng-pattern-restrict*@
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">
+                        Project Name <span class="abp_required"
+                                           style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="form-control" type="text" name="projectName" ng-model="vm.project.projectName"
+                               minlength="2">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">
+                        Project Description <span class="abp_required"
+                                                  style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+
+                        <textarea class="form-control " type="text" name="projectDescription"
+                                  ng-model="vm.project.description" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="startDate" class="form-label">
+                        Start Date<span class="abp_required"
+                                        style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="Start Date "
+                               moment-picker="vm.project.startDate" locale="en" format="DD/MM/YYYY" start-view="month"
+                               today="true" ng-model="vm.project.startDate" value="vm.project.startDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="endDate" class="form-label">
+                        End Date<span class="abp_required">
+                        </span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="End Date" moment-picker="vm.project.endDate"
+                               locale="en" format="DD/MM/YYYY" start-view="month" @*start-date="vm.startDate"*@
+                               ng-model="vm.project.endDate" value="vm.project.endDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+                    </div>
+                </div>
+            </div>
+            <div class="row marginleftright0">
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="teamDeadline" class="form-label">Team Dead line</label>
+                        <div class="form-line focused">
+                            <input class="validate form-control" placeholder="Team Deadline"
+                                   moment-picker="vm.project.teamDeadline" locale="en" format="DD/MM/YYYY" start-view="month"
+                                   ng-model="vm.project.teamDeadline" value="vm.project.teamDeadline"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="actualEndDate" class="form-label">Actual End Date </label>
+                        <div class="form-line focused">
+                            <input class="form-control" placeholder="Actual End Date"
+                                   moment-picker="vm.project.actualEndDate" locale="en" format="DD/MM/YYYY" start-view="month"
+                                   ng-model="vm.project.actualEndDate" value="vm.project.actualEndDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row marginleftright0">
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="ddlcom" class="form-label">Client <span style="color:#000 !important"> ({{vm.opportunity.companyName}})</span></label>
+                        <div class="form-line focused">
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.project.clientId">
+                                <option value="">-Select Client-</option>
+                                <option ng-repeat="st in vm.cname" value="{{st.clientId}}">{{st.clientName}}</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+
+                        <label for="ddlmarket" class="form-label highlight">Select Marketing Leader</label>
+                        <div class="form-line focused">
+                            <select id="ddlmarket" ui-select2 class="form-control" ng-model="vm.project.marketing_LeaderId">
+                                <option value="0">-Select Marketing Leader-</option>
+                                <option ng-repeat="imm_supper in vm.imm_sup" value="{{imm_supper.id}}">
+                                    {{imm_supper.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label">Price</label>
+                    <div class="form-line focused">
+                        <input disabled class="validate form-control allow_decimal" type="text" name="Price"
+                               ng-model="vm.project.price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label"> Hours </label>
+                    <div class="form-line">
+                        <input disabled class="validate form-control allow_decimal" type="text" name="hours"
+                               ng-model="vm.project.totalhours">
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix" ng-repeat="data in projectDetails track by $index">
+
+                <div class="col-sm-4" style="margin-top:15px;">
+                    <label for="ddltype" class="form-label">Project Type </label>
+                    <div class="form-group form-float">
+                        <div class="">
+                            <label for="ddltype" class="form-label form-control" style="color:#000 !important"> {{data.name}} </label>
+                            @*<select id="ddltype" disabled ui-select2 class="form-control" ng-model="data.id"
+                                    ng-model-options="data[$index].id">
+                                <option value="">-Select Project type-</option>
+                                <option ng-repeat="proj_typelist in vm.projecttypelist" value="{{proj_typelist.id}}">
+                                    {{proj_typelist.projectTypeName}}
+                                </option>
+                            </select>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="margin-top:15px;">
+                    <label for="prl" class="form-label">Price </label>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input class=" form-control" ng-keypress="filterDecimalValue($event,$index)"
+                                   ng-keyup="totalprice(data.typeprice)" style="width: 100%;" type="text"
+                                   ng-model="data.typeprice" />
+
+                            <span id="isShowP-{{$index}}" style="color:Red;display:none">
+                                Please enter decimal
+                                number.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="margin-top:15px;">
+                    <div class="form-group form-float">
+                        <label for="prl" class="form-label"> Hours </label>
+                        <div class="form-line">
+                            <input class=" form-control allow_decimal" ng-keypress="filterValue($event,$index)"
+                                   ng-keyup="totalhours(data.hours)" style="width: 100%;" type="text"
+                                   ng-model="data.hours" />
+
+                            <span id="isShowH-{{$index}}" style="color:Red;display:none">Please enter number.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" ng-show="emailList.length>1" style="margin-top:15px;">
+                    <div class="form-group form-float" style="margin-bottom: 0px; ">
+                        <a ng-click="removeItem(data,$index)" class="remove_icon">
+                            <img src="../../images/cancel.png" alt="" style="width: 15%;" />
+                            @* <span>Clear</span>*@
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()"
+            ng-disabled="projectCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props" Condition="Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbpProjects</RootNamespace>
+    <AssemblyName>AbpProjects.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.6.3.0\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.6.3.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.6.2.0\lib\net461\Abp.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.Common.6.2.0\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.6.3.0\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.6.3.0\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=6.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.6.2.0\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Collection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=e57c3f0a3d6646db, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Collection.7.0.1\lib\net461\AutoMapper.Collection.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core.AsyncInterceptor, Version=2.0.21.0, Culture=neutral, PublicKeyToken=e33b67d3bb5581e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.AsyncInterceptor.2.0.21-alpha\lib\net45\Castle.Core.AsyncInterceptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.5.1.1\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.5.1.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfigureAwait, Version=3.3.1.0, Culture=neutral, PublicKeyToken=233850a516558a98, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConfigureAwait.Fody.3.3.1\lib\net452\ConfigureAwait.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.2.0.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.3.2.0\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.5.0.0\lib\net461\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="N.EntityFramework.Extensions, Version=1.5.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\N.EntityFramework.Extensions.1.5.7\lib\net45\N.EntityFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Interop.WaitHandles, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Interop.WaitHandles.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Interop.WaitHandles.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Oop, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Oop.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Oop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Cancellation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Cancellation.1.1.0\lib\netstandard2.0\Nito.Cancellation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.1.0\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.2.2.0\lib\net461\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.5.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=3.4.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.3.4.0\lib\net461\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio, Version=5.64.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.64.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbpProjectsApplicationModule.cs" />
+    <Compile Include="AbpProjectsAppServiceBase.cs" />
+    <Compile Include="AppConsts.cs" />
+    <Compile Include="Auditing\AuditLogAndUser.cs" />
+    <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Class1.cs" />
+    <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
+    <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
+    <Compile Include="Auditing\IAuditLogAppService.cs" />
+    <Compile Include="Auditing\INamespaceStripper.cs" />
+    <Compile Include="Auditing\NamespaceStripper.cs" />
+    <Compile Include="AuditLogservice\AuditLogsAppService.cs" />
+    <Compile Include="AuditLogservice\Dto\ListData.cs" />
+    <Compile Include="AuditLogservice\IAuditLogsAppService.cs" />
+    <Compile Include="Authorization\Accounts\AccountAppService.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailable.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailableOutput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\RegisterInput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\RegisterOutput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\TenantAvailabilityState.cs" />
+    <Compile Include="Authorization\Accounts\IAccountAppService.cs" />
+    <Compile Include="BackgroundJob\BackgroundAppService.cs" />
+    <Compile Include="BackgroundJob\IBackgroundAppService.cs" />
+    <Compile Include="BulkData\BulkDataAppService.cs" />
+    <Compile Include="BulkData\Dto\InsertBulkData.cs" />
+    <Compile Include="BulkData\IBulkDataAppService.cs" />
+    <Compile Include="Category\CategoryAppService.cs" />
+    <Compile Include="Category\Dto\CategoryDto.cs" />
+    <Compile Include="Category\Dto\CreateCategoryDto.cs" />
+    <Compile Include="Category\Dto\EditCategoryDto.cs" />
+    <Compile Include="Category\Dto\GetCategoryDto.cs" />
+    <Compile Include="Category\Dto\GetCategoryInput.cs" />
+    <Compile Include="Category\ICategoryAppService.cs" />
+    <Compile Include="ChangePasswordServices\ChangePasswordAppService.cs" />
+    <Compile Include="ChangePasswordServices\Dto\ChangePasswordDto.cs" />
+    <Compile Include="ChangePasswordServices\IChangePasswordAppService.cs" />
+    <Compile Include="Clients\ClientsAppService.cs" />
+    <Compile Include="Clients\Dto\AddclientDto.cs" />
+    <Compile Include="Clients\Dto\ClientdetailDto.cs" />
+    <Compile Include="Clients\Dto\ClientsInput.cs" />
+    <Compile Include="Clients\Dto\ClientsListDto.cs" />
+    <Compile Include="Clients\Dto\EditAddressDto.cs" />
+    <Compile Include="Clients\IClientsAppService.cs" />
+    <Compile Include="Clients\InputData.cs" />
+    <Compile Include="Common\CommonLookupAppService.cs" />
+    <Compile Include="Common\Dto\FindUsersInput.cs" />
+    <Compile Include="Common\ICommonLookupAppService.cs" />
+    <Compile Include="Company\CompanyAppService.cs" />
+    <Compile Include="Company\Dto\CompanyDto.cs" />
+    <Compile Include="Company\Dto\CreateCompanyDto.cs" />
+    <Compile Include="Company\Dto\EditCompanyDto.cs" />
+    <Compile Include="Company\Dto\GetCompanyDto.cs" />
+    <Compile Include="Company\Dto\UpdateCompanyDto.cs" />
+    <Compile Include="Company\ICompanyAppService.cs" />
+    <Compile Include="Configuration\ConfigurationAppService.cs" />
+    <Compile Include="Configuration\Dto\ChangeUiThemeInput.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\AbpSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\EmailSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\GeneralSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\HostSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\HostUserManagementSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\SecuritySettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\SendTestEmailInput.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\TenantManagementSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\TwoFactorLoginSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\Dto\UserLockOutSettingsDto.cs" />
+    <Compile Include="Configuration\HostSetting\HostSettingAppService.cs" />
+    <Compile Include="Configuration\HostSetting\IHostSettingAppService.cs" />
+    <Compile Include="Configuration\IConfigurationAppService.cs" />
+    <Compile Include="Configuration\Tenants\Dto\LdapSettingsDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantSettingsDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantUserManagementSettingsDto.cs" />
+    <Compile Include="Configuration\Tenants\ITenantSettingsAppService.cs" />
+    <Compile Include="Configuration\Tenants\TenantSettingsAppService.cs" />
+    <Compile Include="Configuration\Ui\UiThemeInfo.cs" />
+    <Compile Include="Configuration\Ui\UiThemes.cs" />
+    <Compile Include="Dasboard\DashboardAppService.cs" />
+    <Compile Include="Dasboard\Dto\LogInDto.cs" />
+    <Compile Include="Dasboard\Dto\LogOutMissingDto.cs" />
+    <Compile Include="Dasboard\Dto\MonthlySalesDto.cs" />
+    <Compile Include="Dasboard\Dto\ProjectStatsAmountDto.cs" />
+    <Compile Include="Dasboard\Dto\SumDto.cs" />
+    <Compile Include="Dasboard\IDashboardAppService.cs" />
+    <Compile Include="Document\DocumentAppService.cs" />
+    <Compile Include="Document\Dto\CreateDocumentDto.cs" />
+    <Compile Include="Document\Dto\CreateFileUploadDto.cs" />
+    <Compile Include="Document\Dto\DocumentDto.cs" />
+    <Compile Include="Document\Dto\EditDocumentDto.cs" />
+    <Compile Include="Document\Dto\FileUploadDto.cs" />
+    <Compile Include="Document\Dto\GetDocumentDto.cs" />
+    <Compile Include="Document\IDocumentAppService.cs" />
+    <Compile Include="Dto\FileDto.cs" />
+    <Compile Include="Dto\PagedAndFilteredInputDto.cs" />
+    <Compile Include="Dto\PagedAndSortedInputDto.cs" />
+    <Compile Include="Dto\PagedInputDto.cs" />
+    <Compile Include="Dto\PagedSortedAndFilteredInputDto.cs" />
+    <Compile Include="Email\EmailAppService.cs" />
+    <Compile Include="Email\IEmailAppService.cs" />
+    <Compile Include="EmployeeWiseUserStory\EmpUserStoryAppService.cs" />
+    <Compile Include="EmployeeWiseUserStory\IEmpUserStoryAppService.cs" />
+    <Compile Include="ExpenseCategoryServices\Dto\CreateDto.cs" />
+    <Compile Include="ExpenseCategoryServices\Dto\EditDto.cs" />
+    <Compile Include="ExpenseCategoryServices\Dto\ListDto.cs" />
+    <Compile Include="ExpenseCategoryServices\ExpcategoryAppService.cs" />
+    <Compile Include="ExpenseCategoryServices\IExpcategoryAppService.cs" />
+    <Compile Include="ExpenseEntryServices\Dto\InsertDto.cs" />
+    <Compile Include="ExpenseEntryServices\Dto\ListDto.cs" />
+    <Compile Include="ExpenseEntryServices\ExpenseEntryFormAppService.cs" />
+    <Compile Include="ExpenseEntryServices\IExpenseEntryFormAppService.cs" />
+    <Compile Include="ExpenseSubCategoryServices\Dto\EditData.cs" />
+    <Compile Include="ExpenseSubCategoryServices\Dto\InsertData.cs" />
+    <Compile Include="ExpenseSubCategoryServices\Dto\ListData.cs" />
+    <Compile Include="ExpenseSubCategoryServices\ExpSubCategoryAppService.cs" />
+    <Compile Include="ExpenseSubCategoryServices\IExpSubCategoryAppService.cs" />
+    <Compile Include="FinancialYear\Dto\CreateFinancialyearDto.cs" />
+    <Compile Include="FinancialYear\Dto\EditFinancialYearDto.cs" />
+    <Compile Include="FinancialYear\Dto\FinancialYearDto.cs" />
+    <Compile Include="FinancialYear\Dto\FinancialYearListDto.cs" />
+    <Compile Include="FinancialYear\Dto\GetFinanceYearDto.cs" />
+    <Compile Include="FinancialYear\Dto\GetFinancialYearDto.cs" />
+    <Compile Include="FinancialYear\FinancialYearAppService.cs" />
+    <Compile Include="FinancialYear\IFinancialYearAppService.cs" />
+    <Compile Include="GSTDashboard\Dto\GetMonthNameDto.cs" />
+    <Compile Include="GSTDashboard\Dto\CreateGstDataDto.cs" />
+    <Compile Include="GSTDashboard\Dto\EditGstDataDto.cs" />
+    <Compile Include="GSTDashboard\Dto\GetGstDataDto.cs" />
+    <Compile Include="GSTDashboard\Dto\GetGstDataListDto.cs" />
+    <Compile Include="GSTDashboard\Dto\UpdateStatus.cs" />
+    <Compile Include="GSTDashboard\GSTDashboardAppService.cs" />
+    <Compile Include="GSTDashboard\IGSTDashboardAppService.cs" />
+    <Compile Include="Holidays\Dto\CreateHolidayDto.cs" />
+    <Compile Include="Holidays\Dto\EditHoildayDto.cs" />
+    <Compile Include="Holidays\Dto\HolidayListInputDto.cs" />
+    <Compile Include="Holidays\HolidayAppService.cs" />
+    <Compile Include="Holidays\IHolidayAppService.cs" />
+    <Compile Include="HostSetting\Dto\EmailSettingsDto.cs" />
+    <Compile Include="HostSetting\Dto\HostSettingsDto.cs" />
+    <Compile Include="HostSetting\Dto\SendTestEmailInput.cs" />
+    <Compile Include="HostSetting\HostSettingAppService.cs" />
+    <Compile Include="HostSetting\IHostSettingAppService.cs" />
+    <Compile Include="ImportExcelData\Dto\CreateFTPDetailsDto.cs" />
+    <Compile Include="ImportExcelData\Dto\EditDto.cs" />
+    <Compile Include="ImportExcelData\Dto\FTPDetailsDto.cs" />
+    <Compile Include="ImportExcelData\Dto\GetImportExcelDto.cs" />
+    <Compile Include="ImportExcelData\Dto\ImportDto.cs" />
+    <Compile Include="ImportExcelData\Dto\importExcelData.cs" />
+    <Compile Include="ImportExcelData\Dto\importFTPDetails.cs" />
+    <Compile Include="ImportExcelData\IImportFTPDetailsAppService.cs" />
+    <Compile Include="ImportExcelData\ImportFTPDetailsAppService.cs" />
+    <Compile Include="ImportUserStoryData\Dto\AddUserStoryDto.cs" />
+    <Compile Include="ImportUserStoryData\Dto\AssignToUserstoryDto.cs" />
+    <Compile Include="ImportUserStoryData\Dto\EmployeeAssignToUserstoryDto.cs" />
+    <Compile Include="ImportUserStoryData\Dto\importUserStoryDetails.cs" />
+    <Compile Include="ImportUserStoryData\Dto\ImportUserStoryDto.cs" />
+    <Compile Include="ImportUserStoryData\Dto\ProjectDataDto.cs" />
+    <Compile Include="ImportUserStoryData\Dto\UserStoryDto.cs" />
+    <Compile Include="ImportUserStoryData\IImportUserStoryDetailsAppService.cs" />
+    <Compile Include="ImportUserStoryData\ImportUserStoryDetailsAppService.cs" />
+    <Compile Include="LeaveApplication\Dto\CreateLeaveDto.cs" />
+    <Compile Include="LeaveApplication\Dto\GetInputDto.cs" />
+    <Compile Include="LeaveApplication\Dto\LeaveDto.cs" />
+    <Compile Include="LeaveApplication\Dto\LeaveStatusDto.cs" />
+    <Compile Include="LeaveApplication\Dto\LeaveTypeDto.cs" />
+    <Compile Include="LeaveApplication\Dto\UpdateStatusDto.cs" />
+    <Compile Include="LeaveApplication\ILeaveApplicationAppService.cs" />
+    <Compile Include="LeaveApplication\LeaveApplicationAppService.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\CreateKnowledgeCenterDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\EditKnowledgeCenterDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\GetKnowledgeCenterDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\GetKnowledgeCenterInput.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\GetKnowledgeDocumentsDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\GetTeamListDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\Dto\KnowledgeCenterDto.cs" />
+    <Compile Include="ManageKnowledgeCenter\IKnowledgeCenterAppService.cs" />
+    <Compile Include="ManageKnowledgeCenter\KnowledgeCenterAppService.cs" />
+    <Compile Include="ManageLeaves\Dto\EmployeeLeaveDto.cs" />
+    <Compile Include="ManageLeaves\IManageLeavesAppService.cs" />
+    <Compile Include="ManageLeaves\ManageLeavesAppService.cs" />
+    <Compile Include="MasterList\IMasterListAppService.cs" />
+    <Compile Include="MasterList\MasterListAppService.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\DomainListDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\HistoryListDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\InsertDataDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\ListDataDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\ListDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\UpdateDataDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\Dto\UpdateServiceDto.cs" />
+    <Compile Include="MeghPlanningSupportServices\ISupportAppService.cs" />
+    <Compile Include="MeghPlanningSupportServices\SupportAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\CreateTenantDto.cs" />
+    <Compile Include="MultiTenancy\Dto\EditTenantDto.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantDto.cs" />
+    <Compile Include="MultiTenancy\ITenantAppService.cs" />
+    <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="NotificationServices\Dto\GetNotificationDetailsDto.cs" />
+    <Compile Include="NotificationServices\Dto\GetNotificationDto.cs" />
+    <Compile Include="NotificationServices\Dto\NotificationDto.cs" />
+    <Compile Include="NotificationServices\Dto\ProjectListDto.cs" />
+    <Compile Include="NotificationServices\INotificationAppService.cs" />
+    <Compile Include="NotificationServices\NotificationAppService.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationSettingsOutput.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationsOutput.cs" />
+    <Compile Include="Notifications\Dto\GetUserNotificationsInput.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionDto.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionWithDisplayNameDto.cs" />
+    <Compile Include="Notifications\Dto\UpdateNotificationSettingsInput.cs" />
+    <Compile Include="Notifications\INotificationsAppService.cs" />
+    <Compile Include="Notifications\MyService.cs" />
+    <Compile Include="Notifications\NotificationsAppService.cs" />
+    <Compile Include="Notifications\SentFrendshipRequestNotificationData.cs" />
+    <Compile Include="NthLevelCategory\Dto\CategoryCreateDto.cs" />
+    <Compile Include="NthLevelCategory\Dto\CategoryEditDto.cs" />
+    <Compile Include="NthLevelCategory\Dto\GetCategoryByIdDto.cs" />
+    <Compile Include="NthLevelCategory\Dto\GetCategoryListDto.cs" />
+    <Compile Include="NthLevelCategory\Dto\GetCategoryDataddlDto.cs" />
+    <Compile Include="NthLevelCategory\INthCategoryAppService.cs" />
+    <Compile Include="NthLevelCategory\NthCategoryAppService.cs" />
+    <Compile Include="OpportunityAppServices\Dto\CallCategoryDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\createDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\FollowupHistoryDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\FollowUpTypeDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\GetFollowUpDetailDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\GetMarketingUserDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\GetOpportunityDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\GetOpportunityReportDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\GetProjectTypeDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\OpportunityUpdateDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\ProjectTypeDto.cs" />
+    <Compile Include="OpportunityAppServices\Dto\UpdateFollowUpDto.cs" />
+    <Compile Include="OpportunityAppServices\IOpportunityService.cs" />
+    <Compile Include="OpportunityAppServices\OpportunityService.cs" />
+    <Compile Include="Permissions\Dto\FlatPermissionDto.cs" />
+    <Compile Include="Permissions\Dto\FlatPermissionWithLevelDto.cs" />
+    <Compile Include="Permissions\IPermissionAppService.cs" />
+    <Compile Include="Permissions\ListResultDto.cs" />
+    <Compile Include="Permissions\PermissionAppService.cs" />
+    <Compile Include="Permissions\PermissionManagerExtensions.cs" />
+    <Compile Include="ProjectMilestone\Dto\CreateProjectMilestoneDto.cs" />
+    <Compile Include="ProjectMilestone\Dto\EditProjectMilestoneDto.cs" />
+    <Compile Include="ProjectMilestone\Dto\GetProjectMilestoneDto.cs" />
+    <Compile Include="ProjectMilestone\Dto\ProjectMilestoneDetailsDto.cs" />
+    <Compile Include="ProjectMilestone\Dto\ProjectMilestoneDto.cs" />
+    <Compile Include="ProjectMilestone\IProjectMilestoneAppService.cs" />
+    <Compile Include="ProjectMilestone\ProjectMilestoneAppService.cs" />
+    <Compile Include="ProjectType\Dto\CreateProjectTypeDto.cs" />
+    <Compile Include="ProjectType\Dto\EditProjectTypeDto.cs" />
+    <Compile Include="ProjectType\Dto\GetProjectTypeDto.cs" />
+    <Compile Include="ProjectType\Dto\ProjectTypeDto.cs" />
+    <Compile Include="ProjectType\IProjectTypeAppService.cs" />
+    <Compile Include="ProjectType\ProjectTypeAppService.cs" />
+    <Compile Include="Project\Dto\CreateProjectDto.cs" />
+    <Compile Include="Project\Dto\createProjectTypeByProjectDto.cs" />
+    <Compile Include="Project\Dto\EditProjectDto.cs" />
+    <Compile Include="Project\Dto\EditProjectTypeByProject.cs" />
+    <Compile Include="Project\Dto\GetProjectDto.cs" />
+    <Compile Include="Project\Dto\GetStatusDto.cs" />
+    <Compile Include="Project\Dto\InvoiceRequestDto.cs" />
+    <Compile Include="Project\Dto\ListInvoiceRequestDto.cs" />
+    <Compile Include="Project\Dto\ProjectDetailsDto.cs" />
+    <Compile Include="Project\Dto\ProjectDto.cs" />
+    <Compile Include="Project\Dto\ProjectTotalHoursDto.cs" />
+    <Compile Include="Project\Dto\ProjectTypeUpdate.cs" />
+    <Compile Include="Project\Dto\ProjectViewDto.cs" />
+    <Compile Include="Project\Dto\UpdateProjectStatusDto.cs" />
+    <Compile Include="Project\IProjectAppService.cs" />
+    <Compile Include="Project\ProjectAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Dto\AllUserDto.cs" />
+    <Compile Include="Reports\Dto\ExpenseReportDto.cs" />
+    <Compile Include="Reports\Dto\GetDailyActivityReportDto.cs" />
+    <Compile Include="Reports\Dto\GetDailyActivityReportInputDto.cs" />
+    <Compile Include="Reports\Dto\GetInputDto.cs" />
+    <Compile Include="Reports\Dto\GetYearDto.cs" />
+    <Compile Include="Reports\Dto\InputLoginLogoutReportDto.cs" />
+    <Compile Include="Reports\Dto\LoginLogoutReportDto.cs" />
+    <Compile Include="Reports\Dto\MonthDto.cs" />
+    <Compile Include="Reports\Dto\OutStandingInvoice.cs" />
+    <Compile Include="Reports\Dto\ProjectDto.cs" />
+    <Compile Include="Reports\Dto\ProjectWiseTimesheetDto.cs" />
+    <Compile Include="Reports\Dto\ReportsDto.cs" />
+    <Compile Include="Reports\Dto\SalesReport.cs" />
+    <Compile Include="Reports\Dto\StatsAmountDto.cs" />
+    <Compile Include="Reports\Dto\StatusDto.cs" />
+    <Compile Include="Reports\Dto\YearDto.cs" />
+    <Compile Include="Reports\IReportsAppService.cs" />
+    <Compile Include="Reports\ReportsAppService.cs" />
+    <Compile Include="Roles\Dto\CreateRoleDto.cs" />
+    <Compile Include="Roles\Dto\GetRoleInputDto.cs" />
+    <Compile Include="Roles\Dto\PermissionDto.cs" />
+    <Compile Include="Roles\Dto\RoleDto.cs" />
+    <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="SmsSender\ISmsSenderAppService.cs" />
+    <Compile Include="SmsSender\TwilioSmsSenderAppService.cs" />
+    <Compile Include="SmsSender\TwilioSmsSenderConfigurationAppService.cs" />
+    <Compile Include="TimeSheet\Dto\CreateTimeSheetDto.cs" />
+    <Compile Include="TimeSheet\Dto\EditTimeSheetDto.cs" />
+    <Compile Include="TimeSheet\Dto\GetTimeSheetDto.cs" />
+    <Compile Include="TimeSheet\Dto\ProjectDto.cs" />
+    <Compile Include="TimeSheet\Dto\TimeSheetDto.cs" />
+    <Compile Include="TimeSheet\Dto\UserDto.cs" />
+    <Compile Include="TimeSheet\Dto\WorkTypeDto.cs" />
+    <Compile Include="TimeSheet\ITimeSheetAppService.cs" />
+    <Compile Include="TimeSheet\TimeSheetAppService.cs" />
+    <Compile Include="Timing\Dto\GetTimezoneComboboxItemsInput.cs" />
+    <Compile Include="Timing\Dto\GetTimezonesInput.cs" />
+    <Compile Include="Timing\ITimingAppService.cs" />
+    <Compile Include="Timing\TimingAppService.cs" />
+    <Compile Include="TypeNameServices\Dto\CreateTypenameDto.cs" />
+    <Compile Include="TypeNameServices\Dto\EditTypenameDto.cs" />
+    <Compile Include="TypeNameServices\Dto\GetTypenameDto.cs" />
+    <Compile Include="TypeNameServices\Dto\TypenameDto.cs" />
+    <Compile Include="TypeNameServices\ITypeNameAppService.cs" />
+    <Compile Include="TypeNameServices\TypeNameAppService.cs" />
+    <Compile Include="Users\Dto\CreateUserDto.cs" />
+    <Compile Include="Users\Dto\GetUserInputDto.cs" />
+    <Compile Include="Users\Dto\GetUserPermissionsForEditOutput.cs" />
+    <Compile Include="Users\Dto\ProjectMLeaderDto.cs" />
+    <Compile Include="Users\Dto\ProjectServiceDto.cs" />
+    <Compile Include="Users\Dto\ServiceAccMgrDto.cs" />
+    <Compile Include="Users\Dto\TeamDto.cs" />
+    <Compile Include="Users\Dto\UpdatePasswordDto.cs" />
+    <Compile Include="Users\Dto\UpdateRenewUserDto.cs" />
+    <Compile Include="Users\Dto\UpdateUserDto.cs" />
+    <Compile Include="Users\Dto\UpdateUserPermissionsInput.cs" />
+    <Compile Include="Users\Dto\UserDto.cs" />
+    <Compile Include="Users\IUserAppService.cs" />
+    <Compile Include="Roles\RoleAppService.cs" />
+    <Compile Include="Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Users\UserAppService.cs" />
+    <Compile Include="VPS\Dto\CreateVPSDto.cs" />
+    <Compile Include="VPS\Dto\EditVPSDto.cs" />
+    <Compile Include="VPS\Dto\GetVPSDto.cs" />
+    <Compile Include="VPS\Dto\VPSDto.cs" />
+    <Compile Include="VPS\IVPSAppService.cs" />
+    <Compile Include="VPS\VPSAppService.cs" />
+    <Compile Include="WorkType\Dto\CreateWorkTypeDto.cs" />
+    <Compile Include="WorkType\Dto\EditWorkTypeDto.cs" />
+    <Compile Include="WorkType\Dto\GetWorkTypeDto.cs" />
+    <Compile Include="WorkType\Dto\WorkTypeDto.cs" />
+    <Compile Include="WorkType\IWorkTypeAppService.cs" />
+    <Compile Include="WorkType\WorkTypeAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbpProjects.Core\AbpProjects.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>AbpProjects.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbpProjects.EntityFramework\AbpProjects.EntityFramework.csproj">
+      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+      <Name>AbpProjects.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmployeeWiseUserStory\Dto\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Fody.6.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.2\build\Fody.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

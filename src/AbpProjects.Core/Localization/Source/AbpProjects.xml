@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<localizationDictionary culture="en">
+	<texts>
+		<text name="HomePage" value="Home page" />
+		<text name="About" value="About" />
+		<text name="WellcomeMessage" value="Welcome to AbpProjects!" />
+
+		<text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+		<text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+
+		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+		<text name="TenantIsNotActive" value="Tenant {0} is not active." />
+		<text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+		<text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login</text>
+		<text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+		<text name="PleaseEnterLoginInformation" value="Please enter login information" />
+		<text name="TenancyName" value="Tenancy name" />
+		<text name="UserNameOrEmail" value="User name or email" />
+		<text name="Password" value="Password" />
+		<text name="RememberMe" value="Remember me" />
+		<text name="LogIn" value="Log in" />
+		<text name="DataVault" value="Data Vault" />
+		<text name="LoginFailed" value="Login failed!" />
+		<text name="PasswordRepeat" value="Password (repeat)" />
+		<text name="PasswordResetEmail_SubTitle" value="This email is sent you to reset and re-create your password." />
+		<text name="PasswordResetEmail_Title" value="Megh Planning password reset." />
+		<text name="PasswordResetEmail_ClickTheLinkBelowToResetYourPassword" value="Please click the link below to reset your password:" />
+		<text name="PasswordResetEmail_Subject" value="Megh Planning password reset" />
+		<text name="InvalidEmailAddress" value="Invalid email address" />
+		<text name="ForgotPassword" value="Forgot Password" />
+		<text name="ChangePassword" value="Change password" />
+		<text name="PleaseEnterYourNewPassword" value="Please enter your new password." />
+		<text name="Submit" value="Submit" />
+		<text name="NameSurname" value="Name" />
+		<text name="Employee_Holiday" value="Employee_Holidays" />
+		<text name="Admin_Holiday" value="Admin_Holidays" />
+		<text name="ProjectStatsHours" value="Project Stats Hours" />
+		<text name="ProjectStatsAmount" value="Project Stats Amount" />
+		<text name="UserName" value="User name" />
+		<text name="AssignTo" value="Assign To Employee" />
+		<text name="Name" value="Name" />
+		<text name="Surname" value="Surname" />
+		<text name="EmailAddress" value="Email address" />
+		<text name="InvalidPasswordResetCode" value="Invalid Password Reset Code" />
+		<text name="InvalidPasswordResetCode_Detail" value="Please be sure you entered this page by clicking the link sent to your email. If this not solves the problem, you can re-try to request a new password reset link." />
+
+		<text name="Tenants" value="Tenants" />
+		<text name="Admin_Renewal" value="Renewal Reminder Employee List" />
+		<text name="Dashboard" value="Dashboard" />
+		<text name="MissingEmployeeTimesheet_Count" value="Missing Employee Timesheet Count" />
+		<text name="Pages_AssignToUserstory_Employee" value="Assign To Userstory Employee" />
+		<text name="MissingEmployeeTimesheet_Datewise" value="Missing Employee Timesheet Datewise" />
+		<text name="SavedSuccessfully" value="Saved successfully" />
+		<text name="UserAdmin" value="UserAdmin" />
+		
+		<text name="Opportunity" value="Inquiry" />
+		<text name="GeneralOpportunity" value="General Opportunity" />
+		<text name="MyOpportunity" value="My Opportunity" />
+		<text name="SalesImport" value="Sales Import" />
+		<text name="OpportunityLeader" value="Opportunity Leader" />
+		<text name="ConvertToInquiry" value="Convert To Inquiry" />
+		<text name="Opportunity_Admin" value="Opportunity Admin" />
+		<text name="Opportunity_Users" value="Opportunity Users" />
+		<text name="Opportunity_Report" value="Opportunity Report" />
+		<text name="CompanyName" value="Company Name" />
+		<text name="AddOpportunity" value="Add Inquiry" />
+		<text name="EditOpportunity" value="Edit Inquiry" />
+		<text name="InterestedInSelected">Interested in should be selected.</text>
+
+		<text name="PersonName" value="Person Name" />
+		<text name="MobileNumber" value="Mobile Number" />
+		<text name="EmailId" value="Email Id" />
+		<text name="InterestedIn" value="Interested In" />
+    <text name="ProjectValue" value="Project Value" />
+    
+		<text name="CreateNewTenant" value="Create new tenant" />
+		<text name="AdminEmailAddress" value="Admin email address" />
+		<text name="Save" value="Save" />
+		<text name="Cancel" value="Cancel" />
+		<text name="Done" value="Done" />
+		<text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+		<text name="DefaultPasswordIs" value="Default password is {0}" />
+		<text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
+		<text name="Register" value="Register" />
+		<text name="OrLoginWith" value="Or login with" />
+		<text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+		<text name="TenantSelection" value="Tenant Selection" />
+		<text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+		<text name="Logout" value="Logout" />
+
+		<text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
+
+		<text name="DatabaseConnectionString" value="Database connection string" />
+		<text name="Employee" value="Employee" />
+		<text name="Users" value="Users" />
+		<text name="Holiday" value="Holiday" />
+		<text name="HolidayList" value="Holiday List" />
+		<text name="CreateHoliday" value="Create Holiday" />
+		<text name="EditHoliday" value="Edit Holiday" />
+		<text name="pleaseuploadcorrectfile" value="Please Upload document,Image,Text,Excel type files only." />
+		<text name="pleaseuploaddocument">Please Upload Document</text>
+		<text name="FilesizeexceedsmaximumlimitMB">File size exceeds maximum limit MB</text>
+		<text name="ProjectStats(Amount)">Project Stats (Amount)</text>
+		<text name="IsActive" value="Is active" />
+		<text name="FullName" value="Full name" />
+		<text name="CreateNewUser" value="Create new user" />
+		<text name="CreateNewFinancialyear" value="Create Financial Year" />
+		<text name="EditFinancialyear" value="Edit Financial Year" />
+		<text name="FinancialYear" value="Financial Year List" />
+		<text name="Yes" value="Yes" />
+		<text name="No" value="No" />
+		<text name="Optional" value="Optional" />
+		<text name="AuditLogs" value="Audit Log" />
+		<text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
+
+		<text name="CurrentTenant">Current tenant</text>
+		<text name="NotSelected">Not selected</text>
+		<text name="Change">Change</text>
+		<text name="ChangeTenant">Change tenant</text>
+
+		<text name="MultiLevelMenu">Multi Level Menu</text>
+		<text name="Back">Back</text>
+		<text name="SuccessfullyRegistered">Successfully registered</text>
+		<text name="WaitingForEmailActivation">Your email address should be activated</text>
+		<text name="Roles">Roles</text>
+		<text name="ProjectUserstory">My TO DO</text>
+
+		<text name="Actions">Actions</text>
+		<text name="RoleName">Role Name</text>
+		<text name="DisplayName">Display Name</text>
+		<text name="EditGSTDashboard">Edit GST Dashboard</text>
+		<text name="CreateNewRole">Create New Role</text>
+		<text name="EditRole">Edit Role</text>
+		<text name="EditUser">Edit User</text>
+		<text name="Edit">Edit</text>
+		<text name="Financialyear">Financialyear</text>
+		<text name="Delete">Delete</text>
+
+		<text name="BeneficialCompanyDetails">Company</text>
+		<text name="CreateNewBeneficialCompany">Create Company</text>
+		<text name="BeneficialCompanyName">Company Name</text>
+		<text name="SavedBeneficialCompanySuccessfully">Company Saved Successfully</text>
+		<text name="BeneficialCompanyisalreadyExist">Company already Exist</text>
+		<text name="EditBeneficialCompanyName">Edit Company</text>
+		<text name="UpdatedBeneficialCompanyNameSuccessfully">Company Saved Successfully</text>
+
+		<text name="UserRolesShouldbeSelected">User Roles Should be Selected</text>
+
+		<text name="ProjectTypeDetails">Project Type</text>
+		<text name="ProjectTypeName">Project Type</text>
+		<text name="CreateNewProjectType">Create Project Type</text>
+		<text name="EditProjectTypeName">Edit Project Type</text>
+
+
+		<text name="WorkTypeDetails">Work Type</text>
+
+		<text name="WorkTypeName">Work Type</text>
+		<text name="CreateNewWorkType">Create Work Type</text>
+		<text name="EditWorkTypeName">Edit Work Type</text>
+		<text name="GSTDashboard">GST Dashboard</text>
+		<text name="Month">Month</text>
+		<text name="OutputGST">Output GST</text>
+		<text name="InputGST">Input GST</text>
+		<text name="TotalPayableGST">Total Payable GST</text>
+		<text name="TotalPendingPayment">Total Pending Payment</text>
+		<text name="StatusofPayment">Status of Payment</text>
+
+		<text name="Projects">Projects</text>
+		<text name="Project">Project</text>
+		<text name="allProjects">All Projects</text>
+		<text name="ActiveProjects">Active Projects</text>
+		<text name="AMCProjects">AMC Projects</text>
+		<text name="OnGoingProjects">On Going Projects</text>
+		<text name="InvoiceCollectionProjects">Invoice Collection Projects</text>
+		<text name="CompletedProjects">Completed Projects</text>
+		<text name="OnHoldProjects">On Hold Projects</text>
+		<text name="ProjectWithoutClient">Project Without Client</text>
+		<text name="CreateNewProject">Create Project</text>
+		<text name="ProjectEndDateshouldbegreatethanProjectStartDate">Project EndDate Should be greate than Project StartDate</text>
+		<text name="ProjectActualDateShouldbegreatethanProjectTeamDeadLine">Project ActualDate Should be greate than Project TeamDeadLine</text>
+		<text name="SelectActualDateandTeamDeadlinebetweenstartand enddate">Select ActualDate And TeamDeadline between StartDate And EndDate</text>
+
+		<text name="DocumentDetails">Document</text>
+		<text name="CreateNewDocument">Create Document</text>
+		<text name="Title">Title</text>
+		<text name="EditDocument">Edit Document</text>
+		<text name="pleaseuploaddoc">Please Upload Document</text>
+		<text name="DocumentSavedSuccessfully">Document Saved Successfully</text>
+		<text name="somethingsiswrong">Something is Wrong</text>
+		<text name="Document">Policy Document</text>
+		<text name="Documents">Policy Documents</text>
+		<text name="Employee_Documents">Employee_Documents</text>
+		<text name="Admin_Documents">Admin_Documents</text>
+		<text name="DownLoad">Download</text>
+		<text name="Company">Company</text>
+		<text name="ProjectType">Project Type</text>
+		<text name="WorkType">Work Type</text>
+		<text name="Datavault">Data Vault</text>
+		<text name="Permissions">Permissions</text>
+		<text name="VPSDetails">VPS</text>
+		<text name="VPS">VPS</text>
+		<text name="Support_VPS">Support_VPS</text>
+		<text name="Employee_VPS">Employee_VPS</text>
+		<text name="TotalOutstanding">TotalOutstanding</text>
+
+		<text name="CreateNewVPS">Create VPS</text>
+		<text name="IP">IP</text>
+		<text name="Comment">Comment</text>
+		<text name="MarkAsTerminate" value="Mark As Terminate" />
+		<text name="MarkAsRenew" value="Mark As Renew" />
+		<text name="MarkAsResign" value="Mark As Resign" />
+		<text name="EditVPS">Edit VPS</text>
+		<text name="Employee_MissingTimeSheet">Employee_MissingTimeSheet</text>
+
+		<text name="TimeSheetDetails">TimeSheet</text>
+		<text name="UserStoryList">User Story List</text>
+		<text name="UserStoryReport">User Story Report</text>
+		<text name="CreateNewTimeSheet">Create TimeSheet</text>
+		<text name="Reports">Reports</text>
+		<text name="Reports_User_Timesheet">User Timesheet Reports</text>
+		<text name="Reports_ProjectWiseTimesheet">Project Wise Timesheet Report</text>
+		<text name="Pages_Reports_Sales">Sales Reports</text>
+		<text name="Pages_Project_Report">Project Reports</text>
+		<text name="Pages_Service_Report">Service Reports</text>
+		<text name="Pages_ProjectStats_Hour_Report">Project Stats Hours Reports</text>
+		<text name="Pages_ProjectStats_Amount_Report">Project Stats Amount Reports</text>
+		<text name="UserTimeSheet">User TimeSheet</text>
+		<text name="MonthlyReport">Monthly Report</text>
+		<text name="WorkDescription">Work Description</text>
+		<text name="Description">Description</text>
+		<text name="CreateNewProjectMilestone">Create NewProject Milestone</text>
+		<text name="Amount">Amount</text>
+		<text name="EditTimeSheet">Edit TimeSheet</text>
+		<text name="EmployeeLoginLogoutReport">Employee In/Out Report</text>
+		<text name="EmployeeInOutDetailsReport">Employee In/Out Details Report</text>
+		<text name="EmployeeInOutReport">Employee In/Out Report</text>
+
+		<text name="Hours">Hours</text>
+
+		<text name="admin_TimeSheet">TimeSheet</text>
+
+		<text name="adminTimeSheet">adminTimeSheet</text>
+
+		<text name="TimeSheet">TimeSheet</text>
+
+		<text name="Details">Details</text>
+
+
+		<text name="Detail">Detail</text>
+		<text name="Domain">Domain</text>
+		<text name="Price">Price</text>
+		<text name="HostingSpace">HostingSpace</text>
+		<text name="CreateNewService">Create Service</text>
+
+		<text name="Service">Service</text>
+		<text name="Client">Client</text>
+		<text name="UpdateService">Update Service</text>
+		<text name="ManageServices"> Services</text>
+		<text name="ManageSupportService">Manage Support Service</text>
+		<text name="AdminSupportService">Admin Support Service</text>
+		<text name="SupportManageService">Support Manage Service</text>
+
+		<text name="Support"> Support Service</text>
+		<text name="Support_Admin"> Support Admin</text>
+		<text name="Support_Employee"> Support Employee</text>
+
+		<text name="NextRenewalDate">Next Renewal Date</text>
+		<text name="RenewReminderList" value="Renew Reminder List (Within 75 Days)" />
+		<text name="Hosting">Hosting</text>
+		<text name="Storage">Storage</text>
+		<text name="Email">Email</text>
+		<text name="MissingLogOutData">Missing Logout Data</text>
+		<text name="MissingTimesheet">Missing TimeSheet Date</text>
+		<text name="MissingTimesheetEmployee">Missing TimeSheet - Employee</text>
+		<text name="LoginLogOut">Login/Logout</text>
+		<text name="FTPDetails">FTP Details</text>
+		<text name="UserStory">User Story</text>
+		<text name="UserStoryReports">User Story Reports</text>
+		<text name="ImportExcel">Import Excel</text>
+		<text name="importuserstory">Import User Story</text>
+		<text name="Upload">Upload</text>
+		<text name="Search">Search</text>
+		<text name="FtpUserName">FTP User Name</text>
+		<text name="DomainName">Domain Name</text>
+		<text name="HostName">Host Name</text>
+		<text name="FTPPassword">FTP Password</text>
+		<text name="DBType">DB Type</text>
+		<text name="OnlineManager">Online Manager</text>
+		<text name="OnlineManagerHostName">Online Manager HostName</text>
+		<text name="DatabaseName">Database Name</text>
+		<text name="DataBaseUserName">DataBase UserName</text>
+		<text name="DataBasePassword">DataBase Password</text>
+		<text name="StorageContainer">Storage Container</text>
+		<text name="MailProvider_Host">MailProvider_Host</text>
+		<text name="MailProvider_User">MailProvider_User</text>
+		<text name="MailProvider_Password">MailProvider_Password</text>
+		<text name="Adjustment">Adjustment</text>
+		<text name="ManageLeaves">Manage Leaves</text>
+		<text name="History">History</text>
+		<text name="RenewHistory">Renew History</text>
+		<text name="CreateTypeName">Create Type Name</text>
+		<text name="TypeName">Type Name</text>
+		<text name="TypeNameSavedSuccessfully">Type Name Saved Successfully</text>
+		<text name="TypeNamealreadyExist">Type Name already Exist</text>
+		<text name="EditTypeName">Edit Type Name</text>
+		<text name="TypeNameDeletedSuccessfully">Type Name Deleted Successfully</text>
+		<text name="ManageKnowledgeCenter">Knowledge Center</text>
+		<text name="CreateData">Create Knowledge Center</text>
+		<text name="Team">Team</text>
+		<text name="attachment">Attachment</text>
+		<text name="Url">Url</text>
+		<text name="EditData">Edit Knowledge Center</text>
+		<text name="DetailData">Knowledge Center Details</text>
+		<text name="Clear">Clear</text>
+		<text name="SelectDocument" value="Please Select Document" />
+		<text name="EnterUrl" value="Please Enter Url" />
+		<text name="Category">Category</text>
+		<text name="CreateCategory">Create Category</text>
+		<text name="EditCategory">Edit Category</text>
+		<text name="CategoryDetails">Category Details</text>
+		<text name="UpdatedSuccessfully" value="Updated Successfully" />
+		<text name="LeaveBalance" value="Leave Balance" />
+		<text name="DataVault_Company" value="Company" />
+		<text name="DataVault_ProjectType" value="ProjectType" />
+		<text name="DataVault_WorkType" value="WorkType" />
+		<text name="DataVault_TypeName" value="TypeName" />
+		<text name="DataVault_Category" value="Category" />
+		<text name="KnowledgeCenter" value="Knowledge Center" />
+		<text name="KnowledgeCenterList" value="Knowledge Center List" />
+		<text name="KnowledgeCenterCrud" value="Knowledge Center Crud" />
+		<text name="FTPImport" value="FTP Import" />
+		<text name="FTPImportExcel" value="FTP Import Excel" />
+		<text name="AdminLeaves" value="Admin Leaves" />
+		<text name="InvoiceRequest" value="Invoice Request" />
+		<text name="InvoiceRequestProject" value=" Project Invoice Request " />
+		<text name="InvoiceRequestService" value="Service Invoice Request " />
+		<text name="Projects_Generate_Invoice_Request" value="Projects_Generate_Invoice_Request" />
+		<text name="ProjectReports" value="Project Report" />
+		<text name="importexcel" value="Import Excel" />
+		<text name="Project_Admin" value="Project_Admin" />
+		<text name="Project_Employee" value="Project_Employee" />
+		<text name="LastSevenDaysSales" value="Last SevenDays Sales" />
+
+		<text name="MonthlySales" value="Monthly Sales" />
+		<text name="ProjectStatsHour" value="Project Stats (Hour)" />
+		<text name="Pages_Reports_CollectionReport" value="Pages_Reports_CollectionReport" />
+		<text name="Pages_Reports_InvoiceReport" value="Pages_Reports_InvoiceReport" />
+		<text name="Pages_Reports_ProductionReport" value="Pages_Reports_ProductionReport" />
+		<text name="Pages_OutstandingInvoice_Report" value="Pages_OutstandingInvoice_Report" />
+		<text name="Pages_OutstandingClient_Report" value="Pages_OutstandingClient_Report" />
+		<text name="Clients" value="Clients" />
+		<text name="EditClient" value="Edit Client" />
+		<text name="ViewClient" value="View Client" />
+		<text name="AdminEmailAddress_Regex_Description" value="Please enter valid mail address" />
+		<text name="GST_Dashboard">GSTDashboard</text>
+		<text name="SalesTargetChart_Dashboard">Target Vs. Achievement Chart</text>
+		<text name="ServiceWithoutClient">Service Without Client</text>
+		<text name="CreateClient" value="Add Client" />
+		<text name="Service_Generate_Invoice_Request" value="Service Generate Invoice Request" />
+		<text name="UpdatePriority" value="Update Project Priority" />
+		<text name="projectEnableDisable" value="Project Enable Or Disable" />
+		<text name="Pages_Employeewise_UserStory">Employee Wise User Story</text>
+	<text name="EmployeeWiseUserStoryReport">User Story Report</text>
+		<text name="Page_Expense_Category">Expense Category</text>
+		<text name="Page_Expense_SubCategory">Expense Heads</text>
+		<text name="SubCategory">Expense Heads</text>
+		<text name="Page_Expense">Expense</text>
+		<text name="Date">Month-Year</text>
+		<text name="Page_Expense_Entry">Expense Entry</text>
+    <text name="ExpenseReport">Expense Report</text>
+		
+    <text name="Settings">Settings</text>
+		<text name="SetAsRead">Set As Read</text>
+		<text name="SaveAll">Save all</text>
+		<text name="ThereIsNoNotification">There Is No Notification</text>
+		<text name="SeeAllNotifications">See All Notifications</text>
+		<text name="General">General</text>
+		<text name="Timezone">Timezone</text>
+		<text name="TenantManagement">Tenant Management</text>
+		<text name="FormBasedRegistration">Form Based Registration</text>
+		<text name="AllowTenantsToRegisterThemselves">Allow tenants to register to the system.</text>
+		<text name="AllowTenantsToRegisterThemselves_Hint">If you disable this,tenants will only be added by admin using tenant management page.</text>
+		<text name="NewRegisteredTenantsIsActiveByDefault">New registered tenants are active by default.</text>
+		<text name="NewRegisteredTenantsIsActiveByDefault_Hint">If you disable this,new tenants will not be active (and can not login) until admin manually activate the account.</text>
+		<text name="UseCaptchaOnRegistration">Use security image question (captcha) on registration.</text>
+		<text name="Edition">Edition</text>
+		<text name="UserManagement">User Management</text>
+		<text name="EmailConfirmationRequiredForLogin">Email confirmation required for login.</text>
+		<text name="Security">Security</text>
+		<text name="PasswordComplexity">Password complexity</text>
+		<text name="UseDefaultSettings">Use default settings</text>
+		<text name="UseNumbers">Use numbers in password</text>
+		<text name="UseUpperCaseLetters">Use upper case letters in password</text>
+		<text name="UseLowerCaseLetters">Use lower case letters in password</text>
+		<text name="UsePunctuations">Use punctuations in password</text>
+		<text name="MinPasswordLength">Minimum password length</text>
+		<text name="MaxPasswordLength">Maximum password length</text>
+		<text name="UserLockOut">User Lock Out</text>
+		<text name="EnableUserAccountLockingOnFailedLoginAttemts">Enable user account locking on failed login attemts</text>
+		<text name="MaxFailedAccessAttemptsBeforeLockout">Maximum number of failed login attempts count before locking the account</text>
+		<text name="DefaultAccountLockoutDurationAsSeconds">Account locking duration (as seconds)</text>
+		<text name="TwoFactorLogin">Two Factor Login</text>
+		<text name="EnableTwoFactorLogin">Enable two factor user login.</text>
+		<text name="IsEmailVerificationEnabled">Is Email Verification Enabled</text>
+		<text name="IsSmsVerificationEnabled">Is Sms Verification Enabled</text>
+		<text name="AllowToRememberBrowserForTwoFactorLogin">Allow To Remember Browser For Two Factor Login</text>
+		<text name="EmailSmtp">Email(SMTP)</text>
+		<text name="DefaultFromAddress">Default From (Sender) Email Address</text>
+		<text name="DefaultFromDisplayName">Default From (Sender) Display Name</text>
+		<text name="SmtpHost">SMTP Host</text>
+		<text name="SmtpPort">SMTP Port</text>
+		<text name="UseSsl">Use SSL</text>
+		<text name="UseDefaultCredentials">Use Default Credentials</text>
+		<text name="TestEmailSettingsHeader">Test Email Settings</text>
+		<text name="SendTestEmail">Send Test Email</text>
+		<text name="TestEmailSentSuccessfully">Test Email Sent Successfully</text>
+		<text name="TimeZoneSettingChangedRefreshPageNotification">TimeZone Setting Changed Refresh Page Notification</text>
+		<text name="NotAssigned">Not Assigned</text>
+		<text name="All">All</text>
+		<text name="Notifications">Notifications</text>
+		<text name="ReceiveNotifications">Receive Notifications</text>
+		<text name="ReceiveNotifications_Definition">Receive Notifications_Definition</text>
+		<text name="Refresh">Refresh</text>
+		<text name="Unread">Unread</text>
+		<text name="NotificationSettings">Notification Settings</text>
+		<text name="SetAllAsRead">Set All As Read</text>
+		<text name="ManageCategory">Manage Category</text>
+		<text name="ManageSubCategory">Manage Sub Category</text>
+		<text name="CDNDocument">Document</text>
+		<text name="CDNOnOff">CDN On/Off</text>
+		<text name="CDNUrl">CDN Url</text>
+		<text name="CDNFolderName">CDN Folder Name</text>
+		<text name="CDNUserName">CDN User Name</text>
+		<text name="CDNKey">CDN Key</text>
+		<text name="CDNFlag">CDN Flag</text>
+		<text name="CDNContainer">CDN Container</text>
+		<text name="Notification">Notification</text>
+		<text name="Reminder">Reminder</text>
+		<text name="Utility">Utility</text>
+		<text name="Type">Project_Type</text>
+		<text name="HangfireDashboard">Hangfire Dashboard</text>
+		<text name="UploadExcel">Upload Excel</text>
+		<text name="UploadAttachment">Upload File</text>
+	<text name="ProjectsWithoutClient">Projects Without Client</text>
+		<text name="Project_Marketing">Project_Marketing</text>
+		<text name="LeaveUpdateDate">Last Leave Updated On</text>
+		<text name="LeaveApplication">Leave Application</text>
+    <text name="LeaveApplicationReport">Leave Application Report</text>
+    <text name="DailySalesActivityReport">Daily Sales Activity Report</text>
+	<text name="LeaveApplicationToDo">Leave Application TO DO</text>
+		<text name="CreateLeaveApplication">Create Leave Application</text>
+		<text name="ReasonForLeave">Reason For Leave</text>
+		<text name="LeaveApplication_Admin">LeaveApplication_Admin</text>
+		<text name="LeaveApplication_User">LeaveApplication_User</text>
+		<text name="LeaveApplicationToDo_Admin">LeaveApplicationToDo_Admin</text>
+		<text name="LeaveApplicationToDo_User">LeaveApplicationToDo_User</text>
+   
+		<text name="IsAutoRenewal">Auto Renewal</text>
+		<text name="InvoiceNote">Invoice Note</text>
+		<text name="AddFollowup">Add Follow Up</text>
+    <text name="ConvertIntoMyOpportunity">Convert Into My Opportunity</text>
+	<text name="Opportunity_Closing_Report">Opportunity Closing Report</text>
+		<text name="Closing_Report">Closing Report</text>
+		<text name="DailyActivityReport">Daily Activity Report</text>
+  </texts>
+</localizationDictionary>

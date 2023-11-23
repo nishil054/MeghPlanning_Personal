@@ -1,0 +1,85 @@
+﻿
+<div class="row clearfix" ng-controller="app.views.reports.opportunity as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    @L("Opportunity_Report")
+
+                </h2>
+            </div>
+                <div class="data_section headerbox">
+                    <ul>
+                        <li>
+                            <input class="validate form-control" placeholder="From Date"
+                                   moment-picker="vm.fromDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.fromDate"
+                                   value="vm.fromDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+                        </li>
+                        <li>
+                            <input class="validate form-control" placeholder="To Date"
+                                   moment-picker="vm.toDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.toDate"
+                                   value="vm.toDate"
+                                   min-date="vm.fromDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+
+                        </li>
+                        <li>
+                            <select id="ddlCategory" ui-select2 class="form-control" ng-model="vm.calllCategoryId">
+                                <option value="">Select Call Category</option>
+                                <option ng-repeat="category in vm.callCategory" value="{{category.id}}">{{category.name}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select id="ddlassignUsers" ui-select2 class="form-control" ng-model="vm.assignUserId">
+                                <option value="">Select Assign Users</option>
+                                <option ng-repeat="assignUsers in vm.assignUsers" value="{{assignUsers.id}}">{{assignUsers.name}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.beneficiaryCompanyId" ng-disabled="vm.rolenamevalue == 'DubaiManager'">
+                                <option value="">Company Beneficiary</option>
+                                <option ng-repeat="company in vm.companylist" value="{{company.id}}">{{company.beneficial_Company_Name}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" ng-model="vm.companyName" class="form-control" placeholder="Company Name">
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.search()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <div>
+                                <button ng-disabled="vm.isChecked" type="button" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()"
+                                        ng-click="vm.exportExcel()" value=""
+                                        class="btn btn-primary btnback fixed" data-toggle="tooltip" data-placement="top" title="Export To Excel">
+                                    <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+            
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿<div class="row clearfix" ng-controller="app.views.importuserstory as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    {{ vm.projectName.data }}
+
+                </h2>
+            </div>
+
+            <div class="data_section">
+                <ul>
+                    <li class="dropdown">
+                        <select id="ddlemployee" ui-select2 class="form-control" style="width:180px" ng-model="vm.importuserstory.employeeId" ng-change="getEmployeeUserStory(vm.importuserstory.employeeId)">
+                            <option value="">All</option>
+                            <option value="0">Unassigned</option>
+                            <option value="-1">Assigned</option>
+                            <option ng-repeat="employee in vm.employeelist" value="{{employee.id}}">{{ employee.name }}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select id="ddlcom" class="form-control" ng-change="statusChange(vm.importuserstory.status)" ng-model="vm.importuserstory.status" required
+                                style=" width:126px;">
+                            <option value="">-All Status-</option>
+                            <option value="0">Pending</option>
+                            <option value="1">Complete</option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openUserStoryCreationModal()">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <div>
+                            <button type="button" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="vm.importExcelUserStory()" value=""
+                                    class="btn btn-primary btnback fixed" data-toggle="tooltip" data-placement="top" title="Import User Story">
+                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                <!-- <span ng-show="hoverEdit">Import User Story</span> -->
+                            </button>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <a style="color:#fff" class="btn btn-default btn_flex" href="javascript:history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> @L("Back")</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr"
+                 ng-if="noData==false">
+
+            </div>
+            <div ng-if="noData==true" class="alert alert-info">
+                No Records Found.
+            </div>
+        </div>
+    </div>
+</div>

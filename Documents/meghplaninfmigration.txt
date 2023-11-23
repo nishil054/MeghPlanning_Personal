@@ -1,0 +1,126 @@
+--Megh planng service migration
+
+
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Alpesh' where A_c_Manager='Alpesh Parmar'
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Riddham' where A_c_Manager='Riddham Purohit'
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Jitu' where A_c_Manager in('Mandip Raval','Mikita Shah','Jitendra Gandhi','Namrata Brahmbhatt')
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Jitu' where A_c_Manager is null 
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Abhishek' where A_c_Manager='Abhishek Dave'
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Jigar' where A_c_Manager='Jigar Patel'
+update CLOUD_CUSTOMER_MASTER set A_c_Manager='Nitin' where A_c_Manager='Nitin Patel'
+update CLOUD_CUSTOMER_MASTER set EXP_DATE='11 . May . 2050' where EXP_DATE='No Expiry'
+======================================
+--for Domain service
+======================================
+
+insert into TblManageService (ServiceId, ClientId, DomainName,price,NextRenewalDate,EmployeeId,Isdeleted,CreationTime,Cancelflag,RegistrationDate
+   )  
+   (
+   select 1 ,
+	(CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME)is not null
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME) )
+	ELSE (CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME)is not null 
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME))
+	else 0 END)    END)    
+ , name,Domain,Cast(EXP_DATE as datetime2),
+ (CASE WHEN(select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)is not null
+ then (select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)
+ else 0 end) ,0  ,cast( GETDATE() as datetime2)  ,(CASE WHEN STATUS='Active'   THEN 0 ELSE 1  END) 
+,
+(CASE WHEN Created_On IS NULL THEN  GETDATE()   ELSE
+TRY_CAST(Created_On as datetime)END) 
+   from CLOUD_CUSTOMER_MASTER where Domain>0)
+
+
+======================================
+--for email service
+======================================
+insert into TblManageService  (ServiceId, ClientId, DomainName,price,NextRenewalDate,EmployeeId,NoOfEmail ,Isdeleted,CreationTime,Cancelflag,RegistrationDate
+   )  
+   (
+   select 4 ,--4 for email,1 for domain
+	(CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME)is not null
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME) )
+	ELSE (CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME)is not null 
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME))
+	else 0 END)    END)    
+ , name,Email,Cast(EXP_DATE as datetime2),
+ (CASE WHEN(select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)is not null
+ then (select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)
+ else 0 end),No_of_Mailbox ,0  ,cast( GETDATE() as datetime2)  ,(CASE WHEN STATUS='Active'   THEN 0 ELSE 1  END) 
+,
+(CASE WHEN Created_On IS NULL THEN  GETDATE()   ELSE
+TRY_CAST(Created_On as datetime)END) 
+   from CLOUD_CUSTOMER_MASTER where No_of_Mailbox>0)
+======================================================
+--hosting
+======================================================
+ insert into TblManageService  (ServiceId, ClientId, DomainName,price,NextRenewalDate,EmployeeId,HostingSpace ,Isdeleted,CreationTime,Cancelflag,RegistrationDate
+   )  
+   (
+   select 2 ,--4 for email,1 for domain,2 for hosting
+	(CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME)is not null
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME) )
+	ELSE (CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME)is not null 
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME))
+	else 0 END)    END)    
+ , name,Site_Storage1,(CASE WHEN EXP_DATE IS NULL THEN  cast( GETDATE() as datetime2)    ELSE
+TRY_CAST(EXP_DATE as datetime)END),
+ (CASE WHEN(select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)is not null
+ then (select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)
+ else 0 end),Site_Storage ,0  ,cast( GETDATE() as datetime2)  ,(CASE WHEN STATUS='Active'   THEN 0 ELSE 1  END) 
+,
+(CASE WHEN Created_On IS NULL THEN  GETDATE()   ELSE
+TRY_CAST(Created_On as datetime)END) 
+   from CLOUD_CUSTOMER_MASTER where Site_Storage>0)
+
+=======================================================
+--Storage
+==========================================
+
+insert into TblManageService  (ServiceId, ClientId, DomainName,price,NextRenewalDate,EmployeeId,HostingSpace ,Isdeleted,CreationTime,Cancelflag,RegistrationDate
+   )  
+   (
+   select 3 ,--4 for email,1 for domain,2 for hosting,3 for storage
+	(CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME)is not null
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME) )
+	ELSE (CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME)is not null 
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME))
+	else 0 END)    END)    
+ , name,File_Storage1,(CASE WHEN EXP_DATE IS NULL THEN  cast( GETDATE() as datetime2)    ELSE
+TRY_CAST(EXP_DATE as datetime)END),
+ (CASE WHEN(select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)is not null
+ then (select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)
+ else 0 end),File_Storage ,0  ,cast( GETDATE() as datetime2)  ,(CASE WHEN STATUS='Active'   THEN 0 ELSE 1  END) 
+,
+(CASE WHEN Created_On IS NULL THEN  GETDATE()   ELSE
+TRY_CAST(Created_On as datetime)END) 
+   from CLOUD_CUSTOMER_MASTER where File_Storage>0)
+
+=============================
+--ssl
+=============================
+
+ update  CLOUD_CUSTOMER_MASTER set  ssl1 ='0.00'   where ssl1='POSITIVE'
+
+insert into TblManageService   (ServiceId, ClientId, DomainName,price,NextRenewalDate,EmployeeId,HostingSpace ,Isdeleted,CreationTime,Cancelflag,RegistrationDate
+   )  
+   (
+   select 5 ,--4 for email,1 for domain,2 for hosting,3 for storage,5 for SSL
+	(CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME)is not null
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.COMPANY_NAME) )
+	ELSE (CASE when (SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME)is not null 
+	THEN ((SELECT distinct id FROM Clients WHERE ClientName =  CLOUD_CUSTOMER_MASTER.BILLING_NAME))
+	else 0 END)    END)    
+ , name,
+   CONVERT(DECIMAL(18,2), REPLACE(SSL1, ',', '')),
+ (CASE WHEN EXP_DATE IS NULL THEN  cast( GETDATE() as datetime2)    ELSE
+TRY_CAST(EXP_DATE as datetime)END),
+ (CASE WHEN(select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)is not null
+ then (select id from abpusers where UserName=CLOUD_CUSTOMER_MASTER.A_c_Manager)
+ else 0 end), CASE WHEN ssl='POSITIVE'    THEN ssl ELSE 'WILDCARD'  END  ,0  ,cast( GETDATE() as datetime2)  ,(CASE WHEN STATUS='Active'   THEN 0 ELSE 1  END) 
+,
+(CASE WHEN Created_On IS NULL THEN  GETDATE()   ELSE
+TRY_CAST(Created_On as datetime)END) 
+   from CLOUD_CUSTOMER_MASTER where   ssl1 !='0.00')
+    

@@ -1,0 +1,57 @@
+﻿<div class="row clearfix" ng-controller="app.views.gstData as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    GST Data
+                </h2>
+                <div class="search_container">
+                    <ul>
+                        <li class="dropdown">
+                            <select id="ddlcom" class="form-control">
+                            </select>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.refreshGrid()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="body table-responsive">
+
+                @**********************************************************@
+                <table class="table table-hover table-striped fnt_normal td_middal width600 table-bordered">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Month</th>
+                            <th colspan="3" style="text-align:center;">
+                                Outstanding Payble GST
+                            </th>
+                            <th rowspan="2">Total</th>
+                        </tr>
+                        <tr>
+                            <th ng-repeat="itemval1 in  vm.GSTDataList[0].companynames">{{itemval1}}</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblbody">
+                        @*<tr ng-repeat="itemval2 in  vm.GSTDataList">
+            <td>{{itemval2.monthyear}}</td>
+            <td>
+            b</td>
+            <td>b</td>
+            <td>b</td>
+            <td>{{itemval2.gstAmount}}</td>
+        </tr>*@
+                        
+                    </tbody>
+                    <tfoot id="tblfooter">
+
+                    </tfoot>
+                </table>
+            </div>
+            <!-- <p class="alert alert-danger"> No record found.</p> -->
+        </div>
+    </div>
+</div>

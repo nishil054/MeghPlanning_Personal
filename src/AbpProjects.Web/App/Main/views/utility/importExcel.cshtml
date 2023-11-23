@@ -1,0 +1,45 @@
+﻿
+    <form name="UploadExcelForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h2 class="modal-title">
+                <span>@L("UploadExcel")</span>
+            </h2>
+        </div>
+        <div class="modal-body">
+            <div class="uploadimbbox">
+                <div class="input-group">
+                    <input type="text" name="Logo" id="logo" class="form-control" placeholder="No file selected" readonly required>
+                    <span class="input-group-btn">
+                        <div class="btn btn-default  custom-file-uploader">
+                            <input id="filetoupload" type="file" name="file" onchange="this.form.logo.value = this.files.length ? this.files[0].name : ''" />
+                            Browse
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr><div ng-if="vm.rowcount.length > 0">&nbsp;&nbsp;Total rows successfull : {{vm.successrowcount}} and failed : {{vm.rowcount.length}}</div></tr>
+                        <tr ng-repeat="item in vm.errorresult track by $index">
+                            <td ng-show="vm.showcolumn">
+                                <div>
+                                    <span style="color:red">Error :- {{item}}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                @L("Cancel")
+            </button>
+            <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.uploadFile(myFile)"><span>@L("Upload")</span></button>
+        </div>
+    

@@ -1,0 +1,72 @@
+﻿<div class="row clearfix" ng-controller="app.views.project.projectTypeList as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    {{ vm.data.projectName }} 
+                     </h2>
+                    <div >
+                        <ul>
+
+                            <li>
+                                <a style="color:#fff" class="btn btn-default add btn_flex" href="javascript:history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> @L("Back")</a>
+                            </li>
+                            <li>
+                                <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openProjectCreationModal()">
+                                    <i class="material-icons">add</i>
+                                </button>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+               
+
+            </div>
+             <div class="body table-responsive verticalalign  min_height304">
+
+                <table class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="align-center">@L("Actions")</th>
+                            <th width=180px>Project Type</th>
+                            <th class="align-right" width=120px>Price</th>
+                            <th class="align-center" width="60px">Hours</th>
+                            <th class="align-center" width="60px">Milestone</th>
+                            <th class="align-right" width="140px">Cost For Company</th>
+                            <th>Comments</th>
+
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr ng-repeat="proj in vm.projectDetails">
+                            <td class="dropdown align-center" style="width: 70px;">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons" style="color: #adadad !important;">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-left">
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openEdit(proj)">Edit</a></li>
+                                    <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openDelete(proj)">Delete</a></li>
+                                </ul>
+                            </td>
+                            <td width=180px>{{ proj.projectType }}</td>
+                            <td class="align-right" width=120px>{{ proj.typeprice }}</td>
+                            <td class="align-center" width="60px">{{ proj.hours }}</td>
+                            <td class="align-center">
+                                <a ng-click="vm.openMilestoneCreationModal(proj)">{{ proj.milestoneCount }}</a>
+                            </td>
+                            <td class="align-right" width="140px">{{ proj.costforCompany }}</td>
+                            <td>{{ proj.comments }}</td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+
+               
+            </div>
+
+           
+        </div>
+    </div>
+</div>

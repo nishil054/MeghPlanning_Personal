@@ -1,0 +1,38 @@
+﻿<form id="frm_create_timesheet" name="assignToCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("AssignTo") </span> <span ng-if="vm.milestone.empName != null">({{vm.milestone.empName}})</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlproject" class="form-label">Select Employee<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlemployee" ui-select2 class="form-control" ng-model="vm.assign.employeeId" required>
+                            <option value="">-Select-</option>
+                            <option ng-repeat="employee in vm.employeelist" value="{{employee.id}}">{{ employee.name }}</option>
+                        </select>
+                        @*<label for="ddlproject" class="form-label">Select Project<span class="abp_required" style="color:red">*</span></label>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="assignToCreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

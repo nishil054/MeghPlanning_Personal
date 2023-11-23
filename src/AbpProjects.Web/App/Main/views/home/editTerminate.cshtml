@@ -1,0 +1,40 @@
+﻿<form id="frm_edit_user" name="edituserterminateform" novalidate>
+    <div class="modal-header">
+
+        <h4 class="modal-title">
+            <span>@L("MarkAsTerminate")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input class="validate form-control" placeholder="Last Date"
+                                       moment-picker="vm.home.lastdate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       @*start-date="vm.startDate"*@
+                                       required 
+                                       selected-date="vm.home.lastdate"
+                                       ng-model="vm.home.lastdate"
+                                       value="vm.home.lastdate"
+                                       ng-model-options="{ updateOn: 'blur' }"/>
+                                <label for="dtter" class="form-label">Last Date<span class="abp_required" style="color:red">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>       
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="edituserterminateform.$invalid">
+            @L("Save")
+        </button>
+    </div>
+</form>
+
+

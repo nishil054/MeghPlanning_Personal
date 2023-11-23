@@ -1,0 +1,198 @@
+// add in core
+=====================================================================================
+IDocumentUpload.cs (Core)
+=====================================================================================
+public interface IDocumentUpload : IApplicationService
+    {
+        Task<string>  SaveDocument(string FolderName, HttpPostedFileBase file, List<string> FileExtension);
+    } 
+======================================================================================
+======================================================================================
+
+DocumentUpload.cs (Core)
+=======================================================================================
+public class DocumentUpload : IDocumentUpload
+    {
+	public async Task<string> SaveDocument(string FolderName,HttpPostedFileBase 						file,List<string> FileExtension)
+        {
+            string tempFileName = "";
+            try
+            {
+                if (file != null)
+                {
+                    var acceptedFormats = new List<string>();
+                    acceptedFormats = FileExtension;
+                    //remove space,special character from filename
+                    string FileName = file.FileName.Replace(/([^a-z0-9.]+)/gi, ""); //file.ext
+
+                    var fileInfo = new FileInfo(FileName);
+                    //check file format 
+                    if (acceptedFormats != null)
+                    {
+
+
+                        if (!acceptedFormats.Contains(fileInfo.Extension.ToLower()))
+                        {
+                            throw new ApplicationException("Invalid File Format.");
+                        }
+                    }
+                    tempFileName = Path.GetFileNameWithoutExtension(FileName) + "_" + DateTime.Now.ToString("ddMMyyHHmmssffffff") + fileInfo.Extension;
+
+                    if (!System.IO.Directory.Exists(HttpContext.Current.Server.MapPath("~\\UserFiles\\" + "\\" + FolderName)))                                                                                                   
+                    {
+                        System.IO.Directory.CreateDirectory(HttpContext.Current.Server.MapPath("~\\UserFiles\\" + "\\" + FolderName));
+                    }
+
+                    var tempFilePath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "UserFiles\\" + "\\" + FolderName, tempFileName);
+                    file.SaveAs(tempFilePath);
+                   
+                            
+
+                    return tempFileName;
+                }
+              
+            }
+            catch (UserFriendlyException ex)
+            {
+
+            }
+
+            return tempFileName;
+        }
+ }
+
+======================================================================================
+//call above functionality to controller
+
+DemoController.cs
+=======================================================================================
+public readonly IDocumentUpload _documentUpload;
+
+
+ [HttpPost]
+        public JsonResult UploadDocument(HttpPostedFileBase Files)
+        {
+             if (Files != null)
+            {
+                List<string> extension = new List<string> { ".pdf", ".jpg", ".jpeg", ".doc", ".docx", ".txt", ".xls", ".xlsx" };
+                var fileName = _documentUpload.SaveDocument("Download", Files, extension);
+                    
+                }
+                
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+            }
+
+
+
+
+======================================================================================
+// .web 
+===>demo.js
+//first upload file
+
+vm.uploadFile = function (file) {
+
+                var files = $('#filetoupload')[0].files[0];
+                if ($('#filetoupload')[0].files.length == 0) {
+
+                    abp.notify.error(App.localize('pleaseuploaddoc'));
+
+                    return;
+                }
+
+                var uploadUrl = "../Demo(Controller)/UploadDocument";
+                var fd = new FormData();
+                fd.append('file', $('#filetoupload')[0].files[0]);
+
+                $http.post(uploadUrl, fd, {
+                    transformRequest: angular.identity,
+                    headers: { 'Content-Type': undefined }
+                }).then(function (data, status) {
+                    if (data.statusText == "OK") {
+
+                        //vm.document.attachment = data.data.Result.fileName;
+                        //your code
+                    }
+
+
+                    else {
+                        alert("somethingsiswrong");
+                    }
+
+                }).finally(function () {
+                    vm.saveAs();
+
+                })
+
+
+            };
+
+// after upload the document,save document
+            vm.saveAs = function () {
+		
+		//check if document exist
+                //documentService.documentExsistence(vm.document).then(function (result) 					//{
+                //if (!result.data) {
+			//call save document api
+                	//documentService.createDocument(vm.document).then(function (result) {
+                        //vm.document = result.data;
+                            abp.notify.success(App.localize('DocumentSavedSuccessfully'));
+
+                        //$uibModalInstance.close();
+                        //vm.getAll();
+
+                        //}).finally(function () {
+
+                        //});
+                //}
+                //else {
+                        //abp.notify.error(App.localize('Document already Exist '));
+                    //}
+                //});
+            };
+
+
+            vm.save = function () {       //when save button click
+                
+                var files = $('#filetoupload')[0].files[0];
+
+                if ($('#filetoupload')[0].files.length != 0) {
+                    vm.document.attachment = files.name;
+                    var ext = vm.document.attachment.split('.').pop();
+                    if (ext == 'pdf' || ext == 'jpg' || ext == 'jpeg' || ext == 'doc' || ext == 'docx' || ext == 'txt' || ext == 'xls' || ext == 'xlsx') {
+                        
+                        if (files.size <= maxsize) {   // maxsize = 2048000;(2MB Max)
+                            vm.uploadFile();
+                        }
+                        else {
+                            abp.notify.error(App.localize('FilesizeexceedsmaximumlimitMB'));
+                        }
+                    }
+
+                    else {
+                        abp.notify.error(App.localize('pleaseuploadcorrectfile'));
+
+                        // return;
+                    }
+
+                }
+                else {
+                    abp.notify.error(App.localize('pleaseuploaddoc'));
+                    //return;
+                }
+            };
+
+
+============================================================================================================
+web.config
+//maximum upload size
+
+<configuration>
+  <system.web>
+    <httpRuntime maxRequestLength="xxx" />  //"xxx" is in KB. The default is 4096 (= 4 MB).
+  </system.web>
+</configuration>

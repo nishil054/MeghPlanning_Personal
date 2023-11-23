@@ -1,0 +1,353 @@
+﻿<form id="frm_create_project" name="projectCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" ng-if="vm.fvalue==false && vm.fadjust==false && vm.dashboard==false">
+            <span>@L("UpdateService")</span>
+        </h4>
+        <h4 class="modal-title" ng-if="vm.fvalue==true && vm.fadjust==false ||  vm.dashboard==true">
+            <span>Service Renewal</span>
+        </h4>
+        <h4 class="modal-title" ng-if="vm.fadjust==true">
+            <span> Adjustment</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="tab-container tabbable-line">
+            @*<uib-tab heading="Service Details">*@
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="ddlcom" class="form-label">
+                            Service <span class="abp_required"
+                                          style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <select id="ddlcom" class="form-control" ng-model="vm.task.serviceId"
+                                    ng-disabled="vm.fvalue==false || vm.fadjust==true || vm.dashboard==false"
+                                    @*ng-change="getServiceClearField(vm.task.serviceId)"*@ required>
+                                <option value="">-Select Service-</option>
+                                <option ng-repeat="st in vm.sname" value="{{st.serviceId}}">{{st.serviceName}}</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="ddlcom" class="form-label">
+                            Client<span @*class="abp_required"*@
+                                        style="color:red"></span>
+                        </label>
+                        <div class="form-line focused">
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.task.clientId"
+                                    ng-disabled="vm.fvalue==true || vm.fadjust==true || vm.dashboard==true">
+                                <option value="0">-Select Client-</option>
+                                <option ng-repeat="st in vm.cname" value="{{st.clientId}}">{{st.clientName}}</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Domain<span class="abp_required"
+                                        style="color:red">*</span>
+                        </label>
+                        <div class="autocompletebox form-line focused">
+
+                            <angucomplete-alt pause="400"
+                                              remote-api-handler="vm.searchAPI"
+                                              title-field="domainName"
+                                              id="domainName"
+                                              name="domainName"
+                                              minlength="1"
+                                              data-selected-object-data="vm.task.domainName"
+                                              selected-object="vm.selecteddomainname"
+                                              input-class="form-control"
+                                              ng-model="vm.task.domainName"
+                                              initial-value="vm.task.domainName" required />
+
+                            <label for="areaname" class="form-label"></label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Term<span class="abp_required" style="color:red">*</span></label>
+                        <div class="form-line focused">
+                            <input class="validate form-control" type="number" name="term"
+                                   ng-disabled="vm.fadjust==true || vm.fvalue==false || vm.dashboard==true"
+                                   required ng-model="term" ng-change="termchange(term)">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Price<span class="abp_required"
+                                       style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+
+                            <input class="form-control " maxlength="12" type="number" name="projectDescription"
+                                   ng-model="vm.task.price" ng-change="pricechange(vm.task.price)"
+                                   ng-disabled="vm.fadjust==true || vm.fvalue==false || vm.dashboard==true" required
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Total Price</label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="number" name="projectDescription" ng-model="vm.task.tprice" ng-disabled="true" style="height: 35px">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" ng-if="vm.task.serviceId == 7">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Credits<span class="abp_required" style="color:red">*</span></label>
+                        <div class="form-line focused">
+                            <input class="form-control" min="0" maxlength="12" type="number" name="credits" ng-model="vm.task.credits"
+                                   required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+
+                        <label for="startDate" class="form-label">
+                            Registration Date<span class="abp_required"
+                                                   style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <input class="validate form-control" placeholder="Date"
+                                   moment-picker="vm.task.registrationDate" locale="en" format="DD/MM/YYYY"
+                                   start-view="month" today="true" required ng-model="vm.task.registrationDate"
+                                   value="vm.project.startDate" ng-model-options="{ updateOn: 'blur' }"
+                                   ng-disabled=" vm.dashboard==true"
+                                   ng-blur="datechange(vm.task.registrationDate)" />
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="startDate" class="form-label">
+                            Next Renewal Date<span class="abp_required"
+                                                   style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <input class="validate form-control" placeholder="Date"
+                                   moment-picker="vm.task.nextRenewalDate" locale="en" format="DD/MM/YYYY"
+                                   start-view="month" today="true" ng-model="vm.task.nextRenewalDate"
+                                   value="vm.task.nextRenewalDate" ng-model-options="{ updateOn: 'blur' }"
+                                   ng-disabled="vm.fadjust==true"/>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="ddlcom" class="form-label">
+                            Account Manager<span class="abp_required"
+                                                 style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.task.employeeId"
+                                    ng-disabled="vm.fadjust==true" required>
+                                <option value="">-Select Account Manager-</option>
+                                <option ng-repeat="st in vm.ename" value="{{st.employeeId}}">
+                                    {{st.employeeName}}
+                                </option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12" ng-if="vm.task.serviceId == 2 || vm.task.serviceId == 3">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Storage  Space</label>
+                        <div class="form-line focused">
+
+                            <input class="form-control " type="text" name="projectDescription" @*required*@
+                                   @*ng-disabled="vm.fadjust==true"*@ ng-model="vm.task.hostingSpace" minlength="2"
+                                   maxlength="12">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12" ng-show="vm.task.serviceId == 8">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Database  Space<span @*class="abp_required"*@ style="color:red">*</span></label>
+                        <div class="form-line focused">
+
+                            <input class="form-control " maxlength="12" type="text" name="projectDescription" ng-model="vm.task.databaseSpace"
+                                   minlength="2" ng-required="vm.task.serviceId == 8">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" ng-if="vm.task.serviceId == 2 || vm.task.serviceId == 8">
+                    <div class="form-group form-float">
+                        <label for="ddlcom" class="form-label">Server Type</label>
+                        <div class="form-line focused">
+                            <select id="ddlcom" class="form-control" ng-model="vm.task.serverType"
+                                    @*ng-disabled="vm.fadjust==true"*@>
+                                <option value="">-Select Server-</option>
+                                <option ng-repeat="st in vm.server" value="{{st.serverType}}">{{st.serverName}}</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6" ng-if="vm.task.serviceId == 4">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Type Name<span @*class="abp_required"*@
+                                           style="color:red">*</span>
+                        </label>
+                        <select id="ddlcom" class="form-control" ng-model="vm.task.typeName"
+                                @*ng-disabled="vm.fadjust==true"*@ @*required*@>
+                            <option value="">-Select Type Name-</option>
+                            <option ng-repeat="st in vm.tname" value="{{st.typeName}}">{{st.displayTypename}}</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-sm-12" ng-if="vm.task.serviceId == 4">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            No of email<span class="abp_required"
+                                             style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <input class="validate form-control allow_decimal" type="number" name="Price" required
+                                   @*ng-disabled="vm.fadjust==true"*@ ng-model="vm.task.noOfEmail" maxlength="12"
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" ng-if="vm.fadjust==true">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Adjustment Amount<span class="abp_required"
+                                                   style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <input class="validate form-control allow_decimal" type="number" name="Price" required
+                                   ng-model="vm.task.adjustmentAmount">
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--Invoice Note-->
+                <div class="col-sm-12" ng-if="vm.fadjust==true">
+                    <div class="form-group form-float">
+                        <label for="InvoiceNote" class="form-label highlight">
+                            @L("InvoiceNote")<span class="abp_required" style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <textarea type="text" name="InvoiceNote" ng-model="vm.task.invoiceNote" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="vm.task.serviceId == 5" class="col-sm-12">
+                    <div class="form-group form-float">
+                        <label for="title" class="form-label">Type Of SSL<span @*class="abp_required"*@ style="color:red">*</span></label>
+                        <div class="form-line focused">
+
+                            <select id="ddl" class="form-control" ng-model="vm.task.typeofssl"
+                                    @*style=" width:126px;"*@>
+                                <option value="">-Type Of SSL-</option>
+                                <option value="CLOUDFLAIR">CLOUDFLAIR</option>
+                                <option value="POSITIVE">POSITIVE</option>
+                                <option value="INSTALLATION">SSL Service and installation</option>
+                                <option value="WILDCARD">WILDCARD</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="vm.task.serviceId == 6" class="col-sm-12">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Title<span @*class="abp_required"*@ style="color:red">*</span></label>
+                        <div class="form-line focused">
+
+                            <input class="form-control " @*maxlength="12"*@ type="text" name="projectDescription" ng-model="vm.task.title"
+                                   minlength="2">
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">Comment</label>
+                        <div class="form-line focused">
+                            <textarea type="text" name="Name" ng-model="vm.task.comment" @*maxlength="32"*@
+                                      class="form-control"></textarea>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" ng-if="vm.fvalue==true && vm.fadjust==false && vm.dashboard==false">
+                    <div class="form-group form-float">
+                        <input id="isAutoRenewal" type="checkbox" name="IsAutoRenewal" ng-model="vm.task.isAutoRenewal" class="form-control" />
+                        <label for="isAutoRenewal" class="form-label">@L("IsAutoRenewal")</label>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save(vm.task.adjustmentAmount)"
+                ng-disabled="projectCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+
+</form>
+
+<style>
+    .data_section {
+        position: relative;
+        z-index: 9;
+    }
+
+    .angucomplete-dropdown {
+        max-width: 278px !important;
+    }
+</style>

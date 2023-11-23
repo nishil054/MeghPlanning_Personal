@@ -1,0 +1,28 @@
+﻿<form id="frm_edit" name="CreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditReason")</span>
+        </h4>
+    </div>
+    <div class="modal-body editform">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">                 
+                    <label for="name" class="form-label">Reasons for Delay<span class="req">*</span></label>
+                        <input id="name" type="text" name="reason" ng-model="vm.items.reason" required class="validate form-control">                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.close()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="CreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+﻿<form id="frm_edit_worktype" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditWorkTypeName")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        @*<uib-tabset class="tab-container tabbable-line">
+            <uib-tab heading="Work Type Details">*@
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                             <label for="worktypename" class="form-label">@L("WorkTypeName")<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input id="worktypename" type="text" name="worktypename" ng-model="vm.worktype.workTypeName" required  class="validate form-control"
+                         @*ng-pattern="/^[a-zA-Z0-9 -]*$/"*@>                   
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            @*</uib-tab>
+
+        </uib-tabset>*@
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="worktypeCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+</form>

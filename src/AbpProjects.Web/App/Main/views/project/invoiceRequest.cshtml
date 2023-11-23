@@ -1,0 +1,108 @@
+﻿<form id="frm_create_project" name="projectCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span >Create Invoice Request</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="tab-container">
+            @*<uib-tab>*@
+                <div class="row clearfix">
+
+
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                        <label class="form-label highlight">Amount<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input class="form-control " maxlength="12" type="number" name="projectDescription" ng-model="vm.task.amount"
+                                       minlength="2" required>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                        <label class="form-label highlight">Comment</label>
+                            <div class="form-line focused">
+                                <textarea type="text" name="Name" ng-model="vm.task.comment"  class="form-control"></textarea>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+
+
+
+                    </div>
+
+                </div>
+
+            @*</uib-tab>*@
+
+        </div>
+    </div>
+    <div ng-if="inv==false" class="alert alert-info">
+        No Records Found.
+    </div>
+    <div ng-if="inv==true">
+        <div class="header">
+            <h4 style="margin-left:6px">
+                Invoice Request History
+            </h4>
+
+        </div>
+        <table class="table table-hover table-striped">
+            <thead>
+
+                <tr>
+                    <th>Project</th>
+                    <th>Amount</th>
+                    @*<th>Comment</th>*@
+                    <th>Invoice Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="invo in vm.invoice">
+                    <td>
+                        <b>Name : </b>{{invo.projectName}}<br />
+                        <b>Comment : </b>{{invo.comment}}
+                    </td>
+                    <td>{{invo.amount}}</td>
+                    @*<td>{{invo.comment}}</td>*@
+
+                    <td>{{invo.creationTime| date:'dd/MM/yyyy'}}</td>
+                    <td>
+                        <span ng-if="invo.status==0">Pending </span>
+                        <span ng-if="invo.status==1"> Complete  </span>
+                        <span ng-if="invo.status==2"> Cancel  </span>
+                    </td>
+                    <td class="dropdown">
+                        <a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.delete(invo)" style="color:indianred"><i class="material-icons">delete</i></a>
+                        @*<a ng-if="invo.status==0" href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.delete(invo)" style="color:indianred"><i class="material-icons">delete</i></a>*@
+                    </td>
+                    @*<td>{{invo.status}}</td>*@
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="projectCreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+
+
+</form>

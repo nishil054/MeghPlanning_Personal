@@ -1,0 +1,156 @@
+@using AbpProjects.Localization
+<div ng-controller="app.views.auditLogs.index as vm">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card main-content mbzero">
+                <div class="header data_section">
+                    <h2> <span>Audit Log</span></h2>
+                    <div>
+                        <ul>
+                            <!--<li>
+                                <button tooltip-placement="top" uib-tooltip="Download" class="btn btn-primary add" ng-click="vm.exportToExcel()">
+                                    <i class="fa fa-file-excel-o"></i>-->
+                                    @*@L("ExportToExcel")*@
+                                <!--</button>
+
+                            </li>-->
+                            <li>
+                                <button class="btn btn-primary add" ng-click="toggle = !toggle" ng-class="{'active' : toggle}">
+                                    <i class="material-icons">filter_alt</i>
+                                </button>
+                            </li>
+
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagetitlebox">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-head">
+                        <div class="page-title">
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="filterBlock" ng-class="{'active' : toggle}">
+            <div class="form-body" enter-key="vm.getAuditLogs()">
+                <ul>
+                    @*
+                    <li>
+                        <label class="control-label">@L("DateRange")</label>
+                        <input date-range-picker type="text" options="vm.dateRangeOptions" min="vm.dateRangeOptions.min" max="vm.dateRangeOptions.max" class="form-control date-picker" ng-model="vm.dateRangeModel" />
+                    </li>*@
+                    <li class="twocolumn">
+                        <div>
+                            <label class="control-label">From</label>
+                            <input class="validate form-control" placeholder="Date"
+                                   moment-picker="vm.audit.startDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   max-date="vm.date"
+                                   required ng-model="vm.audit.startDate"
+                                   value="vm.audit.startDate"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   change="datechange(vm.audit.startDate)" />
+                        </div>
+                        <div>
+                            <label class="control-label">To</label>
+                            <input class="validate form-control" placeholder="Date"
+                                   moment-picker="vm.audit.endDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   max-date="vm.date"
+                                   required ng-model="vm.audit.endDate"
+                                   value="vm.audit.endDate"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   change="datechange(vm.audit.endDate)" />
+                        </div>
+
+                    </li>
+                    <li>
+                        <label class="control-label">UserName</label>
+                        <input type="text" class="form-control" ng-model="vm.audit.userName">
+                    </li>
+                    <li>
+                        <label class="control-label">Service</label>
+                        <input type="text" class="form-control" ng-model="vm.audit.serviceName">
+                    </li>
+                    <li>
+                        <label class="control-label" style="display: block">Duration</label>
+                        <div class="input-group" style="width: 150px !important;">
+                            <input type="number" only-number="" ng-model="vm.audit.minExecutionDuration" class="form-control" min="0" max="86400000" ng-minlength="0" ng-maxlength="8">
+                            <span class="input-group-addon">
+
+                            </span>
+                            <input type="number" only-number="" ng-model="vm.audit.maxExecutionDuration" class="form-control" min="0" max="86400000" ng-minlength="0" ng-maxlength="8">
+                        </div>
+                    </li>
+                    <li>
+                        <label class="control-label">Action</label>
+                        <input type="text" class="form-control" ng-model="vm.audit.methodName">
+                    </li>
+                    <li>
+                        <label class="control-label">ErrorState</label>
+                        <select class="form-control" ng-model="vm.audit.hasException">
+                            <option value="">All</option>
+                            <option value="false">Success</option>
+                            <option value="true">HasError</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label class="control-label">Browser</label>
+                        <input type="text" class="form-control" ng-model="vm.audit.browserInfo">
+                    </li>
+                    <li class="twocolumn buttonarea">
+                        <button ng-click="vm.search()" class="btn btn-primary">
+                            Search
+                        </button>
+                        <button ng-click=" vm.clearSearch()" class="btn btn-primary">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </button>
+
+                    </li>
+                    @*
+                    <li>
+                        <label class="control-label">&nbsp;</label>
+                        <button class="btn blue" ng-click="vm.getAuditLogs()"><i class="fa fa-refresh"></i> @L("Refresh")</button>
+                    </li>*@
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-12">
+
+            <div class="portlet light margin-bottom-0">
+
+                <div class="portlet-body">
+
+                    <div ng-if="noData" class="alert alert-info">
+                        No record found.
+                    </div>
+                    <div busy-if="vm.loading" ng-if="noData==false">
+                        <div ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir=@(CultureHelper.IsRtl ? "rtl" : "" )></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filteroverlay" ng-class="{'active' : toggle}" ng-click="toggle = !toggle">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Lead Owner</th><th scope="col">Company</th><th scope="col">Company Beneficiary</th><th scope="col">Person Name</th><th scope="col">Interested In</th><th scope="col">Project Value</th><th scope="col">Email Id</th><th scope="col">Mobile Number</th><th scope="col">Call Category</th><th scope="col">Closed Amount</th><th scope="col">Closing Date</th>
+		</tr><tr>
+			<td>operator operator</td><td>TBEA</td><td>ABB</td><td>dcs</td><td>DMS,</td><td>1000.00</td><td>sneha@gmail.com</td><td>9887877879</td><td>Hot</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>operator operator</td><td>advfgh</td><td>ABB</td><td>thgfnb</td><td>DMS,</td><td>444.00</td><td>ssn@gmail.com</td><td>7699870890</td><td>Inquiry</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>operator operator</td><td>Megh Technologies</td><td>ABB</td><td>Mosmi</td><td>AMS,DMS,</td><td>10000.00</td><td>mosmi11@gmail.com</td><td>9426565874444</td><td>Cold</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>admin admin</td><td>TBEA</td><td>ABB</td><td>Sneha Patel</td><td>AMS,</td><td>800000.00</td><td>sneha@gmail.com</td><td>9887877879</td><td>Cold</td><td>&nbsp;</td><td>&nbsp;</td>
+		</tr>
+	</table>
+</div>

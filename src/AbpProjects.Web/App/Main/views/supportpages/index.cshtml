@@ -1,0 +1,205 @@
+﻿<div class="row clearfix" ng-controller="app.views.supportpages.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("ManageServices")
+                </h2>
+
+                <div>
+                    <ul>
+                        @* <li>
+                                <input type="text" ng-model="vm.task.domainName" placeholder="Domain Name" class="search_box form-control" />
+                            </li>
+                            <li>
+                                <button ng-click="vm.search()" class="btn btn-primary add">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </li> *@
+                        <li>
+                            <button type="button" ng-show="vm.permissions.adminwrites" data-toggle="modal"
+                                    class="btn btn-primary add"
+                                    ng-click="vm.openCreateServiceModal()">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="data_section headerbox">
+                <div class="header-dropdown m-r--5">
+                    <div class="search_input">
+                        <ul>
+
+                            <li>
+                                <input placeholder="From Date"
+                                       class="form-control"
+                                       moment-picker="vm.task.fromdate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       ng-model="vm.task.fromdate"
+                                       @*today="true"
+                                       value="vm.task.fromdate"*@
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       style="width:90px;" />
+                            </li>
+
+                            @*<li>
+            <input class="form-control icon_date"
+                   placeholder="Delivery date to"
+                   moment-picker="vm.datafield.todeliveryDate"
+                   locale="en"
+                   format="DD/MM/YYYY"
+                   min-date="vm.datafield.frmdeliveryDate"
+                   max-date="vm.maxDateMoment"
+                   ng-model="vm.datafield.todeliveryDate"
+                   ng-model-options="{ updateOn: 'blur' }">
+        </li>*@
+
+                            <li>
+                                <input placeholder="To Date"
+                                       class="form-control"
+                                       moment-picker="vm.task.todate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       ng-model="vm.task.todate"
+                                       @*today="true"
+                                       value="vm.task.todate"*@
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       style="width:90px;" />
+                            </li>
+
+
+
+                            <li>
+                                <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.task.serviceId" required
+                                        style=" width:150;">
+                                    <option value="">-All Service-</option>
+                                    <option ng-repeat="st in vm.sname" value="{{st.serviceId}}">
+                                        {{st.serviceName}}
+                                    </option>
+                                </select>
+
+                            </li>
+
+                            <li>
+                                <select id="ddlcomType" ui-select2 class="form-control" ng-model="vm.task.typeName" required
+                                        style=" width:150;">
+                                    <option value="">-All Email Type-</option>
+                                    <option ng-repeat="st in vm.tname" value="{{st.typeName}}">
+                                        {{st.displayTypename}}
+                                    </option>
+                                </select>
+                            </li>
+                            <li>
+                                <select id="ddlcom1" ui-select2 class="form-control" ng-model="vm.task.clientId" required
+                                        style="width:110;">
+                                    <option value="">-All Client-</option>
+                                    <option ng-repeat="st in vm.client" value="{{st.clientId}}">
+                                        {{st.clientName}}
+                                    </option>
+                                </select>
+                            </li>
+
+
+                            <li>
+                                <select id="ddlcomEmp" ui-select2 class="form-control" ng-model="vm.task.employeeId" required
+                                        style="width:150;">
+                                    <option value="">-All Account Manager-</option>
+                                    <option ng-repeat="st in  vm.emp" value="{{st.employeeId}}">
+                                        {{st.employeeName}}
+                                    </option>
+                                </select>
+                            </li>
+                            <li>
+                                <select id="ddlcom1" class="form-control" ng-model="vm.task.cancelflag" required
+                                        style="width:90px">
+                                    <option value="">-All Status-</option>
+                                    <option value="false">Active</option>
+                                    <option value="true">Cancel</option>
+                                    @*<option ng-repeat="st in vm.client"
+                value="{{st.employeeId}}">{{st.employeeName}}</option>*@
+                                </select>
+                            </li>
+                            @*<li>
+                                <input type="text" ng-model="vm.domainName" class="form-control" placeholder="Search by project " style="">
+                            </li>*@
+
+                            <li>
+                                @*<input type="text" ng-model="vm.task.domainName" placeholder="Domain Name" class="search_box form-control" />*@
+
+                                <angucomplete-alt pause="400"
+                                                  id="DomainName"
+                                                  remote-api-handler="vm.searchAPI"
+                                                  title-field="domainName"
+                                                  minlength="1"
+                                                  data-selected-object-data="vm.domainName"
+                                                  selected-object="vm.selecteddomainname"
+                                                  input-class="form-control"
+                                                  ng-model="vm.domainName"
+                                                  placeholder="Domain Name"
+                                                  initial-value="vm.domainName" />
+
+                                @*<label for="areaname" class="form-label"></label>*@
+                            </li>
+                            <li>
+                                <button ng-click="vm.search()" class="btn btn-primary add">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button ng-click="clearSearch()" class="btn btn-primary">
+                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                </button>
+
+                            </li>
+
+                            @*<li>
+            <button ng-click="AutocompleteSearch()" class="btn btn-primary">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+
+        </li>*@
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            @*<div>{{vm.price}}</div>*@
+
+            <div ng-if="noData" class="alert alert-info">
+                No record found.
+            </div>
+            <div class="body table-responsive">
+
+                @**********************************************************@
+
+                @*<div ng-if="record==false" class="alert alert-info">
+                        No Records Found.
+                    </div>*@
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns
+                     full-height-grid dir="ltr" ng-if="!noData">
+
+                </div>
+
+                @**********************************************************@
+
+                <!-- <button type="button" data-toggle="modal"
+                    class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right"
+                    ng-click="vm.openCreateServiceModal()">
+                    <i class="material-icons">add</i>
+                </button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .data_section{position:relative; z-index:9;}
+    .angucomplete-dropdown{max-width: 278px !important;}
+</style>

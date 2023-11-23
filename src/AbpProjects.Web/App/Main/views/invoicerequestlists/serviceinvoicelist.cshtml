@@ -1,0 +1,68 @@
+﻿<div class="row clearfix" ng-controller="app.views.invoicerequestlists.serviceinvoicelist as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    Service Invoice Request
+                </h2>
+
+                <div class="">
+                    <ul>
+
+
+
+
+                        <li>
+                            <input type="text" ng-model="vm.task.domainName" placeholder="Domain Name" class="search_box form-control" />
+                        </li>
+                        <li>
+                            <select id="ddlcom" class="form-control" ng-model="vm.task.status" required
+                                    style=" width:126px;">
+                                <option value="">-All Status-</option>
+                                <option value="0">Pending</option>
+                                <option value="1">Complete</option>
+                                <option value="2">Cancel</option>
+
+
+                            </select>
+                        </li>
+                        <li>
+                            <button ng-click="vm.search()" class="btn btn-primary">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button ng-click="clearSearch()" class="btn btn-primary">
+                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                            </button>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>{{vm.price}}</div>
+
+            <div style="padding:0px 0px 0px 0px!important;" class="body table-responsive">
+
+                @**********************************************************@
+
+                <div ng-if="record==false" class="alert alert-info">
+                    No record found.
+                </div>
+                <div ui-grid="vm.userGridOptions" ng-if="record==true" ui-grid-pagination ui-grid-resize-columns
+                     full-height-grid dir="ltr">
+
+                </div>
+
+                @**********************************************************@
+
+                @*<button type="button" data-toggle="modal"
+                            class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right"
+                            ng-click="vm.openCreateServiceModal()">
+                        <i class="material-icons">add</i>
+                    </button>*@
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@using AbpProjects.Localization
+
+<div class="row clearfix" ng-controller="views.notifications.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section headerbox">
+                <h2>
+                    <span>@L("Notifications")</span>
+                </h2>
+                <div class="">
+                    <ul>
+                        <li>
+                            <button class="btn btn-default" ng-click="vm.openNotificationSettingsModal()"><i class="fa fa-cog"></i> @L("NotificationSettings")</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-primary blue" ng-click="vm.setAllNotificationsAsRead()"><i class="fa fa-check"></i> @L("SetAllAsRead")</button>
+                        </li>
+                        <li>
+                            <select id="TargetValueFilterSelectionCombobox1"
+                                    class="form-control js-example-basic-multiple"
+                                    ng-model="vm.readStateFilter"
+                                    ng-change="vm.getNotifications()">
+                                <option value="ALL">@L("All")</option>
+                                <option value="UNREAD">@L("Unread")</option>
+                            </select>
+                        </li>
+                        <li style="display:none">
+                            <button id="RefreshNotificationGridButton" class="btn btn-primary blue" style="display: block; width: 100%" ng-click="vm.getNotifications()"><i class="fa fa-refresh"></i> @L("Refresh")</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive padd_top">
+                <div ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

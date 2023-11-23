@@ -1,0 +1,93 @@
+﻿<style>
+    .oldred-people {
+        background-color: #ffdede !important; /*red*/
+    }
+
+    .oldyellow-people-selected {
+        background-color: #fdffde !important; /*yellow*/
+    }
+
+    .oldgreen-people-selected {
+        background-color: #d4fecf !important; /*green*/
+    }
+</style>
+<div class="row clearfix" ng-controller="app.views.project.allprojects as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("allProjects")
+
+                </h2>
+                <div class="data_section headerbox">
+                    <ul>
+                        <li class="dropdown">
+                            <select id="ddlcom" ui-select2 class="form-control" style="width:150px" ng-model="vm.project.clientId">
+                                <option value="">All Client</option>
+                                <option ng-repeat="st in vm.cname" value="{{st.clientId}}">{{st.clientName}}</option>
+                            </select>
+                        </li>
+                        <li class="dropdown" style="display:none">
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.project.projectId" required>
+                                <option value="">All Project</option>
+                                <option ng-repeat="st in vm.projectTask" value="{{st.id}}">{{st.projectName}}</option>
+                            </select>
+                        </li>
+                        <li class="dropdown" ng-show="vm.permissions.adminwrites == true || vm.permissions.marketLeads == true">
+                            <select id="drpteam" class="js-example-placeholder-single js-states form-control validate" ui-select2 ng-model="vm.project.marketingleadId" required>
+                                <option value="">All Marketing Leader</option>
+                                <option ng-repeat="us in vm.ddlmarketingList" value="{{us.id}}">{{us.name}}</option>
+                            </select>
+                        </li>
+                        <li class="dropdown">
+                            <select id="ddlcom" class="form-control js-example-basic-multiple" data-placeholder="All Project" multiple ui-select2 ng-model="vm.project.projectStatusId">
+                                <option ng-repeat="proStatus in vm.ddlProjectStatus" value="{{proStatus.id}}">
+                                    {{proStatus.status}}
+                                </option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" ng-model="vm.searchBox" class="form-control" placeholder="Search by project " style="">
+                        </li>
+
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.refreshGrid()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                        <li style="display:none">
+                            <div ng-show="!vm.permissions.employeewrites">
+                                <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openProjectCreationModal()">
+                                    <i class="material-icons">add</i>
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="">
+
+                                <button ng-disabled="noData" type="button" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="vm.exportExcel()" value=""
+                                        class="btn btn-primary btnback fixed" data-toggle="tooltip" data-placement="top" title="Export To Excel">
+                                    <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                    <!-- <span ng-show="hoverEdit">Export To Excel</span> -->
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

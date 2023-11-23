@@ -1,0 +1,71 @@
+﻿<div>
+    <!-- <div class="modal-header">
+        <div class="header data_section">
+            <div> 
+                <ul>
+                    <li>
+                        <input type="text" id="plugins4_q" ng-model="vm.searchBox" @*ng-change="vm.refreshGrid(vm.searchBox)"*@ class="validate form-control" placeholder="Search by Permission" style="height: 35px">
+                    </li>
+                </ul>
+            </div>
+        </div>
+      <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+
+        <!-- <h3 class="modal-title">
+            <span>@L("Permissions") :  <span class="fname"> {{vm.permissionEditData.rolename}}</span> </span>
+        </h3> -
+
+    </div> -->
+
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("Permissions") : {{vm.permissionEditData.rolename}}</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+    <div class="black-transparentbox">
+        <div class="portlet light margin-bottom-0">
+        <div class="permissionsearch">
+            <input type="text" id="plugins4_q" ng-model="vm.searchBox" @*ng-change="vm.refreshGrid(vm.searchBox)"*@ class="validate form-control" placeholder="Search by Permission" style="height: 35px">
+        </div>
+            <form name="editUserPermissionsForm" role="form" novalidate class="form-validation">
+                <div class="portlet-body">
+                    <div class="createjobsform mt0" style="height:390px; overflow:auto">
+                        <permission-tree edit-data="vm.permissionEditData"></permission-tree>
+                    </div>
+                    <div class="modal-footer transparentbackground permissionmodle">
+
+                        <div class=" data_section">
+                            <ul>
+                                <li>
+                                    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                                        @L("Cancel")
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-primary waves-effect" ng-click="vm.save()"
+                                            ng-disabled="projectCreateForm.$invalid">
+                                        @L("Save")
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        @*<button type="button" ng-disabled="vm.saving" button-busy="vm.resettingPermissions" busy-text="@L("SavingWithThreeDot")" class="btn btn-default pull-left" ng-click="vm.resetPermissions()" uib-popover="@L("ResetPermissionsTooltip")" popover-trigger="'mouseenter'" popover-placement="top"><span>@L("ResetSpecialPermissions")</span></button>*@
+                        @* <button type="button" class="btn btn-danger" ng-click="vm.cancel()"> <span> @L("Cancel") </span></button> *@
+
+                        @* <button type="button" class="btn btn-primary blue" ng-click="vm.save()"> <span>@L("Save")</span></button> *@
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

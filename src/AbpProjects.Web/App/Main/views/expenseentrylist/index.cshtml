@@ -1,0 +1,76 @@
+﻿<div class="row clearfix" ng-controller="app.views.expenseentrylist.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    Expense Entry
+
+                </h2>
+
+          
+            <div class="data_section headerbox">
+                <ul>
+                    <li>
+                        @*<input class="validate form-control" placeholder=" Date "
+                               moment-picker="vm.categories.monthYear" locale="en" format="MMM-YYYY" start-view="month"
+                               today="true" ng-model="vm.categories.monthYear" value="vm.categories.monthYear"
+                               ng-model-options="{ updateOn: 'blur' }" change="datechange(vm.categories.monthYear)" />*@
+
+
+                        <div>
+                            
+                            
+                                <input class="validate form-control" placeholder="Date"
+                                       moment-picker="vm.categories.monthYear"
+                                       locale="en"
+                                       format="MMM-YYYY"
+                                       start-view="month"
+                                       today="true"
+                                       max-date="vm.date"
+                                       required ng-model="vm.categories.monthYear"
+                                       value="vm.categories.monthYear"
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       change="datechange(vm.categories.monthYear)" />
+
+                        
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+              </div>
+
+            <div class="body table-responsive footer_table_right">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>@L("Category")</th>
+                            <th>Heads</th>
+                            <th>Amount</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cate in vm.categories">
+                            <td>{{cate.category}}</td>
+                            <td>{{cate.subCategory}}</td>
+                            <td><input class="form-control text-right" min="0" maxlength="12" style="width: 120px;" type="number" ng-change="getTotal()" name="priority" ng-keypress="vm.CheckNumber()" ng-model=" cate.expense" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)"></td>
+                          
+                        </tr>
+                        <tr><td>Total</td><td></td><td><span style="margin-left: 70px;">{{getTotal()}}</span></td></tr>
+                    </tbody>
+
+                </table>
+                @*<div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr"></div>*@
+            </div>
+            
+            <button type="submit" class="btn btn-primary waves-effect" style="margin-left: 514px;" ng-click="vm.save()" ng-if="vm.loading==false" ng-disabled="btndisable">
+                @L("Save")
+            </button>
+
+        </div>
+    </div>
+</div>

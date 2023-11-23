@@ -1,0 +1,112 @@
+﻿<form id="frm_create_holiday" name="holidayEditForm" novalidate>
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditHoliday")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                      <label for="dtstart" class="form-label">Start date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                      
+                        <input class="validate form-control" placeholder="Start Date "
+                               moment-picker="vm.holiday.startDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               required ng-model="vm.holiday.startDate"
+                               value="vm.holiday.startDate" />
+                        @*ng-model-options="{ updateOn: 'blur' }" />*@
+
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                     <label for="dtend" class="form-label">End date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                       
+                        <input class="validate form-control" placeholder="End Date "
+                               moment-picker="vm.holiday.endDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               required ng-model="vm.holiday.endDate"
+                               value="vm.holiday.endDate" />
+                        @*ng-model-options="{ updateOn: 'blur' }" />*@
+
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+  <div class="row clearfix">
+        <div class="col-sm-6">
+             <label class="form-label" style="color: #aaa;"> Type <span class="req"> *</span> </label>
+            <div class="form-group">
+               
+                <div class="radio-inline-list">
+                    <div class="radio_input">
+                        <input type="radio" ng-readonly="makeReadOnlyYes" id="fes1" ng-model="vm.holiday.type" name="type" value="1" ng-checked="vm.hoilday.type==1">
+                        <label for="fes1">
+                            FullDay
+                        </label>
+                    </div>
+                    <div class="radio_input">
+                        <input type="radio" id="fes2" ng-readonly="makeReadOnlyNo" ng-model="vm.holiday.type" name="type" value="0" ng-checked="vm.hoilday.type==0">
+                        <label for="fes2">
+                            HalfDay
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                     <label for="dttitle" class="form-label">Title<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input id="title" type="text" name="Title" ng-model="vm.holiday.title" required maxlength="32" minlength="2" class="validate form-control">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal-footer">
+        <div class=" data_section">
+            <ul>
+                <li>
+                   <button type="button" class="btn btn-default btncancel waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+                </li>
+                <li>
+                   <button type="submit" class="btn btn-primary btnsubmit waves-effect" ng-click="vm.save()" ng-disabled="holidayEditForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+                </li>
+            </ul>
+        </div>
+       
+        
+    </div>
+
+</form>

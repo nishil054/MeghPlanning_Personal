@@ -1,0 +1,152 @@
+﻿@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8-VQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-U1Ug.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UNirk-VQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rg-VQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rs-VQ.ttf) format('truetype');
+}
+#LoginArea {
+  max-width: 400px;
+  margin: 120px auto 10px auto;
+  font-family: 'Open Sans', sans-serif;
+}
+.login-page {
+  background-color: transparent;
+  background: url('../../images/loginback.jpg') no-repeat left top !important;
+  background-size: cover !important;
+}
+.loginmaincontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0px 0px;
+  max-width: 100%;
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0px auto;
+  height: 100vh;
+  align-items: center;
+}
+.login-page {
+  max-width: 100% !important;
+  margin: 0px !important;
+}
+.tenant-change-component span {
+  color: #ffffff !important;
+}
+.rememberbox label {
+  color: #ffffff !important;
+}
+.rememberbox [type="checkbox"].filled-in:not(:checked) + label:after {
+  border: 2px solid #ffffff !important;
+}
+.login-box {
+  width: 400px;
+  background: #00597b;
+  height: 100vh;
+  padding: 0px 27px;
+  display: FLEX;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-box .card {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.login-box .card .body {
+  padding: 0px !important;
+}
+.registerform .error {
+  margin-bottom: 0px !important;
+}
+#LoginForm h4,
+.registerform h4 {
+  text-align: left !important;
+  font-size: 30px !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  font-family: 'Open Sans', sans-serif;
+}
+.registerbox {
+  color: #ffffff;
+}
+.login-box .form-control {
+  height: 50px !important;
+  padding: 10px !important;
+}
+.login-box .input-group {
+  margin-bottom: 5px !important;
+}
+#LoginButton,
+.loginbutton {
+  background: #0297ad !important;
+  color: #fff;
+  border: 0px;
+  padding: 10px 30px !important;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+}
+#LoginButton:hover,
+.loginbutton:hover {
+  background: #028194 !important;
+}
+.backbutton {
+  background: #171717 !important;
+  color: #fff !important;
+  border: 0px;
+  padding: 10px 30px !important;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0px 5px 0px 0px;
+}
+.backbutton:hover {
+  background: #000000 !important;
+}
+.remembercolor label {
+  color: #ffffff;
+}
+.remembercolor [type="checkbox"].filled-in:not(:checked) + label:after {
+  border: 2px solid #ffffff !important;
+}
+.remembercolor [type="checkbox"].filled-in:checked.chk-col-pink + label:after {
+  border: 2px solid #0297ad !important;
+  background-color: #0297ad !important;
+}
+.login-page .login-box .logo a {
+  text-align: left;
+}
+.remembercolor input[type="checkbox"] {
+  opacity: 0 !important;
+}
+.language-switch-area {
+  display: none !important;
+}

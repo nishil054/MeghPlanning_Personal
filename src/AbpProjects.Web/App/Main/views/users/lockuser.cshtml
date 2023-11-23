@@ -1,0 +1,80 @@
+﻿<form id="frm_edit_lockuser" name="editlockuserform" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>Details</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix" ng-show="vm.projectservice[0].projectCount>0">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">No. Of Projects</label>
+                    <a ng-click="vm.show('p')"><p class="form-label form-control">{{vm.projectservice[0].projectCount}}</p></a>
+                </div>
+            </div>
+          
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+
+                    <label for="dtren" class="form-label highlight">Select Marketing Leader<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlsupe" class="form-control" ng-model="vm.project.marketing_LeaderId">
+                            <option value="">-Select Marketing Leader-</option>
+                            <option ng-repeat="imm_supper in vm.imm_sup" value="{{imm_supper.id}}">
+                                {{imm_supper.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix" ng-show="vm.projectservice[0].serviceCount>0">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">No. Of Services</label>
+                    <a ng-click="vm.show('d')"><p class="form-label form-control">{{vm.projectservice[0].serviceCount}}</p></a>
+                </div>
+            </div>
+          
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlcom" class="form-label">Account Manager<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlcom" class="form-control" ng-model="vm.project.employeeId">
+                            <option value="">-Select Account Manager-</option>
+                            <option ng-repeat="st in vm.ename" value="{{st.employeeId}}">{{st.employeeName}}</option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+       
+        <div class="modal-footer">
+
+
+            <div class=" data_section">
+                <ul>
+                    <li>
+                        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                            @L("Cancel")
+                        </button>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="editlockuserform.$invalid">
+                            @L("Save")
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+</form>
+
+

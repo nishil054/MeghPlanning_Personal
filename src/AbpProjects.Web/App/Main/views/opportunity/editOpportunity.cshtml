@@ -1,0 +1,188 @@
+﻿<form id="frm_create_company" name="opportunityCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditOpportunity")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="company_Name" class="form-label">@L("CompanyName")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="company_Name" type="text" max="200" name="company_Name" ng-model="vm.opportunity.companyName" required
+                               class="validate form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="ddlcom" class="form-label">
+                        Company Beneficiary<span class="abp_required" style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.opportunity.beneficiaryCompanyId" required>
+                            <option value="">-Select Company-</option>
+                            <option ng-repeat="company in vm.companylist" value="{{company.id}}">
+                                {{company.beneficial_Company_Name}}
+                            </option>
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="personName" class="form-label">@L("PersonName")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="personName" max="200" type="text" name="personName" ng-model="vm.opportunity.personName" required
+                               class="validate form-control allow_alpha">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="mobilenumber" class="form-label">@L("MobileNumber")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="mobilenumber" type="text" max="50" name="mobilenumber" ng-model="vm.opportunity.mobileNumber" required
+                               class="validate form-control clsallow_numeric">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="emailId" class="form-label">@L("EmailId")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="emailId" type="email" max="200" name="emailId" ng-model="vm.opportunity.emailId" required
+                               class="validate form-control">
+                    </div>
+                </div>
+                <span style="color:Red" ng-show="opportunityCreateForm.emailId.$dirty&&opportunityCreateForm.emailId.$error.pattern">Please Enter Valid Email</span>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="projType" class="form-label">@L("InterestedIn")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="row">
+                        <div class="col-sm-4" ng-repeat="projType in vm.projectTypes">
+                            <input type="checkbox" name="projType" value="{{projType.name}}" title="{{projType.name}}" class="form-control" id="projType-{{projType.id}}" checked="checked" ng-model="projType.isAssigned" />
+                            <label for="projType-{{projType.id}}" title="{{projType.name}}">{{projType.name}}</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="projectValue" class="form-label">@L("ProjectValue")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="projectValue" type="text" name="projectValue" ng-model="vm.opportunity.projectValue" required maxlength="12" step="0.01"
+                               class="validate form-control clsallow_decimal">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="ddlCategory" class="form-label highlight">Call Category<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlCategory" ui-select2 class="form-control" required ng-model="vm.opportunity.calllCategoryId">
+                            <option value="">-Select Call Category-</option>
+                            <option ng-repeat="category in vm.callCategory" value="{{category.id}}">{{category.name}}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix" style="display:none">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="ddlCategory" class="form-label highlight">Assign Users</label>
+                    <div class="form-line focused">
+                        <select id="ddlCategory" ui-select2 class="form-control" @*required*@ ng-model="vm.opportunity.assignUserId">
+                            <option value="">-Select Assign Users-</option>
+                            <option ng-repeat="assignUsers in vm.assignUsers" value="{{assignUsers.id}}">{{assignUsers.name}}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="comment" class="form-label">Comment<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+
+                        <textarea id="comment" name="comment" class="validate form-control" ng-model="vm.opportunity.comment" required></textarea>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="actualEndDate" class="form-label">Next Action Date </label>
+                    <div class="form-line focused">
+                        <input class="form-control" placeholder="Next Action Date"
+                               moment-picker="vm.opportunity.nextactiondate" locale="en" format="DD/MM/YYYY" start-view="month"
+                               ng-model="vm.opportunity.nextactiondate" value="vm.opportunity.nextactiondate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class=" data_section">
+            <ul>
+                <li>
+                    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                        @L("Cancel")
+                    </button>
+                </li>
+                <li>
+                    <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="opportunityCreateForm.$invalid || btndisable">
+                        @L("Save")
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            funallow_numeric_Phone("clsallow_numeric");
+            funAllow_Alpha("allow_alpha");
+            funallow_Alpha_Number("allow_alpha_number");
+            funallow_decimal("clsallow_decimal");
+        });
+    </script>
+</form>

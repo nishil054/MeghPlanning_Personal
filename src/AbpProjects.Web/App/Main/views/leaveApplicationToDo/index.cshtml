@@ -1,0 +1,64 @@
+﻿<div class="row clearfix" ng-controller="app.views.leaveapplicationtodo.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("LeaveApplicationToDo")
+                </h2>
+                <div class="data_section headerbox">
+                    <ul>
+
+                        <li>
+                            <input class="validate form-control" placeholder="From Date"
+                                   moment-picker="vm.leaveapplicationtodo.fromDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.leaveapplicationtodo.fromDate"
+                                   value="vm.leaveapplicationtodo.fromDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+                        </li>
+                        <li>
+                            <input class="validate form-control" placeholder="To Date"
+                                   moment-picker="vm.leaveapplicationtodo.toDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.leaveapplicationtodo.toDate"
+                                   value="vm.leaveapplicationtodo.toDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+
+                        </li>
+                        <li class="dropdown">
+                            <select id="ddlleavestatus" ui-select2 class="validate form-control" ng-model="vm.leaveapplicationtodo.leaveStatusId">
+                                <option value="">Leave Status</option>
+                                <option ng-repeat="l in vm.leavestatuslist" value="{{l.id}}">{{l.status}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" ng-model="vm.searchBox" class="validate form-control" placeholder="Search By Name" style="height: 35px">
+                        </li>
+
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.searchAll()" style="height: 35px"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clearAll()" style="height: 35px"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div ng-show="noData" class="alert alert-info">
+                No record found.
+            </div>
+            <div class="body table-responsive">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-show="!noData"></div>
+            </div>
+        </div>
+    </div>
+</div>

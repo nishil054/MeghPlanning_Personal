@@ -1,0 +1,19 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">User Name</th><th scope="col">Leave Type</th><th scope="col">From Date</th><th scope="col">To Date</th><th scope="col">Reason</th><th scope="col">Leave Status Name</th>
+		</tr><tr>
+			<td>market market</td><td>Half Day - Second</td><td>4/30/2023 5:00:27 AM</td><td>4/30/2023 5:00:27 AM</td><td>Going to visit the hospital with my mother.</td><td>Cancel Request Approve</td>
+		</tr><tr>
+			<td>market market</td><td>Short Leave</td><td>4/30/2023 5:03:52 AM</td><td>4/30/2023 5:03:52 AM</td><td>Testing Leave Application</td><td>Pending</td>
+		</tr><tr>
+			<td>market market</td><td>Full Day</td><td>4/30/2023 5:05:48 AM</td><td>4/30/2023 5:05:48 AM</td><td>test</td><td>Pending</td>
+		</tr><tr>
+			<td>admin admin</td><td>Full Day</td><td>5/10/2023 10:08:57 AM</td><td>5/10/2023 10:08:57 AM</td><td>out of station</td><td>Pending</td>
+		</tr><tr>
+			<td>admin admin</td><td>Full Day</td><td>5/11/2023 7:11:44 AM</td><td>5/11/2023 7:11:44 AM</td><td>fasfasdfsda</td><td>Pending</td>
+		</tr><tr>
+			<td>admin admin</td><td>Full Day</td><td>5/11/2023 8:47:24 AM</td><td>5/11/2023 8:47:24 AM</td><td>test</td><td>Pending</td>
+		</tr>
+	</table>
+</div>

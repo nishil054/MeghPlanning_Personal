@@ -1,0 +1,1609 @@
+﻿<?xml version="1.0" ?>
+				<?mso-application progid="Excel.Sheet"?>
+				<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+				 xmlns:o="urn:schemas-microsoft-com:office:office"
+				 xmlns:x="urn:schemas-microsoft-com:office:excel"
+				 xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+				 xmlns:html="http://www.w3.org/TR/REC-html40">
+				 <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+				  <Author>chingzou</Author>
+				  <LastAuthor>chingzou</LastAuthor>
+				  <LastPrinted>2011-07-15T08:16:33Z</LastPrinted>
+				  <Created>2011-07-15T08:13:20Z</Created>
+				  <LastSaved>2011-07-15T08:44:20Z</LastSaved>
+				  <Company>Chingzou</Company>
+				  <Version>OP222 V7.9.2</Version>
+				 </DocumentProperties>
+				 <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+				  <WindowHeight>12945</WindowHeight>
+				  <WindowWidth>16035</WindowWidth>
+				  <WindowTopX>0</WindowTopX>
+				  <WindowTopY>105</WindowTopY>
+				  <ProtectStructure>False</ProtectStructure>
+				  <ProtectWindows>False</ProtectWindows>
+				 </ExcelWorkbook>
+<Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="calibri" x:CharSet="134" ss:Size="12"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="m25570980">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s26">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="calibri" x:CharSet="134" ss:Size="8"/>
+   <NumberFormat ss:Format="Short Time"/>
+  </Style>
+  <Style ss:ID="s34">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="calibri" x:CharSet="134" ss:Size="12" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s40">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s42">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+<Worksheet ss:Name="Punch">
+<Table x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="14.25">
+   <Column ss:AutoFitWidth="1" ss:Width="26.25" ss:Span="30"/>
+ <Row ss:AutoFitHeight="0" ss:Height="29.25">
+							    <Cell ss:MergeAcross="30" ss:StyleID="s34"><Data ss:Type="String">2022:7/1-7/31  Punch</Data></Cell>
+							   </Row>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00000008  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:50 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:16 18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:15 18:56 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:17 18:50 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:20 18:53 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:15 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:15 18:55 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 19:08 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001046  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:22 18:59 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">08:56 18:41 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:02 18:40 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">08:59 18:37 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">08:59 18:35 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:00 18:47 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">08:55 18:40 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">08:49 18:42 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001045  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:43 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:23 18:55 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 18:46 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:10 18:43 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 18:45 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:17 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 18:47 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:05 18:41 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001068  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:01 18:36 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:06 18:38 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:04 18:37 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:07 18:38 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:06 18:39 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:07 18:40 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:41 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001021  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:10 18:49 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:17 19:15 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:06 19:15 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 19:12 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 19:32 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00000011  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:04 18:47 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:02 18:41 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:17 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:14 18:59 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 18:46 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:14 18:44 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 18:45 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001013  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:38 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:23 18:49 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:22 18:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:14 18:44 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:40 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:02 18:40 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:42 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001063  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 19:09 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 18:53 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:10 18:41 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:11 18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001064  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">19:05 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 18:54 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:17 18:46 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:24 17:04 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:14 18:46 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:29 18:58 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:31 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:24 18:59 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001041  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:50 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:20 18:47 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 13:39 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:23 18:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:26 19:00 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">11:02 18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:21 18:57 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:37 19:01 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001057  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">19:06 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 19:06 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 18:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:23 18:53 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:18 19:04 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:13 18:53 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 18:54 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:16 18:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001056  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:56 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:06 18:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:54 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 18:58 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:07 18:44 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:08 19:01 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001052  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:37 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:35 19:05 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:28 18:59 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:30 19:03 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:27 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:25 18:58 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 18:53 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:16 19:36 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001018  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">19:08 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:07 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:27 18:56 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:02 18:57 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:02 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:08 17:12 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:05 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:49 19:07 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001004  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">19:08 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:23 19:06 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 19:01 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:16 19:06 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 18:55 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:19 19:19 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:14 19:05 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:18 19:35 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001008  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">18:56 19:08 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:24 18:57 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:30 19:00 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:25 18:56 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:24 19:09 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:24 18:58 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:21 19:32 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:29 19:02 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">11:13 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001009  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">19:15 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:03 19:05 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 17:04 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:04 18:52 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:16 19:07 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">13:57 19:13 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:12 19:13 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:18 19:20 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00000015  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="11">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:27 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001003  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:46 19:33 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:38 19:08 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:40 19:20 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:39 19:19 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:51 19:32 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">10:00 19:35 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001027  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="11">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:48 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+<Row>
+		                                 <Cell ss:MergeAcross="30" ss:StyleID="m25570980"><Data ss:Type="String">ID:00001006  Name:  Dept:Office  Shift:Shift1 </Data></Cell>
+		                                 </Row>
+<Row>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s40"><Data ss:Type="Number">31</Data></Cell>
+</Row>
+<Row ss:Height="11">
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String">09:51 </Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s26"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row/>
+</Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape"/>
+    <Header x:Margin="0"/>
+    <Footer x:Margin="0"/>
+    <PageMargins x:Bottom="0" x:Left="0.13" x:Right="0" x:Top="0"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>13</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+<DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R1C1:R30000C100</Range>
+   <Type>TextLength</Type>
+   <Qualifier>Equal</Qualifier>
+   <Value>0</Value>
+   <ErrorMessage>Data is protected and can not be edited</ErrorMessage>
+   <ErrorTitle>Read only</ErrorTitle>
+  </DataValidation>
+</Worksheet>
+</Workbook>

@@ -1,0 +1,168 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Date</th><th scope="col">TBEA Portal</th><th scope="col">Megh Planning</th><th scope="col">Xylem Quote Tool</th><th scope="col">APS - Mobile APP</th><th scope="col">Xylem Xamarin Developer_MP</th><th scope="col">Kirby AD Auth</th><th scope="col">GASSCC</th><th scope="col">Refillity</th><th scope="col">Casepro</th><th scope="col">Comment</th>
+		</tr><tr>
+			<td>02/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>Casepro : Solve issue of tab selected in case detial page 
+Bind Quote Detail Page listing
+</td>
+		</tr><tr>
+			<td>03/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>4.50</td><td>Xylem Xamarin Developer_MP : working on unit conversion issue
+Casepro : add filter and create quote listing, 
+
+add tab page in it
+and try to display quote detail
+</td>
+		</tr><tr>
+			<td>04/05/2022</td><td>0.00</td><td>0.00</td><td>5.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Quote Tool : Solve issue on Employee Edit 
+and Review issue of Wrong total while generating PO
+Xylem Xamarin Developer_MP : Working on Displaying round off value in Threshold Alarm Page.
+and Meeting with Sunil regarding Pipeline
+</td>
+		</tr><tr>
+			<td>05/05/2022</td><td>0.00</td><td>0.00</td><td>2.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>4.00</td><td>Xylem Quote Tool : Solve Issue OF Employee Creation.
+Working on Solving issue of Notification mail not sending to Sales Leader.
+Xylem Xamarin Developer_MP : Working on Changing Text  in Localization project .
+and add Roundof Logic in threshold alarm listing page
+Casepro : I have Remove Session from everyplace and Add Query string Variable 
+Working on solving issue of Date range
+</td>
+		</tr><tr>
+			<td>06/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>6.00</td><td>Xylem Xamarin Developer_MP : Working on Changing Text in localization Project.
+Casepro : Solve design issue Dropdown not working properly, 
+
+Solve issue of validation while creating Quote., 
+
+Solve issue of Filter and change Grid Design., 
+
+Solve validation issue for input type decimal fields
+Hide Delete button if it is used in Quotation.
+</td>
+		</tr><tr>
+			<td>09/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>Xylem Xamarin Developer_MP : Working on Manage Threshold alarm text change.
+and working on crashlytics  part.
+Casepro : Solve html related design  issue in detail page.
+</td>
+		</tr><tr>
+			<td>10/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>Xylem Xamarin Developer_MP : Working on App Crash Issue.
+Casepro : Update  html content for other weblayout in cases detail page.
+</td>
+		</tr><tr>
+			<td>11/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Threshold Alarm takes more time to load data
+</td>
+		</tr><tr>
+			<td>12/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>3.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Meeting with Sunil and Yogesh regarding pipeline process
+remove Filter Icon and change text in manage Alarm
+Release a build in android and iOS In App Center
+Kirby AD Auth : Prepare Release for uploading on Live Server
+Change ADD login page from loginaademo to Login Page.
+</td>
+		</tr><tr>
+			<td>13/05/2022</td><td>0.00</td><td>1.50</td><td>0.00</td><td>0.00</td><td>7.00</td><td>1.50</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : Create User story for carbon registry
+discuss changes .
+Xylem Xamarin Developer_MP : Working on icon changes in android and ios 
+working on changing splash screen
+Kirby AD Auth : Solve issue of redirection not proper working 
+create source release.
+</td>
+		</tr><tr>
+			<td>16/05/2022</td><td>0.00</td><td>6.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : Seller should be able to Burn and Tokenize., 
+
+Change the Messe format and sentence in the transaction Grid, 
+
+display detail of Burn and Tokenize at admin side transaction tab, 
+
+Display Burn and Tokenize serial no list in Rou and Cou, 
+
+Text change for no of cou if Project CAtegory is COU 
+change the MAil template for Transer and retire flow
+Xylem Xamarin Developer_MP : Solve issue if ios Release mode through error 
+working on changing the Splash screen.
+</td>
+		</tr><tr>
+			<td>17/05/2022</td><td>0.00</td><td>4.50</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : buyer should be able to Burn and tokenize 
+change logic based on action
+change text of no of cou  based on  Project Category., 
+
+display detail of Burn and tokenize 
+in transaction grid., 
+
+Working on File Uploader Directive.
+Xylem Xamarin Developer_MP : Working on solving issue not able to install App.
+and start working on Crashlytics.
+</td>
+		</tr><tr>
+			<td>18/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>2.00</td><td>Xylem Xamarin Developer_MP : Implemented Crashlytisc
+Change App Icon.
+working on changing Splash Screen.
+Casepro : Change Button Design In create/Edit Quote
+change Design of Pop up
+check code.
+</td>
+		</tr><tr>
+			<td>19/05/2022</td><td>0.00</td><td>2.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>2.00</td><td>0.00</td><td>1.50</td><td>Megh Planning : Change text from Burn to Burnt 
+Test changes 
+Merge code to Master Branch.
+Xylem Xamarin Developer_MP : Working on Changing  Text from Designation to Description in Manage Alarm
+Changing the Threshold alarm to Active/Past Alarm.
+Commit code to Release/Dev Branch.
+Release the Build to QA Environment.
+GASSCC : Update Assignment Flag while updating Assigned user from Grid and Detail page., 
+
+Change query for Export to Excel 
+change query of Total Count 
+and Query of Grid.
+Casepro : Remove File save on physical storage 
+Pass Attachment Stream in Mail .
+Add Loader while Send and Save Button.
+</td>
+		</tr><tr>
+			<td>20/05/2022</td><td>0.00</td><td>4.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.50</td><td>0.00</td><td>0.00</td><td>Megh Planning : Reproduce the issue of duplicate Serial No solve and upload on weblivelink.
+Xylem Xamarin Developer_MP : Change App Name 
+working on Splash Screen.
+GASSCC : Check changes and Upload changes on Live Server.
+</td>
+		</tr><tr>
+			<td>21/05/2022</td><td>0.00</td><td>2.50</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : Solve issue of Multiple File Uploader in Manage Certificate., 
+
+Check Invoice requests in Service and Project and Service 
+delete action in Invoice Request
+Change Permission for marketing
+</td>
+		</tr><tr>
+			<td>23/05/2022</td><td>0.00</td><td>0.50</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>1.50</td><td>0.00</td><td>Megh Planning : Test all changes
+Xylem Xamarin Developer_MP : Solving issue of Splash Screen.
+Refillity : Review the project and add task in JIra
+</td>
+		</tr><tr>
+			<td>24/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Splash Screen Appearing black  screen.
+</td>
+		</tr><tr>
+			<td>25/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>1.50</td><td>1.50</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Splash screen
+GASSCC : Solving issue of DatePIcker.
+Refillity : Review Whole Flow
+Solve issue of updating Flag.
+</td>
+		</tr><tr>
+			<td>26/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Release App on Testfight
+</td>
+		</tr><tr>
+			<td>27/05/2022</td><td>0.00</td><td>0.50</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : check the changes related to Ftp Detail 
+duplicate users bind in Dropdown in service module 
+and display updated last updatedLeave.on dashboard.
+Xylem Xamarin Developer_MP : Working on Merging branch on Production Release 
+and Upload file on Testflight.
+</td>
+		</tr><tr>
+			<td>30/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>3.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Solve the issue of Image while merging code in QA branch
+started working on merging the Production branch.
+GASSCC : Solving the issue of DatePicker get blank on company edit.
+</td>
+		</tr><tr>
+			<td>31/05/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Solve issue of Archana not able to install the App 
+merge the code in Production branch 
+and release the build to testflight
+</td>
+		</tr>
+	</table>
+</div>

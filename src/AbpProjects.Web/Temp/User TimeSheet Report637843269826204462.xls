@@ -1,0 +1,21 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Date</th><th scope="col">DU</th><th scope="col">3web</th><th scope="col">Megh Planning</th><th scope="col">Check Undefined Problem</th><th scope="col">ABB Project</th><th scope="col">Delivery Tiffen Box</th><th scope="col">Comment</th>
+		</tr><tr>
+			<td>05/02/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>5.00</td><td>0.00</td><td>0.00</td><td>Check Undefined Problem : designing
+</td>
+		</tr><tr>
+			<td>13/02/2022</td><td>0.00</td><td>78.00</td><td>1.00</td><td>0.00</td><td>43.00</td><td>0.00</td><td>3web : hgh
+Megh Planning : fd
+ABB Project : ghhgfh
+</td>
+		</tr><tr>
+			<td>15/02/2022</td><td>0.00</td><td>0.00</td><td>1.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : Check test
+</td>
+		</tr><tr>
+			<td>22/02/2022</td><td>2.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>DU : test by mosmi
+</td>
+		</tr>
+	</table>
+</div>

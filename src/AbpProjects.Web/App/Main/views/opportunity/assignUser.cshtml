@@ -1,0 +1,43 @@
+﻿<form id="frm_details_opportunity" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h4 class="modal-title">
+            <span>Assign User</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card main-content">
+                    <div class="padd_top">
+
+                        <div class="row clearfix">
+                            <div class="col-sm-4">
+                                <div class="form-group form-float">
+                                    <label for="drpteam" class="form-label highlight">Marketing Leader<span class="abp_required" style="color:red">*</span></label>
+                                    <div class="form-line focused">
+                                        <select id="drpteam" required class="js-example-placeholder-single js-states form-control validate" ui-select2 ng-model="vm.opportunity.assignUserId">
+                                            <option value="">All Marketing Leader</option>
+                                            <option ng-repeat="us in vm.ddlmarketingList" value="{{us.id}}">{{us.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button id="btnupload" type="submit" class="btn btn-primary waves-effect" ng-disabled="vm.opportunity.assignUserId==null" ng-click="vm.assignUser()"><span>@L("Save")</span></button>
+    </div>
+</form>

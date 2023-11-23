@@ -1,0 +1,69 @@
+﻿<form id="frm_details_timesheet" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("Details")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+
+
+                    <label class="form-label"><b>Project Name</b></label><br />
+                    <p class="form-label form-control">{{vm.timesheet.projectName}}</p>
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+
+
+
+                    <label class="form-label"><b>Type</b></label><br />
+                    <p class="form-label form-control">{{vm.timesheet.workTypeName}}</p>
+
+                </div>
+            </div>
+            <div class="col-sm-12" ng-show="vm.timesheet.userStory!=null">
+                <div class="form-group form-float">
+
+
+                    <label class="form-label"><b>User Story</b></label><br />
+                    <p class="form-label form-control">{{vm.timesheet.userStory}}</p>
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+
+
+                    <label class="form-label"><b>@L("WorkDescription")</b></label><br />
+                    <p class="form-label form-control">{{vm.timesheet.description}}</p>
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+
+
+                    <label class="form-label"><b>Date</b></label><br />
+                    <p class="form-label form-control">{{vm.timesheet.date | date:'dd/MM/yyyy'}}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+
+    </div>
+</form>

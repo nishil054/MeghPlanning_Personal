@@ -1,0 +1,72 @@
+﻿<form id="frm_edit_project" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>Add User Story</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="ddlcom" class="form-label"> User Story  <span style="color:red">*</span></label>
+                    <div class="form-line">
+                        <textarea class="form-control" type="text" name="userStory" ng-model=" vm.importuserstory.userStory" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">Developer Hours  <span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input class="form-control clsallow_decimal" type="text" maxlength="4" @*ng-keypress="vm.CheckNumber()"*@ step="0.01" name="devHours" ng-model=" vm.importuserstory.devHours">
+                        @*<span id="isShowH" style="color:Red;display:none">Please enter number.</span>*@
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight"> Expected Hours  <span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input class="form-control clsallow_decimal" type="text" maxlength="4" step="0.01" name="expHours" ng-model=" vm.importuserstory.expHours">
+                    </div>
+                    @*<span id="isShowHours" style="color:Red;display:none">Please enter number.</span>*@
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlproject" class="form-label">Select Employee</label>
+                    <div class="form-line focused">
+                        <select id="ddlemployee" ui-select2 class="form-control" ng-model="vm.importuserstory.employeeId" required>
+                            <option value="">-Select-</option>
+                            <option ng-repeat="employee in vm.employeelist" value="{{employee.id}}">{{ employee.name }}</option>
+                        </select>
+                        @*<label for="ddlproject" class="form-label">Select Project<span class="abp_required" style="color:red">*</span></label>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.close()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="projectCreateForm.$invalid || btndisable">
+            @L("Save")
+        </button>
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        funAllow_Alpha("allow_alpha");
+        funallow_numeric("allow_numeric");
+        funallow_decimal("clsallow_decimal");
+    });
+</script>

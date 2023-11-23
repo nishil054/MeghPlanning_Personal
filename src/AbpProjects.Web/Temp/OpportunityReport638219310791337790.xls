@@ -1,0 +1,27 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Lead Owner</th><th scope="col">Company Name</th><th scope="col">Person Name</th><th scope="col">Email Id</th><th scope="col">Mobile No</th><th scope="col">Call Category Name</th><th scope="col">Interested In</th>
+		</tr><tr>
+			<td>admin admin</td><td>ABC company</td><td>sdaf</td><td>afdfd@gmai.com</td><td>43434344343</td><td>Closed</td><td>AMS,</td>
+		</tr><tr>
+			<td>market market</td><td>ANIL company</td><td>ANIL</td><td>aNIL@gmail.com</td><td>888888888</td><td>Inquiry</td><td>AMS,DMS,</td>
+		</tr><tr>
+			<td>tele tele</td><td>APS</td><td>Mosmi Soni</td><td>mosmi@gmail.com</td><td>89564562352</td><td>Inquiry</td><td>DMS,</td>
+		</tr><tr>
+			<td>operator operator</td><td>cdv</td><td>vd</td><td>sneha@gmail.com</td><td>9887877879</td><td>Inquiry</td><td>DMS,</td>
+		</tr><tr>
+			<td>admin admin</td><td>Chirag and cmpany</td><td>Chirag gurjar</td><td>chiragn@gmail.com</td><td>9887877879</td><td>Inquiry</td><td>DMS,NEW,</td>
+		</tr><tr>
+			<td>admin admin</td><td>Chirag and cmpany</td><td>Chirag gurjar</td><td>chiragn@gmail.com</td><td>9887877879</td><td>Inquiry</td><td>AMS,DMS,NEW,</td>
+		</tr><tr>
+			<td>admin admin</td><td>chirag company</td><td>chirag</td><td>chirag@gmail.com</td><td>99090909</td><td>Closed</td><td>AMS,DMS,</td>
+		</tr><tr>
+			<td>market market</td><td>csfds</td><td>fdvg</td><td>vffd</td><td>89564</td><td>Inquiry</td><td>DMS,</td>
+		</tr><tr>
+			<td>tele tele</td><td>Heer Infotech</td><td>Sneha Patel</td><td>sneha@gmail.com</td><td>9887877879</td><td>Hot</td><td>AMS,DMS,NEW,</td>
+		</tr><tr>
+			<td>operator operator</td><td>Heer Infotech</td><td>Sneha Patel</td><td>sneha@gmail.com</td><td>9887877879</td><td>Hot</td><td>AMS,</td>
+		</tr>
+	</table>
+</div>

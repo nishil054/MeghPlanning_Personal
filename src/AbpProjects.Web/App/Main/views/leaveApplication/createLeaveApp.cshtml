@@ -1,0 +1,82 @@
+﻿<form id="frm_create_leaveapplication" name="LeaveCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateLeaveApplication")</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="ddlleavetype" class="form-label">Leave Type<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlleavetype" ui-select2 class="form-control" ng-model="vm.leaveapplication.leaveType" required>
+                            <option value="">-Select-</option>
+                            <option ng-repeat="t in vm.leavetypelist" value="{{t.id}}">{{ t.type }}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="fromdate" class="form-label">From Date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="From Date"
+                               moment-picker="vm.leaveapplication.fromDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               today="true"
+                               required ng-model="vm.leaveapplication.fromDate"
+                               value="vm.leaveapplication.fromDate"
+                               selected-date="vm.leaveapplication.fromDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="todate" class="form-label">To Date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="To Date"
+                               moment-picker="vm.leaveapplication.toDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               today="true"
+                               required ng-model="vm.leaveapplication.toDate"
+                               value="vm.leaveapplication.toDate"
+                               selected-date="vm.leaveapplication.toDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="reason" class="form-label">@L("ReasonForLeave")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <textarea id="reason" name="Reason" class="validate form-control" ng-model="vm.leaveapplication.reason"></textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="LeaveCreateForm.$invalid || btndisable">
+            @L("Save")
+        </button>
+    </div>
+
+</form>
+

@@ -1,0 +1,132 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <h4 class="modal-title">@L("FTPDetails")</h4>
+</div>
+<div class="modal-body detailmodal">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("DomainName")</label>
+            <div>
+                <span ng-if="vm.items.domainName != '' || vm.items.domainName != null">{{vm.items.domainName}}</span>
+                <span ng-if="vm.items.domainName == '' || vm.items.domainName == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("HostName")</label>
+            <div>
+                <span ng-if="vm.items.hostName != '' || vm.items.hostName != null">{{vm.items.hostName}}</span>
+                <span ng-if="vm.items.hostName == '' || vm.items.hostName == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("FTPUserName")</label>
+            <div>
+                <span ng-if="vm.items.ftpUserName != '' || vm.items.ftpUserName != null">{{vm.items.ftpUserName}}</span>
+                <span ng-if="vm.items.ftpUserName == '' || vm.items.ftpUserName == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("FTPPassword")</label>
+            <div>
+                <span ng-if="vm.items.ftpPassword != '' || vm.items.ftpPassword != null">{{vm.items.ftpPassword}}</span>
+                <span ng-if="vm.items.ftpPassword == '' || vm.items.ftpPassword == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("DBType")</label>
+            <div>
+                <span ng-if="vm.items.dbType != '' || vm.items.dbType != null">{{vm.items.dbType}}</span>
+                <span ng-if="vm.items.dbType == '' || vm.items.dbType == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("OnlineManager")</label>
+            <div>
+                <span ng-if="vm.items.onlineManager != '' || vm.items.onlineManager != null">{{vm.items.onlineManager}}</span>
+                <span ng-if="vm.items.onlineManager == '' || vm.items.onlineManager == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("OnlineManagerHostName")</label>
+            <div>
+                <span ng-if="vm.items.onlineManagerHostName != '' || vm.items.onlineManagerHostName != null">{{vm.items.onlineManagerHostName}}</span>
+                <span ng-if="vm.items.onlineManagerHostName == '' || vm.items.onlineManagerHostName == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("DatabaseName")</label>
+            <div>
+                <span ng-if="vm.items.databaseName != '' || vm.items.databaseName != null">{{vm.items.databaseName}}</span>
+                <span ng-if="vm.items.databaseName == '' || vm.items.databaseName == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("DataBaseUserName")</label>
+            <div>
+                <span ng-if="vm.items.dataBaseUserName != '' || vm.items.dataBaseUserName != null">{{vm.items.dataBaseUserName}}</span>
+                <span ng-if="vm.items.dataBaseUserName == '' || vm.items.dataBaseUserName == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("DataBasePassword")</label>
+            <div>
+                <span ng-if="vm.items.dataBasePassword != '' || vm.items.dataBasePassword != null">{{vm.items.dataBasePassword}}</span>
+                <span ng-if="vm.items.dataBasePassword == '' || vm.items.dataBasePassword == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("StorageContainer")</label>
+            <div>
+                <span ng-if="vm.items.storagecontainer != '' || vm.items.storagecontainer != null">{{vm.items.storagecontainer}}</span>
+                <span ng-if="vm.items.storagecontainer == '' || vm.items.storagecontainer == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("MailProvider_Host")</label>
+            <div>
+                <span ng-if="vm.items.mailProvider_Host != '' || vm.items.mailProvider_Host != null">{{vm.items.mailProvider_Host}}</span>
+                <span ng-if="vm.items.mailProvider_Host == '' || vm.items.mailProvider_Host == null">-</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("MailProvider_User")</label>
+            <div>
+                <span ng-if="vm.items.mailProvider_User != '' || vm.items.mailProvider_User != null">{{vm.items.mailProvider_User}}</span>
+                <span ng-if="vm.items.mailProvider_User == '' || vm.items.mailProvider_User == null">-</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="milestoneTitle" class="form-label">@L("MailProvider_Password")</label>
+            <div>
+                <span ng-if="vm.items.mailProvider_Password != '' || vm.items.mailProvider_Password != null">{{vm.items.mailProvider_Password}}</span>
+                <span ng-if="vm.items.mailProvider_Password == '' || vm.items.mailProvider_Password == null">-</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+        @L("Cancel")
+    </button>
+</div>
+
+
+
+

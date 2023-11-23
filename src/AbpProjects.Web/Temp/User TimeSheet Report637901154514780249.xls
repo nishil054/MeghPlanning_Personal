@@ -1,0 +1,11 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Date</th><th scope="col">Xylem Mobile App</th><th scope="col">ABB Project</th><th scope="col">ABB PROJECT1</th><th scope="col">Comment</th>
+		</tr><tr>
+			<td>05/02/2022</td><td>6.50</td><td>3.00</td><td>0.00</td><td>Xylem Mobile App : Push Notification issues resolved
+ABB Project : test all work flow
+</td>
+		</tr>
+	</table>
+</div>

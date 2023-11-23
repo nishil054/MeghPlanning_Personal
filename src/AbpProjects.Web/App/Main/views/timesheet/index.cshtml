@@ -1,0 +1,72 @@
+﻿<div class="row clearfix" ng-controller="app.views.timesheet.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("TimeSheetDetails")
+                </h2>
+                 <div class="data_section headerbox">
+                <ul>
+
+                    <li @*class="dropdown"*@>
+                        <input class="validate form-control" placeholder="From Date"
+                               moment-picker="vm.timesheet.fromDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               today="true"
+                               ng-model="vm.timesheet.fromDate"
+                               value="vm.timesheet.fromDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+                    </li>
+                    <li @*class="dropdown"*@>
+                        <input class="validate form-control" placeholder="To Date"
+                               moment-picker="vm.timesheet.toDate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               today="true"
+                               ng-model="vm.timesheet.toDate"
+                               value="vm.timesheet.toDate"
+                               ng-model-options="{ updateOn: 'blur' }" />
+
+                    </li>
+                    <li class="dropdown">
+                        <select id="ddlemp" ui-select2 class="validate form-control" ng-model-options="vm.timesheet.userId" ng-model="vm.timesheet.userId">
+                            @*ng-if="vm.timesheet.roleName=='admin' || vm.timesheet.roleName=='supervisor'"*@
+                            <option value="" ng-if="vm.roleName=='admin'">All TimeSheet</option>
+                            <option value="" ng-if="vm.roleName!='admin'">My TimeSheet</option>
+                            <option ng-repeat="user in vm.userlist" value="{{user.id}}">{{user.name}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="text" ng-model="vm.searchBox" class="validate form-control" placeholder="Search By Project Name" style="height: 35px">
+                    </li>
+
+                    <li>
+                        <button type="button" class="btn btn-primary" ng-click="vm.searchAll()" style="height: 35px"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary" ng-click="vm.clearAll()" style="height: 35px"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openTimeSheetCreationModal()">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </li>
+                   
+                </ul>
+            </div>
+
+                </div>
+
+           
+            <div ng-show="noData" @*ng-show="vm.norecord == true"*@ class="alert alert-info">
+                No record found.
+            </div>
+            <div class="body table-responsive">
+                <div ui-grid="vm.userGridOptions"  ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-show="!noData"></div>
+            </div>
+        </div>
+    </div>
+</div>

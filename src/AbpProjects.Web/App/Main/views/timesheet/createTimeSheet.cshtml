@@ -1,0 +1,169 @@
+﻿<form id="frm_create_timesheet" name="timesheetCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateNewTimeSheet")</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlproject" class="form-label">Select Project<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlproject" ui-select2 class="form-control" ng-change="projectChange(vm.timesheet.projectId)" ng-model="vm.timesheet.projectId" required>
+                            <option value="">-Select-</option>
+                            <option ng-repeat="project in vm.projectlist" value="{{project.id}}">{{ project.projectName }}</option>
+                        </select>
+                        @*<label for="ddlproject" class="form-label">Select Project<span class="abp_required" style="color:red">*</span></label>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="ddlwork" class="form-label">Select Work Type<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlwork" ui-select2 class="form-control" ng-model="vm.timesheet.workTypeId" required>
+                            <option value="">-Select-</option>
+                            <option ng-repeat="work in vm.worktypelist" value="{{work.id}}">{{ work.workTypeName }}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" ng-show="vm.userstorylist.length > 0">
+                <div class="form-group form-float">
+                    <label for="ddlwork" class="form-label">Select User Story<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlwork" ui-select2 class="form-control" ng-model="vm.timesheet.userStoryId" ng-required="vm.userstorylist.length>0">
+                            <option value="">-Select-</option>
+                            <option ng-repeat="userstory in vm.userstorylist" value="{{userstory.id}}">{{ userstory.userStory }}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="description" class="form-label">@L("WorkDescription")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+
+                        <textarea id="description" name="Description" class="validate form-control" ng-model="vm.timesheet.description"></textarea>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="hours" class="form-label">@L("Hours")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        @*<input id="hours" type="number" name="Hours" ng-model="vm.timesheet.hours" required
+                            ng-pattern="/^[0-9]{1,4}(\.[0-9])?$/"
+                            class="validate form-control" />*@
+
+                        <input id="hours" type="text" name="Hours" ng-model="vm.timesheet.hours" step="0.01" @*ng-keypress="vm.CheckNumber()"*@ maxlength="4" required @*ng-pattern="/^[0-9]{1,4}(\.[0-9])?$/"*@ class="validate form-control clsallow_decimal" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="date" class="form-label">Date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="SelectDate"
+                               moment-picker="vm.timesheet.date"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               @*id="vm.timesheet.date"*@
+                               @*today="true"*@
+                               @*ng-disabled="vm.timesheet.date"*@
+                               max-date="vm.timesheet.date"
+                               required ng-model="vm.timesheet.date"
+                               value="vm.timesheet.date"
+                               selected-date="vm.timesheet.date"
+                               @*start-date="vm.startDate"*@
+                               ng-model-options="{ updateOn: 'blur' }" />
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="timesheetCreateForm.$invalid || btndisable">
+            @L("Save")
+        </button>
+    </div>
+
+    <div class="body table-responsive" ng-show="norecord==true">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Hours</th>
+                    <th>Actions</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="timesheet in vm.timesheetList">
+                    <td style="width:850px;">{{timesheet.projectName}}</td>
+                    <td style="width:850px;">{{timesheet.workTypeName}}</td>
+                    <td style="width:850px;">{{timesheet.date |date:"dd/MM/yyyy"}}</td>
+                    <td style="width:850px;">{{timesheet.hours}}</td>
+                    <td class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openTimeSheetEditModal(timesheet)"><i class="material-icons">create</i>Edit</a></li>
+                            @*<li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.delete(timesheet)"><i class="material-icons">delete_sweep</i>Delete</a></li>*@
+
+
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination items-perpage="{{vm.itemsPerPage}}"
+                    skip-count="vm.skipCount"
+                    total-record="{{vm.totalRecord}}"
+                    data-method="vm.refreshGrid"></pagination>
+
+
+    </div>
+
+</form>
+<script>
+    $(document).ready(function () {
+
+        var tc7 = "https://aspnetboilerplate.com/Pages/Documents";
+        // alert(isValidURL(tc7))
+        //var emailtest = "mosmi@gamilcom";
+        //alert(isValidEmailAddress(emailtest))
+        // funAllow_Alpha("allow_alpha");
+        //funallow_numeric("allow_numeric");
+        funallow_decimal("clsallow_decimal");
+        // funallow_numeric_Phone("clsallow_numeric");
+    });
+</script>

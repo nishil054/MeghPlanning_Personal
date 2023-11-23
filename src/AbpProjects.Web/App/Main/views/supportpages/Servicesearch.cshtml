@@ -1,0 +1,30 @@
+﻿<form id="Search-domainname" name="Searchdomainname" novalidate ng-controller="app.views.supportpages.servicesearch as vm">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card main-content">
+                <div class="header pl-0">
+                    <h2>
+                        <span>Search Domain Name</span>
+                    </h2>
+                    <div class="autocompletebox">
+                        <angucomplete-alt pause="400"
+                                          id="DomainName"
+                                          remote-api-handler="vm.searchAPI"
+                                          title-field="domainName"
+                                          minlength="1"
+                                          data-selected-object-data="vm.domainName"
+                                          selected-object="vm.selecteddomainname"
+                                          input-class="form-control"
+                                          ng-model="vm.domainName"
+                                          initial-value="vm.domainName" required />
+
+                        <label for="areaname" class="form-label"></label>
+                    </div>
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

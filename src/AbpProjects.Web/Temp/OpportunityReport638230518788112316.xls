@@ -1,0 +1,15 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Lead Owner</th><th scope="col">Company</th><th scope="col">Company Beneficiary</th><th scope="col">Person Name</th><th scope="col">Interested In</th><th scope="col">Project Value</th><th scope="col">Email Id</th><th scope="col">Mobile Number</th><th scope="col">Call Category</th><th scope="col">Closed Amount</th><th scope="col">Closing Date</th>
+		</tr><tr>
+			<td>admin admin</td><td>verma company</td><td>&nbsp;</td><td>verma</td><td>AMS,</td><td>50000.00</td><td>varma@gail.com</td><td>4343434343</td><td>Closed</td><td>50000.00</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>admin admin</td><td>chirag company</td><td>&nbsp;</td><td>Chirag gurjar</td><td>AMS,DMS,NEW,</td><td>1000.00</td><td>chirag12@gmail.com</td><td>99090904</td><td>Closed</td><td>1000.00</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>admin admin</td><td>ABC company</td><td>&nbsp;</td><td>sdaf</td><td>AMS,</td><td>123456.00</td><td>afdfd@gmai.com</td><td>43434344343</td><td>Closed</td><td>123456.00</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>tele tele</td><td>TechHeer</td><td>&nbsp;</td><td>Prakash</td><td>DMS,</td><td>4000.00</td><td>sneha@gmail.com</td><td>9456123785</td><td>Closed</td><td>4000.00</td><td>14/06/2023</td>
+		</tr>
+	</table>
+</div>

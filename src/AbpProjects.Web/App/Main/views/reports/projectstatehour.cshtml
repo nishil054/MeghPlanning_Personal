@@ -1,0 +1,45 @@
+﻿
+<style>
+    .oldred-people {
+        background-color: #ffdede !important; /*red*/
+    }
+
+    .oldyellow-people-selected {
+        background-color: #fdffde !important; /*yellow*/
+    }
+
+    .oldgreen-people-selected {
+        background-color: #d4fecf !important; /*green*/
+    }
+</style>
+
+<div class="row clearfix" ng-controller="app.views.reports.projectstatehour as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    @L("ProjectStatsHour")
+                </h2>
+           
+            <div class="data_section headerbox">
+                <ul>
+                    <li class="dropdown">
+                        <select id="ddlemp" ui-select2 class="validate form-control" style="width:150px;" ng-model-options="vm.reports.projectStatusId" ng-model="vm.reports.projectStatusId">
+                            <option value="">-All Status-</option>
+                            <option ng-repeat="statusl in vm.statuslist" value="{{statusl.id}}">{{statusl.statusname}}</option>
+                        </select>
+                    </li>
+                    <li> <button type="button" class="btn btn-primary" ng-click="vm.searchAll()"><i class="fa fa-search" aria-hidden="true"></i></button></li>
+
+                </ul>
+            </div>
+             </div>
+            <p ng-if="projreport==true" class="alert alert-info"> No record found.</p>
+
+            <div ng-if="projreport==false" class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

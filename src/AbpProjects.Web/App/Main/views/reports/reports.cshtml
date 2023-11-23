@@ -1,0 +1,73 @@
+﻿<div class="row clearfix" ng-controller="app.views.reports.reports as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    @L("UserTimeSheet")
+                </h2>
+            
+            <div class="data_section headerbox">
+                <ul>
+                    <li class="dropdown width175">
+                        <select id="ddlemp" ui-select2 class="validate form-control" ng-model-options="vm.reports.userId" ng-change="useridchange()" ng-model="vm.reports.userId">
+                            <option value="">-All Employee-</option>
+                            <option ng-repeat="user in vm.userlist" value="{{user.id}}">{{user.name}}</option>
+                        </select>
+                    </li>
+                    <li class="dropdown">
+                        <select id="ddlmonth" class="validate form-control" ng-model-options="vm.reports.month" ng-change="monthchange()" ng-model="vm.reports.month">
+                            <option value="">-Select-</option>
+                            <option ng-repeat="m in vm.monthlist" value="{{m.id}}">{{m.monthName}}</option>
+                        </select>
+                    </li>
+                    <li class="dropdown">
+                        <select id="ddlyear" class="validate form-control" ng-model-options="vm.reports.year" ng-change="yearchange()" ng-model="vm.reports.year">
+                            <option value="">-Select-</option>
+                            <option ng-repeat="y in vm.yearlist" value="{{y.year}}">{{y.year}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary" ng-click="vm.searchAll()" ng-disabled="vm.btndisable==true"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      
+                    </li>
+                    <li>
+                        <div class="">
+                            <button ng-disabled="vm.btndisable==true" type="button" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="vm.exportExcel()" value=""
+                                    class="btn btn-primary btnback fixed" data-toggle="tooltip" data-placement="top" title="Export To Excel">
+                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                <!-- <span ng-show="hoverEdit">Export To Excel</span> -->
+                            </button>
+                            </div>
+                            @*<a class="btnexcel dropdown-toggle" ng-click="vm.exportExcel()"> <img src="~/App/Main/images/excel.svg" alt="excel">Export </a>*@
+
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div id="exportable">
+                <div ng-if="noData" class="alert alert-info">
+                No record found.
+            </div>
+                <table class="table table-hover table-striped" ng-if="!noData">
+                    <thead>
+                        <tr class="">
+                            <th></th>
+                            <th ng-repeat="project in vm.projectlist">{{project.projectName}}</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="history in vm.resultlist">
+                            <td ng-repeat="column in history">
+                                <span ng-bind-html="column">{{column}}</span>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        </div>
+</div>

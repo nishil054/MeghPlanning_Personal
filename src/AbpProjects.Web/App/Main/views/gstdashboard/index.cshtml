@@ -1,0 +1,169 @@
+﻿<div class="row clearfix" ng-controller="app.views.gstdashboard.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("GSTDashboard")
+
+                </h2>
+                @*<div>
+                <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openProjectCreationModal()">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>*@
+            
+            <div class="data_section headerbox">
+                <ul>
+                    <li class="dropdown">
+                        <select id="ddlcom" ui-select2 class="form-control" style="width:150px;" ng-model="vm.gstdashboard.companyId" ng-change="comapneynameChange(vm.gstdashboard.companyId)" required>
+                            <option value="">-All Company-</option>
+                            <option ng-repeat="company in vm.companylist" value="{{company.companyId}}">{{company.beneficial_Company_Name}}</option>
+                        </select>
+                    </li>
+                    <li class="dropdown">
+                        <select id="ddlyear" class="form-control" ng-change="financialyearChange(vm.gstdashboard.financialyearId)" ng-model="vm.gstdashboard.financialyearId" required>
+                            <option value="">-Select Financial Year-</option>
+                            <option ng-repeat="financialyear in vm.financialyearlist" value="{{financialyear.id}}">{{financialyear.title}}</option>
+                        </select>
+                    </li>
+
+
+                    @*<li class="dropdown">
+                    <select id="ddlcom" class="form-control" ng-model="vm.project.projectStatusId">
+                        <option value="">All Status</option>
+                        <option ng-repeat="proStatus in vm.ddlProjectStatus" value="{{proStatus.id}}">{{proStatus.status}}</option>
+                    </select>
+                </li>*@
+                    @*<li>
+                    <input type="text" ng-model="vm.searchBox" class="form-control" placeholder="Search by project " style="">
+                </li>*@
+
+                    @*<li>
+                    <button type="button" class="btn btn-primary" ng-click="vm.refreshGrid()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </li>*@
+                    @*<li>
+                    <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                </li>*@
+
+                </ul>
+            </div>
+            </div>
+
+
+
+            @*<p ng-if="noData" class="alert alert-info"> No record found.</p>*@
+            <div class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr"></div>
+            </div>
+
+            <form id="frm_create_timesheet" name="timesheetCreateForm" novalidate>
+                <!--<div class="modal-header">-->
+                    @*<button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>*@
+                    <!--<h4 class="modal-title">
+                        <span>@L("CreateNewTimeSheet")</span>
+                    </h4>
+                </div>-->
+
+                <div class="modal-body" ng-show="nodata==true" >
+
+                    <div class="row clearfix">
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("Month")<span class="abp_required" style="color:red">*</span></label><br/>
+                                <label for="title" class="form-label" required>{{vm.gstdashboard.monthName}}</label>
+                                <!--<div class="form-line focused">
+                                    <select disabled id="ddlmonth" class="validate form-control" ng-model-options="vm.gstdashboard.monthId" ng-model="vm.gstdashboard.monthId">
+                                        <option value="">-Select-</option>
+                                        <option ng-repeat="m in vm.monthlist" value="{{m.id}}">{{m.monthName}}</option>
+                                    </select>-->
+
+                                    @*<input disabled class="validate form-control allow_decimal" placeholder="Month" type="text" name="Title"
+            ng-model="vm.gstdashboard.month">*@
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("OutputGST")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <input @*disabled*@ class="validate form-control allow_decimal" placeholder="Output GST" type="text" name="Title"
+                                           ng-model="vm.gstdashboard.outputGST" ng-keypress="vm.CheckNumber()" maxlength="10" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("InputGST")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <input class="validate form-control allow_decimal" ng-keypress="vm.CheckNumber()" maxlength="10" placeholder="Input GST" type="text" name="Title"
+                                           ng-model="vm.gstdashboard.inputGST" ng-keyup="datachange(vm.gstdashboard.inputGST)" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("TotalPayableGST")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <input disabled class="validate form-control allow_decimal" placeholder="Total Payable GST" type="text" name="Title"
+                                           ng-model="vm.gstdashboard.totalPayableGST" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("TotalPendingPayment")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <input disabled class="validate form-control allow_decimal" placeholder="Total Pending Payment" type="text" name="Title"
+                                           ng-model="vm.gstdashboard.totalPendingPayment" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group form-float">
+                                <label for="title" class="form-label">@L("StatusofPayment")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    @*<input disabled class="validate form-control allow_decimal" placeholder="Status of Payment" type="text" name="Title"
+                                           ng-model="vm.financialyear.title">*@
+                                    <select id="drpteam" class="form-control" ng-model="vm.gstdashboard.status" required
+                                            style=" width:126px;">
+                                        <option value="">-Status-</option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Paid</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row clearfix">
+
+                    </div>
+
+                </div>
+                <div class="modal-footer" ng-show="nodata==true">
+                    @*<button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                        @L("Cancel")
+                    </button>*@
+                    <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="timesheetCreateForm.$invalid">
+                        @L("Save")
+                    </button>
+                </div>
+
+                
+
+            </form>
+            @*<div class="row">
+            <div class="col-sm-12 text-right p-t-10">
+                <button type="button" class="btn btn-primary" ng-click="vm.updateStatusProject()">Update status</button>
+            </div>
+
+        </div>*@
+
+        </div>
+    </div>
+</div>

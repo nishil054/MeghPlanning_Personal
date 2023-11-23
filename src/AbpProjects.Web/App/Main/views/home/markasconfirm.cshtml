@@ -1,0 +1,176 @@
+﻿<form id="frm_create_project" name="projectCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>Mark As Confirm</span>
+        </h4>
+
+    </div>
+    <div class="modal-body">
+        <div class="tab-container tabbable-line">
+            <label><b>Service:</b>&nbsp;{{vm.task.serviceName}}</label><br />
+            <label><b>Domain:</b>&nbsp;{{vm.task.domainName}}</label>
+            @*<uib-tab heading="Service Details">*@
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">Term<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" type="number" name="term" required ng-model="term" ng-change="termchange(term)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">
+                        Price<span class="abp_required"
+                                   style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+
+                        <input class="form-control " maxlength="12" type="number" name="projectDescription"
+                               ng-model="vm.task.price" ng-change="pricechange(vm.task.price)"
+                               required
+                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">Total Price</label>
+                    <div class="form-line focused">
+                        <input class="form-control" type="number" name="projectDescription" ng-model="vm.task.tprice" ng-disabled="true">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6" ng-if="vm.task.serviceId == 8">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">
+                        Database Space<span class="abp_required"
+                                            style="color:red">*</span>
+                    </label>
+
+                    <div class="form-line focused">
+                        <input class="form-control " type="text" name="projectDescription1" required
+                               ng-model="vm.task.databaseSpace" minlength="2"
+                               maxlength="12">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6" ng-if="vm.task.serviceId == 2 || vm.task.serviceId == 3">
+                <div class="form-group form-float">
+                    <label class="form-label highlight" ng-hide="vm.task.serviceId == 3">
+                        Hosting Space<span class="abp_required"
+                                           style="color:red">*</span>
+                    </label>
+                    <label class="form-label highlight" ng-show="vm.task.serviceId == 3">
+                        Storage Space<span class="abp_required"
+                                           style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="form-control " type="text" name="projectDescription" required
+                               ng-model="vm.task.hostingSpace" minlength="2"
+                               maxlength="12">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6" ng-if="vm.task.serviceId == 4">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">
+                        No of email<span class="abp_required"
+                                         style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="validate form-control allow_decimal" type="number" name="Price" required
+                               ng-model="vm.task.noOfEmail" maxlength="12"
+                               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="startDate" class="form-label">
+                        Next Renewal Date<span class="abp_required"
+                                               style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="Date"
+                               moment-picker="vm.task.nextRenewalDate" locale="en" format="DD/MM/YYYY"
+                               start-view="month" today="true" ng-model="vm.task.nextRenewalDate"
+                               value="vm.task.nextRenewalDate" ng-model-options="{ updateOn: 'blur' }"
+                               required />
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-sm-12">
+            <div class="form-group form-float">
+                <label for="ddlcom" class="form-label">
+                    Client<span class="abp_required"
+                                style="color:red"></span>
+                </label>
+                <div class="form-line focused">
+                    <select id="ddlcom" class="form-control" ng-model="vm.task.clientId"
+                            ng-disabled="vm.fvalue==true || vm.fadjust==true || vm.dashboard==true">
+                        <option value="0">-Select Client-</option>
+                        <option ng-repeat="st in vm.cname" value="{{st.clientId}}">{{st.clientName}}</option>
+                    </select>
+
+
+                </div>
+            </div>
+        </div>*@
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="InvoiceNote" class="form-label highlight">
+                        @L("InvoiceNote")<span class="abp_required" style="color:red">*</span>
+                    </label>
+                    <div class="form-line focused">
+                        <textarea type="text" name="InvoiceNote" ng-model="vm.task.invoiceNote" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label class="form-label highlight">Comment</label>
+                    <div class="form-line focused">
+                        <textarea type="text" name="Name" ng-model="vm.task.comment" @*maxlength="32"*@
+                                  class="form-control"></textarea>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+            @*</uib-tab>*@
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save(vm.task.adjustmentAmount)"
+                ng-disabled="projectCreateForm.$invalid">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

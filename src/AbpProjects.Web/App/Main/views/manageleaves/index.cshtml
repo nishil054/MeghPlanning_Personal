@@ -1,0 +1,45 @@
+﻿<div class="row clearfix" ng-controller="app.views.manageleaves as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    @L("ManageLeaves")
+                    <div class="search_container">
+                        <ul>
+                            <!--<li>
+                                <input type="text" ng-model="vm.filterText" class="form-control search_input" placeholder="Search By Year" />
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary " ng-click="vm.search(vm.filterText)">-->
+                                    @*<i class="fa fa-search"></i>*@ <!--@L("Search")
+                                </button>
+                            </li>-->
+                            @*<li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clearAll()">
+                                @L("Clear")
+                            </button>
+                        </li>*@
+                            @*<li ng-if="vm.checkknowledgeCenterBtnpermission()==true">
+                                <button type="button" data-toggle="modal" class="btn btn-primary" ng-click="vm.openCreateModal()">
+                                    @L("Save")
+                                </button>
+                            </li>*@
+                        </ul>
+                    </div>
+                </h2>
+            </div>
+
+            <div class="body table-responsive" ng-show="vm.norecord == false">
+                <div ui-grid="vm.userGridOptions" ui-grid-resize-columns dir="ltr"></div>
+            </div>
+            <div ng-show="vm.norecord == true"  class="alert alert-info">
+                No Records Found.
+            </div>
+            <div class="modal-footer paddleft0">
+                <button type="submit" id="btnsave" class="btn btn-primary waves-effect" ng-click="vm.save()">
+                    @L("Save")
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

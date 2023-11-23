@@ -1,0 +1,59 @@
+﻿<div class="row clearfix" ng-controller="app.views.outstandingClient as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    Outstanding Client
+                </h2>
+
+                <div class="search_container">
+                    <ul>
+                        <li>
+                            <input class="validate form-control" placeholder="From Date"
+                                   moment-picker="vm.fromDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.fromDate"
+                                   value="vm.fromDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+                        </li>
+                        <li>
+                            <input class="validate form-control" placeholder="To Date"
+                                   moment-picker="vm.toDate"
+                                   locale="en"
+                                   format="DD/MM/YYYY"
+                                   start-view="month"
+                                   today="true"
+                                   ng-model="vm.toDate"
+                                   value="vm.toDate"
+                                   ng-model-options="{ updateOn: 'blur' }" />
+
+                        </li>
+                        <li class="dropdown">
+                            <select id="ddlcom" ui-select2 class="form-control" style="width:200px" ng-model="vm.clientId">
+                                <option value="">All Client</option>
+                                <option ng-repeat="st in vm.cname" value="{{st.clientId}}">{{st.clientName}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.refreshGrid()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clearAll()" style="height: 35px"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr"
+                     ng-if="!noData">
+                </div>
+            </div>
+                <p ng-if="noData" class="alert alert-info"> No record found.</p>
+                <!-- <p class="alert alert-danger"> No record found.</p> -->
+            </div>
+        </div>
+</div>

@@ -1,0 +1,65 @@
+﻿<div class="row clearfix" ng-controller="app.views.importftp as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header pl-0">
+                <h2>
+                    @L("FTPDetails")
+                </h2>
+                <div class="data_section">
+                    <ul>
+                        <li>
+                            <input type="text" ng-model="vm.filterText" class="form-control search_input "
+                                   placeholder="Search By Domain Name / Host Name" ng-keyup="vm.onSubmit($event,vm.filterText)"/>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary " ng-click="vm.search(vm.filterText)">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <div ng-if="vm.checkimportExcelBtnpermission()==true" ng-show="nodata == true">
+                                <button data-toggle="tooltip" data-placement="top" title="Import Excel" ng-click="vm.importExcel()" value=""
+                                        class="btn btn-primary btnback fixed">
+                                    <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                </button>
+
+                            </div>
+
+                        </li>
+                        <li>
+                            <button type="button" ng-if="vm.checkimportExcelBtnpermission()==true" data-toggle="modal" class="btn btn-primary waves-effect waves-circle waves-float pull-right" ng-click="vm.openFtpCreateModal()">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <!-- @*<div class="body table-responsive">*@
+                <div class="form-group ml6" ng-if="vm.checkimportExcelBtnpermission()==true">
+                    <button type="button" ng-click="vm.importExcel()" value="" class="btn btn-primary btnback fixed">
+                        Import from Excel
+                    </button>
+                </div>
+                @*<div ng-show="vm.norecord == true" style="color: red; font-weight: bold">
+                            No Records Found.
+                        </div>*@
+                <p ng-if="noData" class="alert alert-info"> No record found.</p>
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData">
+
+                </div>
+
+            @*</div>*@ -->
+
+            <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr"
+                 ng-if="!noData">
+
+            </div>
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <!-- <p class="alert alert-danger"> No record found.</p> -->
+        </div>
+    </div>
+</div>

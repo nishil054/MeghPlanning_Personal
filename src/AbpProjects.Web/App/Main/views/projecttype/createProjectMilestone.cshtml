@@ -1,0 +1,101 @@
+﻿<form id="frm_create_timesheet" name="projectMilestoneCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateNewProjectMilestone")</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group form-float">
+                    <label for="projecttypename" class="form-label">@L("Title")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="title" type="text" name="title" ng-model="vm.milestone.title"
+                               class="validate form-control" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group form-float">
+                    <label for="leavebalance" class="form-label">@L("Amount")<span class="abp_required" style="color:red">*</span> </label>
+                    <div class="form-line focused">
+                        <input id="amount" type="text" required maxlength="6" name="amount" ng-model="vm.milestone.amount" step="0.01"
+                               ng-keypress="vm.CheckNumber()" required class="validate form-control allow_alpha">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="description" class="form-label">@L("Description")@*<span class="abp_required" style="color:red">*</span>*@</label>
+                    <div class="form-line">
+
+                        <textarea id="description" name="Description" class="validate form-control" ng-model="vm.milestone.description"></textarea>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="projectMilestoneCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+
+    <div class="body table-responsive" ng-show="norecord">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="milestone in vm.milestoneList">
+                    <td style="width:850px;">{{milestone.title}}</td>
+                    <td style="width:850px;">{{milestone.amount}}</td>
+                    <td style="width:850px;">{{milestone.description}}</td>
+                    <td class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            @*<li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.openTimeSheetEditModal(timesheet)"><i class="material-icons">create</i>Edit</a></li>*@
+                            <li><a href="javascript:void(0);" class="waves-effect waves-block" ng-click="vm.delete(milestone)"><i class="material-icons">delete_sweep</i>Delete</a></li>
+
+
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <pagination items-perpage="{{vm.itemsPerPage}}"
+                    skip-count="vm.skipCount"
+                    total-record="{{vm.totalRecord}}"
+                    data-method="vm.refreshGrid"></pagination>
+
+
+    </div>
+
+</form>

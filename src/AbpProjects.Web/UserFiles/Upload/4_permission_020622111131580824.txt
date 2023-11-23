@@ -1,0 +1,12 @@
+Permission Name                                                    Role
+
+1- Add Other Document                                          Admin
+
+
+2- Document 			Tenant,PropertyOwner,Contrator
+   Invoice
+  OtherDocument
+  Tax Document
+
+3- Tenantwise Request		 Property Owner	
+ Tenantwise Complaint	

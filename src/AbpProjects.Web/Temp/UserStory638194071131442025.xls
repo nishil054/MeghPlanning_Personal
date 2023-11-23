@@ -1,0 +1,11 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">User Name</th><th scope="col">Leave Type</th><th scope="col">From Date</th><th scope="col">To Date</th><th scope="col">Reason</th><th scope="col">Leave Status Name</th>
+		</tr><tr>
+			<td>admin admin</td><td>Full Day</td><td>5/10/2023 10:08:57 AM</td><td>5/10/2023 10:08:57 AM</td><td>out of station</td><td>Pending</td>
+		</tr><tr>
+			<td>admin admin</td><td>Full Day</td><td>5/11/2023 7:11:44 AM</td><td>5/11/2023 7:11:44 AM</td><td>fasfasdfsda</td><td>Pending</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,42 @@
+﻿<form id="frm_create_role" name="faqCreateForm" novalidate>
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span> Edit Category</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group form-float col-sm-6">
+                    <label for="dttitle" class="form-label">  Name<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input id="title" type="text" name="Title" ng-model="vm.category.name" required class="validate form-control">
+                    </div>
+
+                </div>
+                <div class="form-group form-float col-sm-6">
+                    <label for="dttitle" class="form-label"> Sort Order<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input id="title" type="text" ng-keypress="filterValue($event)" name="Title" ng-model="vm.category.sortOrder" required class="validate form-control">
+                        <span style="color:red" ng-show="numberShow"> Numbers only.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="faqCreateForm.$invalid || btndisable">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

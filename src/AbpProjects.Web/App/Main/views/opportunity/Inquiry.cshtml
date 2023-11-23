@@ -1,0 +1,58 @@
+﻿
+<div class="row clearfix" ng-controller="app.views.opportunity.inquiry as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("Opportunity")
+
+                </h2>
+                <div class="data_section headerbox">
+                    <ul>
+                        <li>
+                            <select id="ddlCategory" ui-select2 class="form-control" ng-model="vm.calllCategoryId">
+                                <option value="">-Select Call Category-</option>
+                                <option ng-repeat="category in vm.callCategory" value="{{category.id}}">{{category.name}}</option>
+                            </select>
+                        </li>
+                        @*<li>
+                            <select id="ddlassignUsers" ui-select2 class="form-control" ng-model="vm.assignUserId">
+                                <option value="">-Select Assign Users-</option>
+                                <option ng-repeat="assignUsers in vm.assignUsers" value="{{assignUsers.id}}">{{assignUsers.name}}</option>
+                            </select>
+                        </li>*@
+
+                        <li>
+                            <input type="text" ng-model="vm.companyName" class="form-control" placeholder="Company Name">
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.search()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <div>
+                                <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openOpportunityCreationModal()">
+                                    <i class="material-icons">add</i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive footer_table_right">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

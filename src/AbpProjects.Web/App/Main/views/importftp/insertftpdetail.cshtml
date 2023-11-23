@@ -1,0 +1,210 @@
+﻿<form id="frm_create_project" name="projectCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h4 class="modal-title">
+            <span> Create Ftp Details</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="tab-container tabbable-line">
+            @*<uib-tab heading="Service Details">*@
+            <div class="row clearfix">
+
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Domain<span class="abp_required"
+                                        style="color:red">*</span>
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.domainName"
+                                   required>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Host Name
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.hostName">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Hosting Provider
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="HostingProvider" ng-model="vm.ftp.hostingProvider">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            FTP User Name
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.ftpUserName">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            FTP Password
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.ftpPassword">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            DB Type
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.dbType">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Online Manager
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.onlineManager">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Online Manager Host Name
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.onlineManagerHostName">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Database Name
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.databaseName">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            DataBase User Name
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.dataBaseUserName">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            DataBase Password
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.dataBasePassword">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Storage Container
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.storagecontainer">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Mail Provider_Host
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.mailProvider_Host">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Mail Provider_User
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.mailProvider_User">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label class="form-label highlight">
+                            Mail Provider_Password
+                        </label>
+                        <div class="form-line focused">
+                            <input class="form-control" type="text" name="domainName" ng-model="vm.ftp.mailProvider_Password">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            @*</uib-tab>*@
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save(vm.task.adjustmentAmount)"
+                ng-disabled="projectCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

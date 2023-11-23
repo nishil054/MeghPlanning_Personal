@@ -1,0 +1,70 @@
+﻿<form id="frm_edit_document" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditDocument")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                      <label for="title" class="form-label">@L("Title")</label>
+                    <div class="form-line focused">
+                        <input id="title" type="text" name="title" ng-model="vm.document.title" required
+                               @*ng-pattern="/^[a-zA-Z0-9 -]*$/"*@
+                               maxlength="32" class="validate form-control">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                @*<label class="form-label"> Document Upload  </label>*@
+                <div class="form-group form-float">
+                    <div class="customfileupload">
+                        <input type="text" name="Logo" id="logo" class="form-control" placeholder="No file selected" readonly>
+                        <span class="input-group-btn">
+                            <div class="btn btn-primary  custom-file-uploader">
+                                <input id="filetoupload" ng-model="vm.document.attachment" ng-readonly="makeReadOnlysurDoc" type="file" name="file" onchange="this.form.logo.value = this.files.length ? this.files[0].name : ''" />
+                                Browse
+                            </div>
+                            @*<a ng-if="vm.invoices.documentUpload!=null" href={{vm.datafield.uploadDocUrl}} target="_blank" class="btn btn-primary btndownloadfile"><i class="fa fa-download" aria-hidden="true"></i></a>*@
+                        </span>
+                    </div>
+                     <span>
+            [only pdf,doc,txt,xls,jpg file allowed.]
+        </span>
+                </div>
+            </div>
+        </div>
+        <div class="pdf_list">
+            <a class="gridlink bg_pdf_link" ng-click="vm.downloadPDF(vm.document.attachment)" style="text-align:center">{{vm.document.attachment}}</a>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="documentCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+</form>

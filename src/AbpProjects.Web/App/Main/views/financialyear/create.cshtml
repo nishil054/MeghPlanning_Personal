@@ -1,0 +1,75 @@
+﻿<form id="frm_create_financialyear" name="financialyearCreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("CreateNewFinancialyear")</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row clearfix">
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="startyear" class="form-label">Select Start Year<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="startyear" ui-select2 class="validate form-control" ng-change="startyear(vm.financialyear.startyear)" ng-model-options="vm.financialyear.startyear" ng-model="vm.financialyear.startyear">
+                            <option value="">-Select-</option>
+                            <option ng-repeat="y in vm.yearlist" value="{{y.year}}">{{y.year}}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="endyear" class="form-label">Select End Year<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="endyear" ui-select2 class="validate form-control" ng-change="endyear(vm.financialyear.endyear)" ng-model-options="vm.financialyear.endyear" ng-model="vm.financialyear.endyear">
+                            <option value="">-Select-</option>
+                            <option ng-repeat="y in vm.yearlist" value="{{y.year}}">{{y.year}}</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="title" class="form-label">@L("Title")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input disabled class="validate form-control allow_decimal" type="text" name="Title"
+                               ng-model="vm.financialyear.title">
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="col-md-12">
+                <div class="form-group form-float">
+                    <label for="title" class="form-label">@L("Title")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="title" type="text" name="title" ng-model="vm.financialyear.title"
+                               class="validate form-control" />
+
+                    </div>
+                </div>
+            </div>*@
+
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="financialyearCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+
+</form>

@@ -1,0 +1,66 @@
+﻿<div class="row clearfix" ng-controller="app.views.users.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class=" data_section header">
+                <h2>
+                    @L("Employee")
+                </h2>                
+          
+                <div>
+                    <!-- <ul class="header-dropdown m-r--5"> -->
+                    <ul>
+                        <li>
+                        <li class="dropdown">
+                            <select id="ddlteam" class="form-control" ng-model="vm.data.roleId" ui-select2>
+                                <option value=""> All Roles</option>
+                                <option ng-repeat="rl in vm.roleList" value="{{rl.id}}">{{rl.displayName}}</option>
+                            </select>
+                        </li>
+                        <li class="dropdown">
+                            <select id="ddlteam" ui-select2 class="form-control" ng-model="vm.data.teamId">
+                                <option value=""> All Team</option>
+                                <option ng-repeat="tl in vm.teamList" value="{{tl.id}}">{{tl.teamName}}</option>
+                            </select>
+                        </li>
+                        <li class="dropdown">
+                            <select id="ddlcom" ui-select2 class="form-control" ng-model="vm.data.companyId">
+                                <option value=""> All Company</option>
+                                <option ng-repeat="tl in vm.comapnyList" value="{{tl.id}}">{{tl.beneficial_Company_Name}}</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select id="ddlactive" class="form-control" ng-model="vm.data.activeStatus">
+                                <option value="">Active</option>
+                                <option value="1">Deactive</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="text" ng-model="vm.searchBox" class="form-control" placeholder="Name">
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.refreshGrid()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                        <li>
+                        <button type="button" data-toggle="modal" class="btn btn-primary add" ng-click="vm.openUserCreationModal()">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive">
+                <!-- ******************************************************** -->
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+                <!-- ******************************************************** -->
+
+               
+            </div>
+        </div>
+    </div>
+</div>

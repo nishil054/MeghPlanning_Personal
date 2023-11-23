@@ -1,0 +1,46 @@
+﻿<div class="row clearfix" ng-controller="app.views.notification.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2>
+                    @L("Notification")
+                </h2>
+            </div>
+            <div class="body">
+                <div style="max-width:600px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                        <label class="form-label margintop9">@L("Reminder")</label>
+                        </div>
+                        <div class="col-md-10">
+                            
+                            <select class="form-control js-example-basic-multiple" ng-model="vm.notification.userId" data-placeholder="Select User" multiple ui-select2 required>
+                                <option ng-repeat="item in  vm.userList" value="{{item.uId}}">
+                                    {{item.name}}
+                                </option>
+                            </select>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10">
+                            <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()">
+                                @L("Save")
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                
+                
+               
+            </div>
+        
+           
+        </div>
+    </div>                
+</div>
+<style>
+    .margintop9{margin-top:9px;}
+</style>
+    
+   

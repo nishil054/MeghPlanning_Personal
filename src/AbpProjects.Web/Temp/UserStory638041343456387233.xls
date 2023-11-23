@@ -1,0 +1,21 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">User Story</th><th scope="col">Project Name</th><th scope="col">Creation Date</th><th scope="col">Developers Hours</th><th scope="col">Expected Hours</th><th scope="col">Actual Hours</th>
+		</tr><tr>
+			<td>Megh Invoice - Project Invoice Request Issues</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>5.00</td>
+		</tr><tr>
+			<td>Create Document for Moment DateTime Picker</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>1.00</td>
+		</tr><tr>
+			<td>As a Bid no Bid creator I should be able to revise price and send for approval</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>1.00</td>
+		</tr><tr>
+			<td>Dashboard - Project Stats (Amount)</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>0.54</td>
+		</tr><tr>
+			<td>Report - Project Stats (Amount)</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>239.50</td>
+		</tr><tr>
+			<td>Report - Project Stats (Hour)</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>5.50</td>
+		</tr><tr>
+			<td>test data</td><td>Megh Planning</td><td>1/3/2022 12:37:23 PM</td><td>5.00</td><td>10.00</td><td>14.00</td>
+		</tr>
+	</table>
+</div>

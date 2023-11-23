@@ -1,0 +1,45 @@
+﻿<div>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title">
+            <span>@L("Permissions") :  <span class="fname"> {{vm.user }}</span> </span>
+        </h3>
+    </div>
+
+
+
+    @*<div class="pagetitlebox">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-head">
+                        <div class="page-title">
+                            <h1>
+                                <span>@L("Permissions") :  <span class="fname"> {{vm.permissionEditData.rolename}}</span> </span>
+                            </h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    <div class="black-transparentbox">
+        <div class="portlet light margin-bottom-0">
+
+            <form name="editUserPermissionsForm" role="form" novalidate class="form-validation">
+                <div class="portlet-body">
+                    <div class="createjobsform mt0" style="height:600px; overflow:auto">
+                        <permission-tree edit-data="vm.permissionEditData"></permission-tree>
+                    </div>
+                    <div class="modal-footer transparentbackground permissionmodle">
+                        @*<button type="button" ng-disabled="vm.saving" button-busy="vm.resettingPermissions" busy-text="@L("SavingWithThreeDot")" class="btn btn-default pull-left" ng-click="vm.resetPermissions()" uib-popover="@L("ResetPermissionsTooltip")" popover-trigger="'mouseenter'" popover-placement="top"><span>@L("ResetSpecialPermissions")</span></button>*@
+                        <button type="button" class="btn btn-danger" ng-click="vm.cancel()"><i class="fa fa-times"></i> <span> @L("Cancel") </span></button>
+                        <button type="button" class="btn btn-primary blue" ng-click="vm.save()"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

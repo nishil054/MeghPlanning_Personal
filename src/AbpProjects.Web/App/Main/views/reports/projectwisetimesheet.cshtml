@@ -1,0 +1,101 @@
+﻿
+
+<div class="row clearfix" ng-controller="app.views.reports.projectwisetimesheet as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2>
+                    @L("Reports_ProjectWiseTimesheet")
+                </h2>
+            
+            <div class="data_section headerbox">
+                <ul>
+
+                    <li class="dropdown">
+                        <select id="ddlyear" class="validate form-control" ng-model-options="vm.reports.year" ng-model="vm.reports.year" ng-change="vm.bindproject()">
+                            <option value="">-Select Year-</option>
+                            <option ng-repeat="y in vm.yearlist" value="{{y.year}}">{{y.year}}</option>
+                        </select>
+                    </li>
+                    <li class="dropdown">
+                        <select id="ddlmonth" class="validate form-control" ng-model-options="vm.reports.month" ng-model="vm.reports.month" ng-change="vm.bindproject()">
+                            <option value="">-Select Month-</option>
+                            <option ng-repeat="m in vm.monthlist" value="{{m.id}}">{{m.monthName}}</option>
+                        </select>
+                    </li>
+                    <li class="dropdown width175">
+                        <select id="ddlemp" ui-select2 class="validate form-control" style="width:180px" ng-model-options="vm.reports.projectId" ng-model="vm.reports.projectId" ng-change="vm.projectchange()">
+                            <option value="">-Select Project-</option>
+                            <option ng-repeat="p in vm.projectlist" value="{{p.id}}">{{p.projectName}}</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary" ng-click="vm.searchAll()" ng-disabled="vm.btndisable==true"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+                    </li>
+                    <li>
+                        <div class="">
+                            <button ng-disabled="vm.isChecked==true" type="button" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" ng-click="vm.exportExcel()" value=""
+                                    class="btn btn-primary btnback fixed" data-toggle="tooltip" data-placement="top" title="Export To Excel">
+                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                <!-- <span ng-show="hoverEdit">Export To Excel</span> -->
+                            </button>
+                        </div>
+                        @*<a class="btnexcel dropdown-toggle" ng-click="vm.exportExcel()"> <img src="~/App/Main/images/excel.svg" alt="excel">Export </a>*@
+
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="body table-responsive" id="divexport" ng-if="!noData">
+                @**********************************************************@
+                <table class="table table-hover table-striped fnt_normal td_middal">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th ng-repeat="header in vm.userlist">
+                                <table style="border:none!important">
+                                    <tr>
+                                        <th style="text-align:center; width:180px">{{header.userName}} Hour</th>
+                                        <th style="text-align:left; width:300px;">{{header.userName}} Comments</th>
+                                    </tr>
+                                </table>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="itemval in   vm.resultlist">
+                            <td>
+                                {{itemval.date | date:'dd/MM/yyyy'}}
+                            </td>
+                            <td ng-repeat="dataTimesheet in itemval.timesheetData">
+                                <table style="border:none!important">
+                                    <tr>
+                                        <td style="text-align:center; width:180px">
+                                            <span ng-if="dataTimesheet.hours>0">
+                                                {{dataTimesheet.hours}}
+                                            </span>
+                                        </td>
+                                        <td style="text-align:left; width:300px;">
+                                            <p ng-repeat="datadesc in dataTimesheet.description">
+                                                {{datadesc}}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div id="exportable">
+                <div ng-if="noData" class="alert alert-info">
+                    No record found.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

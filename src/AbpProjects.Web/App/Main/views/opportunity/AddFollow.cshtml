@@ -1,0 +1,274 @@
+﻿<div class="row clearfix" ng-controller="app.views.opportunity.addFollow as vm">
+    <form id="frm_create_company" name="opportunityCreateForm" novalidate>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card main-content">
+                <div class="header data_section">
+                    <h2>
+                        Add Follow Up
+
+                    </h2>
+                    <div>
+                        <ul>
+
+                            <li>
+
+
+                                <a style="color:#fff" class="btn btn-default btn_flex waves-effect" href="javascript:history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> @L("Back")</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="padd_top">
+                    <div class="row clearfix">
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="lblCompany" class="form-label highlight">
+                                    Company Name
+                                    @*<span class="abp_required" style="color:red">*</span>*@
+                                </label>
+                                <div class="form-line focused">
+                                    <input id="txtCompany" type="text" name="txtCompany" ng-model="vm.opportunity.companyName" ng-readonly="true"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="lblCompanyBeneficiary" class="form-label highlight">
+                                    Company Beneficiary
+                                    @*<span class="abp_required" style="color:red">*</span>*@
+                                </label>
+                                <div class="form-line focused">
+                                    <input id="txtCompanyBeneficiary" type="text" name="txtCompanyBeneficiary" ng-model="vm.opportunity.beneficiaryCompany" ng-readonly="true"
+                                           class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="lblPerson" class="form-label highlight">
+                                    Person Name
+                                    @*<span class="abp_required" style="color:red">*</span>*@
+                                </label>
+                                <div class="form-line focused">
+                                    <input id="txtPerson" type="text" name="txtPerson" ng-model="vm.opportunity.personName" ng-readonly="true"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="lblEmailId" class="form-label highlight">
+                                    Email
+                                    @*<span class="abp_required" style="color:red">*</span>*@
+                                </label>
+                                <div class="form-line focused">
+                                    <input id="txtEmailId" type="text" name="txtEmailId" ng-model="vm.opportunity.emailId" ng-readonly="true"
+                                           class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="lblMobileNumber" class="form-label highlight">
+                                    Mobile
+                                    @*<span class="abp_required" style="color:red">*</span>*@
+                                </label>
+                                <div class="form-line focused">
+                                    <input id="txtMobileNumber" type="text" name="txtMobileNumber" ng-model="vm.opportunity.mobileNumber" ng-readonly="true"
+                                           class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="ddlCategory" class="form-label highlight">Call Category <span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <select id="ddlCategory" ui-select2 class="form-control" ng-change="closedCallCategory(vm.opportunity.calllCategoryId,vm.opportunity)" required ng-model="vm.opportunity.calllCategoryId">
+                                        <option value="">-Select Call Category-</option>
+                                        <option ng-repeat="category in vm.callCategory" value="{{category.id}}">{{category.name}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="ddlfollowuptype" class="form-label highlight">Follow Up Type <span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <select id="ddlfollowuptype" ui-select2 class="form-control" required ng-model="vm.opportunity.followuptypeId">
+                                        <option value="">Select Follow Up Type</option>
+                                        <option ng-repeat="f in vm.followuptypelist" value="{{f.id}}">{{f.followUpType}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix" ng-show="vm.opportunity.calllCategoryId==9">
+                        <div class="col-sm-4">
+                            <div class="form-group form-float">
+                                <label for="drpteam" class="form-label highlight">Marketing Leader<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <select id="drpteam" class="js-example-placeholder-single js-states form-control validate" ui-select2 ng-model="vm.opportunity.assignUserId">
+                                        <option value="">All Marketing Leader</option>
+                                        <option ng-repeat="us in vm.ddlmarketingList" value="{{us.id}}">{{us.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix" ng-show="vm.opportunity.calllCategoryId!=1 && vm.opportunity.calllCategoryId!=5 && vm.opportunity.calllCategoryId!=7 && vm.opportunity.calllCategoryId!=8 && vm.opportunity.calllCategoryId!=10 && vm.opportunity.calllCategoryId!=6">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <label for="projType" class="form-label">@L("InterestedIn")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="row">
+                                    <div class="col-sm-2" ng-repeat="projType in vm.projectTypes">
+                                        <input type="checkbox" name="projType" value="{{projType.name}}" title="{{projType.name}}" class="form-control" id="projType-{{projType.id}}" checked="checked" ng-model="projType.isAssigned" />
+                                        <label for="projType-{{projType.id}}" title="{{projType.name}}">{{projType.name}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <label for="projectValue" class="form-label">@L("ProjectValue")<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line focused">
+                                    <input id="projectValue" type="text" name="projectValue" ng-model="vm.opportunity.projectValue" required maxlength="12" step="0.01"
+                                           class="validate form-control clsallow_decimal">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <label for="comment" class="form-label">Comment<span class="abp_required" style="color:red">*</span></label>
+                                <div class="form-line">
+
+                                    <textarea id="comment" name="comment" class="validate form-control" required ng-model="vm.opportunity.comment"></textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" ng-show="vm.opportunity.calllCategoryId!=1 && vm.opportunity.calllCategoryId!=5 && vm.opportunity.calllCategoryId!=8">
+                            <div class="form-group form-float">
+                                <label for="actualEndDate" class="form-label">Next Action Date </label>
+                                <div class="form-line focused">
+                                    <input class="form-control" placeholder="Next Action Date"
+                                           moment-picker="vm.opportunity.nextactiondate" locale="en" format="DD/MM/YYYY" start-view="month"
+                                           ng-model="vm.opportunity.nextactiondate" value="vm.opportunity.nextactiondate"
+                                           ng-model-options="{ updateOn: 'blur' }" max-date="vm.opportunity.expectedclosingdate" />
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4" ng-show="vm.opportunity.calllCategoryId!=1 && vm.opportunity.calllCategoryId!=5 && vm.opportunity.calllCategoryId!=7 && vm.opportunity.calllCategoryId!=8 && vm.opportunity.calllCategoryId!=9">
+                            <div class="form-group form-float">
+                                <label for="actualEndDate" class="form-label">Expected Closing Date </label>
+                                <div class="form-line focused">
+                                    <input class="form-control" placeholder="Expected Closing Date"
+                                           moment-picker="vm.opportunity.expectedclosingdate" locale="en" format="DD/MM/YYYY" start-view="month"
+                                           ng-model="vm.opportunity.expectedclosingdate" value="vm.opportunity.expectedclosingdate"
+                                           ng-model-options="{ updateOn: 'blur' }" min-date="vm.opportunity.nextactiondate" />
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class=" data_section">
+                        <ul>
+                            <li>
+                                <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                                    @L("Cancel")
+                                </button>
+                            </li>
+                            <li>
+                                <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="opportunityCreateForm.$invalid">
+                                    @L("Save")
+                                </button>
+                                @*||vm.opportunity.calllCategoryId==6*@
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="body table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th width="100">Created On</th>
+                            <th width="100">Call Category</th>
+                            <th width="160">Follow Up Type</th>
+                            <th width="450">Interested In</th>
+                            <th width="120">Next Action Date</th>
+                            @*<th width="100">Closing Date</th>*@
+                            <th>Comment </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="h in vm.followuphistory track by $index">
+                            <td align="center">{{h.creationDate | date:"dd/MM/yyyy"}}</td>
+                            <td>{{h.calllCategoryName}}</td>
+                            <td>{{h.followUpType}}</td>
+                            <td>{{vm.bindprojecttypename(h.projectNames)}}</td>
+                            <td align="center">
+                                <span ng-if="h.nextActionDate != null">{{h.nextActionDate | date:"dd/MM/yyyy"}}</span>
+                                <span ng-if="h.nextActionDate == null"> - </span>
+                            </td>
+                            @*<td align="center">
+                                <span ng-if="h.closingDate != null">{{h.closingDate | date:"dd/MM/yyyy"}}</span>
+                                <span ng-if="h.closingDate == null"> - </span>
+                            </td>*@
+                            <td>
+                                <span ng-show="h.closingDate != null"><b>Closing Date: </b></span><span ng-show="h.closingDate != null">{{h.closingDate | date:"dd/MM/yyyy"}}</span>
+                                <div><span>{{h.comment}}</span></div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <script>
+        $(document).ready(function () {
+
+          
+            funallow_decimal("clsallow_decimal");
+        });
+        </script>
+
+
+    </form>
+</div>

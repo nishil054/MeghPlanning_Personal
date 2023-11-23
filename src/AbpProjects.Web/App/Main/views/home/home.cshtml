@@ -1,0 +1,635 @@
+﻿@using System.Web.Optimization
+@Scripts.Render("~/Bundles/home-index")
+
+<div ng-controller="app.views.home.home as vm">
+    <div class="card main-content ">
+        <div class="header data_section border0 ">
+            <h2>DashBoard</h2>
+            <div ng-if="vm.permissions.employeeHoliday">
+                <ul>
+                    <li style="margin-right: 25px; background:#f1f1f1; padding: 0px 10px;">
+                        <h5>
+                            <label for="leavebalance" style="font-weight: bold; margin-bottom:0px; "
+                                   class="form-label">@L("LeaveBalance"):</label>{{vm.leaveBalance }} <span ng-show="vm.leaveDate!=null"> as on {{ vm.leaveDate}} (Carry forward leave: {{vm.pendingLeavecount}} valid till September: {{ vm.currentyear}}) </span>
+                            </h5>
+                        </li>
+                        @*<li style="margin-right: 25px; background:#f1f1f1; padding: 0px 10px;" ng-show="vm.leaveDate!=null">
+                            <h5 ng-show="vm.leaveDate!=null">
+                                <label for="leaveupdatedate" style="font-weight: bold; margin-bottom:0px; "
+                                       class="form-label">@L("LeaveUpdateDate") : </label> {{ vm.leaveDate}}
+                                </h5>
+                            </li>*@
+                        <li>
+                            <button ng-show="timeshow==true" type="button" id="login" ng-click="vm.loginf()" ng-disabled="vm.loginloading"
+                                    class="btn btn-primary">
+                                <span>Login</span>
+                            </button>
+                            <span ng-show="logintime">
+                                <b style="margin-right: 20px; background:#f1f1f1; padding: 10px 10px;">
+                                    Log In Time:
+                                    {{vm.login.loggedIn | momentFormat:'HH:mm'}}
+                                </b>
+                            </span>
+
+                            <button ng-show="timeshowlogout" type="button" id="logout" ng-click="vm.logout()"
+                                    class="btn btn-primary">
+                                <span>Logout</span>
+                            </button>
+                            <span ng-show="logouttime" style="margin-right: 20px; background:#f1f1f1; padding: 10px 10px;">
+                                <b style="margin-right: 15px;">
+                                    Log Out Time: {{vm.login.loggedOut | momentFormat:'HH:mm'}}
+                                </b>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="row">
+                    <div ng-if="vm.chcktotaloutstandingpermission()==true">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box" style="background:#b1edff;">
+                                @*<div class="icon">
+                                        <i class="material-icons">playlist_add_check</i>
+                                    </div>*@
+                                <div class="content">
+                                    <div class="text"><b>Total Invoice ({{vm.financialyear}})</b></div>
+                                    <div class="number count-to">
+                                        {{vm.invo}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box" style="background:#baffcf;">
+                                @*<div class="icon">
+                                        <i class="material-icons">help</i>
+                                    </div>*@
+                                <div class="content">
+                                    <div class="text"><b>Total Collection ({{vm.financialyear}})</b></div>
+                                    <div class="number count-to">{{vm.pc}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box " style="background:#ffd0d0;">
+                                @*<div class="icon">
+                                        <i class="material-icons">forum</i>
+                                    </div>*@
+                                <div class="content">
+                                    <div class="text"><b>Total Outstanding ({{vm.financialyear}})</b></div>
+                                    <div class="number count-to">{{vm.totaldiff}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-sm-12" ng-if="missingtimesheet==true && vm.permissions.missingTimsheetDatewise==true">
+                                <div class="card-design">
+                                    <div>
+                                        <div class="card-header">
+                                            <h4>
+                                                @L("MissingTimesheet")
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr class="">
+                                                            <th>Date</th>
+                                                            <th class="text-center">Add</th>
+                                                            <th class="text-center">Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="timesheetmissing in vm.timesheetmissing">
+                                                            <td style="width:40%;">{{timesheetmissing.date |date:"dd/MM/yyyy"}}</td>
+                                                            <td class="text-center">
+                                                                <p>
+                                                                    <a ng-click="vm.openTimeSheetCreationModal(timesheetmissing)">Add/View</a>
+                                                                </p>
+                                                            </td>
+                                                            <td ng-show="timesheetmissing.timesheetCount == 0"
+                                                                class="text-center">
+                                                                <span>@L("Done")</span>
+                                                            </td>
+                                                            <td ng-show="timesheetmissing.timesheetCount != 0"
+                                                                class="text-center">
+                                                                <a href="javascript:void(0);"
+                                                                   class="waves-effect waves-block"
+                                                                   ng-click="vm.done(timesheetmissing)">@L("Done")</a>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12" ng-if="assigneuserstory==true && vm.permissions.assignToUserstoryEmployee==true">
+                                <div class="card-design">
+                                    <div>
+                                        <div class="card-header">
+                                            <h4>
+                                                @L("ProjectUserstory")
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr class="">
+                                                            <th>Project Name</th>
+                                                            <th>User Story</th>
+                                                            <th class="text-center">Developer Hours</th>
+                                                            <th class="text-center">Actual Hours</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="assignuserstoryList in vm.assignuserstoryList">
+                                                            <td>{{assignuserstoryList.projectName}}</td>
+                                                            <td>{{assignuserstoryList.userStory}}</td>
+                                                            <td class="text-center">{{assignuserstoryList.developerHours}}</td>
+                                                            <td class="text-center">{{assignuserstoryList.actualHours}}</td>
+
+                                                        </tr>
+                                                        @*<tr ng-repeat="assignuserstory in vm.assignuserstory">
+                                                                <td style="width:40%;">{{assignuserstory.projectName}}</td>
+                                                                <td class="text-center">
+                                                                    <p>
+                                                                        <a ng-click="vm.openTimeSheetCreationModal(timesheetmissing)">Add/View</a>
+                                                                    </p>
+                                                                </td>
+                                                                <td ng-show="timesheetmissing.timesheetComplete == 0"
+                                                                    class="text-center">
+                                                                    <span>@L("Done")</span>
+                                                                </td>
+                                                                <td ng-show="timesheetmissing.timesheetComplete != 0"
+                                                                    class="text-center">
+                                                                    <a href="javascript:void(0);"
+                                                                       class="waves-effect waves-block"
+                                                                       ng-click="vm.done(timesheetmissing)">@L("Done")</a>
+                                                                </td>
+                                                            </tr>*@
+
+                                                    </tbody>
+                                                </table>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-if="salesreport==true && vm.chcksales1permission()==true">
+                                    <div class="card-design">
+                                        <div class="card-header">
+                                            <h4>
+                                                Last 7 Days Sales
+                                            </h4>
+
+                                        </div>
+
+                                        <div class="card-body">
+
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+
+                                                    <tr class="">
+                                                        <th>Project Name</th>
+                                                        <th>Project Type</th>
+                                                        <th>Marketing Person</th>
+                                                        <th>Price</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="salesdata in vm.sales">
+                                                        <td>{{salesdata.projectName}}</td>
+                                                        <td>{{salesdata.projectType}}</td>
+                                                        <td>{{salesdata.marketing_LeaderName}}</td>
+                                                        <td>{{salesdata.price}}</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" ng-if="vm.permissions.myOpportunity">
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="card-design">
+                                        <div class="card-header">
+                                            <h4>
+                                                My Follow up
+                                            </h4>
+                                            <div class="data_section headerbox">
+                                                <ul>
+                                                    <li>
+                                                        <input class="validate form-control" placeholder="From Date"
+                                                               moment-picker="vm.followfromDate "
+                                                               locale="en"
+                                                               format="DD/MM/YYYY"
+                                                               start-view="month"
+                                                               today="true"
+                                                               ng-model="vm.followfromDate "
+                                                               value="vm.followfromDate"
+                                                               ng-model-options="{ updateOn: 'blur' }" />
+                                                    </li>
+                                                    <li>
+                                                        <input class="validate form-control" placeholder="To Date"
+                                                               moment-picker="vm.followtoDate"
+                                                               locale="en"
+                                                               format="DD/MM/YYYY"
+                                                               start-view="month"
+                                                               today="true"
+                                                               ng-model="vm.followtoDate"
+                                                               value="vm.followtoDate"
+                                                               ng-model-options="{ updateOn: 'blur' }" />
+
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="btn btn-primary" ng-click="vm.searchAll()" style="height: 35px"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" class="btn btn-primary" ng-click="vm.clearAll()" style="height: 35px"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-body">
+                                            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+                                            <table ng-if="!noData" class="table table-hover table-striped">
+                                                <thead>
+
+                                                    <tr class="">
+                                                        <th>Name </th>
+                                                        <th>Count</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="h in vm.followCount track by $index">
+
+                                                        <td>{{h.name}}</td>
+                                                        <td>
+                                                            <p>
+                                                                <a ng-click="vm.opportunity()">{{h.count}}</a>
+                                                            </p>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" ng-if="shownFollowUp == true && vm.permissions.opportunityFollowUp==true">
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="card-design">
+                                        <div class="card-header">
+                                            <h4>
+                                                My Follow up
+                                            </h4>
+
+                                        </div>
+
+                                        <div class="card-body">
+
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+
+                                                    <tr class="">
+                                                        <th>Action </th>
+                                                        <th>Company Details</th>
+                                                        <th>Call Category</th>
+                                                        <th>Description</th>
+                                                        <th>Follow Up Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="h in vm.followUp track by $index">
+                                                        <td class="dropdown text-center align-middle">
+                                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                                               role="button" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="material-icons">more_vert</i>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+
+                                                                <li>
+                                                                    <a href="javascript:void(0);" ng-click="vm.addFollowUp(h)" class="waves-effect waves-block"> View</a>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <span>{{h.companyName}}</span><br />
+                                                            <span><b>Person Name :</b></span> <span>{{h.personName}}</span><br />
+                                                            <span><b>Contact Number :</b></span> <span>{{h.mobileNumber}}</span>
+                                                        </td>
+                                                        <td>{{h.calllCategoryName}}</td>
+                                                        <td>
+                                                            <span><b>Intersert In: </b></span>
+                                                            {{vm.bindprojecttypename(h.projectType)}}
+                                                            <br />
+                                                            <span><b>Comment: </b></span><span>{{h.comment}}</span>
+                                                        </td>
+                                                        <td align="center">
+                                                            <span ng-if="h.nextActionDate != null">{{h.nextActionDate | date:"dd/MM/yyyy"}}</span>
+                                                            <span ng-if="h.nextActionDate == null"> - </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-if="vm.permissions.salesTargetChart &&   vm.monthlysales.length>0">
+                                    <label>Target Vs. Achievement</label>
+                                    <barchart chartid="{{vm.chartid}}" printdata="vm.months" info="vm.monthlysales" data="vm.target" xlabel="Sales" ylabel="Target"></barchart>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12" ng-show="sal">
+                                <div ng-if="sal==true && vm.chckmonthlysales1permission()==true">
+                                    <div class="card-design">
+                                        <div class="card-header">
+                                            <h4>
+                                                Monthly Sales({{today | date:'MMMM'}})
+                                            </h4>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Amount</th>
+                                                        <th>Sales</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="s in vm.monthlysalesdata">
+                                                        <td>{{s.marketingLeaderName}}</td>
+                                                        <td>{{s.amount}}</td>
+                                                        <td>{{s.noOfSales}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="col-md-12" style="padding:0px;" ng-if="vm.permissions.serviceWithoutClient" ng-show="vm.servicewi !=0">
+                                    <div @*ng-if="pamt==true && vm.chckprojectstatsamountpermission()==true"*@>
+                                        <div class="card-design">
+                                            <div class="card-header">
+                                                <h4>
+                                                    Service List(Without Client)
+                                                </h4>
+                                            </div>
+                                            @*<div ng-if="servicerepo==false" class="alert alert-info">
+                                                    No record found.
+                                                </div>*@
+                                            <div class="card-body" @*ng-if="servicerepo==true"*@>
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Actions</th>
+                                                            <th>DomainName</th>
+                                                            <th>ServiceName</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="p in vm.servicewi">
+                                                            <td class="dropdown text-center align-middle">
+                                                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                                                   role="button" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="material-icons">more_vert</i>
+                                                                </a>
+                                                                <ul class="dropdown-menu pull-right">
+
+                                                                    <li>
+                                                                        <a href="javascript:void(0);" class="waves-effect waves-block"
+                                                                           ng-click="vm.openServiceWithoutClientEditModal(p)">
+                                                                            <i class="material-icons">create</i>Edit
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>{{p.domainName}}</td>
+                                                            <td>{{p.serviceName}}</td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div ng-if="vm.chckprojectstatshourspermission()==true" ng-show="projreport">
+                                    <div class="card-design">
+                                        <div class="card-header">
+                                            <h4>
+                                                Project Stats(Hour)
+                                            </h4>
+
+                                        </div>
+                                        <div ng-if="projreport == true">
+
+                                            <div class="card-body">
+
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+
+                                                        <tr class="">
+                                                            <th>Project Name</th>
+                                                            <th>Total hour</th>
+                                                            <th>Actual hour</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="projecthourdata in vm.projecthour">
+                                                            <td>{{projecthourdata.projectName}}</td>
+                                                            <td>{{projecthourdata.totalhours}}</td>
+                                                            <td>{{projecthourdata.actualhours}}</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="padding:0px;" ng-show="pamt">
+                                    <div ng-if="pamt==true && vm.chckprojectstatsamountpermission()==true">
+                                        <div class="card-design">
+                                            <div class="card-header">
+                                                <h4>
+                                                    Project Stats (Amount)
+                                                </h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Project Name</th>
+                                                            <th>Total Amount</th>
+                                                            <th>Actual Amount</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="p in vm.pamountstats">
+                                                            <td>{{p.projectName}}</td>
+                                                            <td>{{p.amount}}</td>
+                                                            <td>{{p.efforts}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" ng-if="renewlist==true && vm.permissions.userAdmin==true" ng-show="renewlist">
+                                <div class="card-design">
+                                    <div>
+                                        <div class="card-header">
+                                            <h4>
+                                                @L("RenewReminderList")
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+
+                                            <!-- ******************************************************** -->
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+
+                                                    <tr class="">
+                                                        <th>Actions</th>
+                                                        <th> Name</th>
+                                                        <th>Renewal Date</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="salesdata in vm.dashboard">
+                                                        <td class="dropdown">
+                                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                                               role="button" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="material-icons">more_vert</i>
+                                                            </a>
+                                                            <ul class="dropdown-menu pull-right">
+
+                                                                <li>
+                                                                    <a href="javascript:void(0);" class="waves-effect waves-block"
+                                                                       ng-click="vm.openUserRenewEditModal(salesdata)">
+                                                                        <i class="material-icons">create</i>Mark As Renew
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="javascript:void(0);" class="waves-effect waves-block"
+                                                                       ng-click="vm.openUserResignEditModal(salesdata)">
+                                                                        <i class="material-icons">create</i>Mark As Resign
+                                                                    </a>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </td>
+                                                        <td>{{salesdata.name}}</td>
+                                                        <td>{{salesdata.next_Renewaldate | date:'dd/MM/yyyy'}}</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12" ng-if="norecord == true && vm.permissions.missingTimsheetEmployee==true">
+                                <div class="card-design">
+                                    <div>
+                                        <div class="card-header">
+                                            <h4>
+                                                @L("MissingTimesheetEmployee")
+                                            </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table table-hover table-striped">
+                                                <thead>
+
+                                                    <tr class="">
+                                                        <th width="80%">UserName</th>
+                                                        <th class="text-center">Count</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="usermissingtimesheet in vm.usermissingtimesheet">
+                                                        <td style="width:40%;">{{usermissingtimesheet.userName}}</td>
+                                                        <td class="text-center">{{usermissingtimesheet.count}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+

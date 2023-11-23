@@ -1,0 +1,86 @@
+﻿
+<div class="row clearfix" ng-controller="app.views.reports.detail as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header">
+                <h2 class="displyflex">
+                    <span>User Detail</span>
+
+                </h2>
+               <button ng-click=" vm.openRedirectModal()">back</button>
+                        @*<a style="color:#fff" class="btn btn-default btn_flex waves-effect" href="javascript:history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> @L("Back")</a>*@
+                    
+              
+            </div>
+          
+               
+                <div class="body table-responsive">
+
+                    @**********************************************************@
+                    <table class="table table-hover table-striped fnt_normal td_middal width600">
+                        <thead>
+                            <tr>
+                                <th>WorkType</th>
+                                <th>Description</th>
+                                <th>Hours</th>
+                                @*<th>Project</th>*@
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr ng-repeat=" data in vm.faq">
+                                <td>{{data.workTypeName}}</td>
+                                <td>{{data.description}}</td>
+
+                                <td>{{data.hours}}</td>
+                                @*<td>{{data.projectName}}</td>*@
+                                <td>{{data.date| date:'dd/MM/yyyy'}}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

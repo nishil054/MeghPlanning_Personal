@@ -1,0 +1,69 @@
+﻿
+<form name="UploadExcelForm" role="form" novalidate class="form-validation">
+    <div class="modal-header">
+        <h2 class="modal-title">
+            <span>@L("UploadExcel")</span>
+        </h2>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-4" ng-if="vm.permissions.opportunityOpportunity_Leader==true">
+                <div class="form-group">
+                    <label for="ddlCategory" class="form-label highlight">Opportunity<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <select id="ddlCategory" ui-select2 class="js-example-placeholder-single js-states form-control validate" required ng-model="vm.opportunity">
+                            <option value="">-Select Opportunity-</option>
+                            <option value="0">Self Opportunity</option>
+                            <option value="1">General Opportunity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="uploadimbbox">
+            <div class="input-group">
+                <input type="text" name="Logo" id="logo" ng-model="vm.filename" class="form-control" placeholder="No file selected" readonly required>
+                <span class="input-group-btn">
+                    <div class="btn btn-default  custom-file-uploader">
+                        <input id="filetoupload" type="file" name="file" onchange="angular.element(this).scope().checkfiletypevalidation(this)" />
+                        Browse
+                    </div>
+                </span>
+            </div>
+
+            <div class="input-group">
+                <button type="button" ng-click="vm.sampleFile()" value=""
+                        class="btn btn-primary">
+                    Download Sample File
+                </button>
+            </div>
+
+        </div>
+        <span style="color: red; display:block;" class="form-group">(Upload file of type .xls, .xlsx only.)</span>
+    </div>
+    <div>
+        <div class="body table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr><div ng-if="vm.rowcount.length > 0">&nbsp;&nbsp;Total rows successfull : {{vm.successrowcount}} and failed : {{vm.rowcount.length}}</div></tr>
+                    <tr ng-repeat="item in vm.errorresult track by $index">
+                        <td ng-show="vm.showcolumn">
+                            <div>
+                                <span style="color:red">Error :- {{item}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</form>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+        @L("Cancel")
+    </button>
+    <button id="btnupload" type="submit" class="btn btn-primary waves-effect" ng-disabled="UploadExcelForm.$invalid || vm.saving" ng-click="vm.uploadFile(myFile)"><span>@L("Upload")</span></button>
+</div>
+

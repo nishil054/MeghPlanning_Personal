@@ -1,0 +1,96 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Date</th><th scope="col">TBEA Portal</th><th scope="col">Megh Planning</th><th scope="col">Xylem Quote Tool</th><th scope="col">APS - Mobile APP</th><th scope="col">Xylem Xamarin Developer_MP</th><th scope="col">Kirby AD Auth</th><th scope="col">GASSCC</th><th scope="col">Refillity</th><th scope="col">Casepro</th><th scope="col">Comment</th>
+		</tr><tr>
+			<td>01/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Production release
+</td>
+		</tr><tr>
+			<td>04/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>6.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Facing Certificate Issue While release App in Production Envi.
+Meeting with yogesh regarding the Certificate Issue.
+GASSCC : Working on displaying graph on dashboard
+</td>
+		</tr><tr>
+			<td>05/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>7.00</td><td>3.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>APS - Mobile APP : Test Dashboard count API
+Xylem Xamarin Developer_MP : Facing issue in Building Project in Production Branch due to certificate.
+Kirby AD Auth : Check Kirby mail in all module.
+</td>
+		</tr><tr>
+			<td>06/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Add Device Type in Device Mapping API
+</td>
+		</tr><tr>
+			<td>07/04/2022</td><td>0.00</td><td>2.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : R&amp;D on Push Notification.
+Xylem Xamarin Developer_MP : Add IS delete Flag in Share Plant and sensor Data.
+</td>
+		</tr><tr>
+			<td>08/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Add IS delete check box  Flag in Share Plant and sensor Data.
+</td>
+		</tr><tr>
+			<td>11/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on APP Crash on IOS 
+Update Mac OS xcode
+</td>
+		</tr><tr>
+			<td>12/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on App crash in IOS
+</td>
+		</tr><tr>
+			<td>13/04/2022</td><td>0.00</td><td>4.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Megh Planning : Working on Push notification
+Xylem Xamarin Developer_MP : Working on adding Device Type in Device Mapping  API.
+</td>
+		</tr><tr>
+			<td>14/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Release a Build in QA Envi in App center for android and IOS
+</td>
+		</tr><tr>
+			<td>15/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Upload android on PLay Store
+</td>
+		</tr><tr>
+			<td>18/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on App Crash on Production Env,
+</td>
+		</tr><tr>
+			<td>19/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>14.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on App Crash on Production Env,, 
+
+Working on App Crash on Production Env,
+</td>
+		</tr><tr>
+			<td>20/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>14.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Uploading app on testflight on production Envi., 
+
+Working on App Crash on Production Env,
+</td>
+		</tr><tr>
+			<td>21/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Uploading app on testflight
+</td>
+		</tr><tr>
+			<td>22/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Solving issue of Certificate
+</td>
+		</tr><tr>
+			<td>25/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Certificate issue in Production server.
+</td>
+		</tr><tr>
+			<td>26/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Certificate issue 
+and meeting with Sunil joshi regarding certifcate issue.
+</td>
+		</tr><tr>
+			<td>27/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>Xylem Xamarin Developer_MP : Working on Distribution certificate.
+and start working on history data arrow.
+</td>
+		</tr><tr>
+			<td>28/04/2022</td><td>0.00</td><td>0.00</td><td>1.50</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.20</td><td>Xylem Quote Tool : Knowledge Transfer 
+Testing the flow
+Xylem Xamarin Developer_MP : Working on next Previous arrow disable on history data in tabular format
+Casepro : Working on value get reset after update stock, 
+
+Design table structure and discuss the flow with jigar sir
+</td>
+		</tr><tr>
+			<td>29/04/2022</td><td>0.00</td><td>0.00</td><td>1.00</td><td>0.00</td><td>7.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>1.00</td><td>Xylem Quote Tool : Review the Database migration done by Jigar sir to update credit charges in previous record.
+Xylem Xamarin Developer_MP : Meeting with Yogesh Regarding Pipeline
+Add missing images in Release/Dev Branch
+Casepro : Solve issue of  selected value after save.
+</td>
+		</tr><tr>
+			<td>30/04/2022</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>4.50</td><td>Casepro : Add Fields current stock and updated stock while product add and in inventory module, 
+
+Working on Creating Detail page
+</td>
+		</tr>
+	</table>
+</div>

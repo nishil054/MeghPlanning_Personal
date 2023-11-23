@@ -1,0 +1,70 @@
+﻿<form id="frm_edit_user" name="edituserterminateform" novalidate>
+    <div class="modal-header">
+<button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("MarkAsTerminate")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+            
+                
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                             <label for="dtter" class="form-label">Last Date<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                @*<datepicker id="dtren" required ng-model="vm.user.next_Renewaldate" selected-date="vm.user.next_Renewaldate" placeholder="Next_Renewaldate"></datepicker>*@
+                                <input class="validate form-control" placeholder="Last Date"
+                                       moment-picker="vm.user.lastdate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       @*start-date="vm.startDate"*@
+                                       required 
+                                       selected-date="vm.user.lastdate"
+                                       ng-model="vm.user.lastdate"
+                                       value="vm.user.lastdate"
+                                       ng-model-options="{ updateOn: 'blur' }"/>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+           
+            @*<uib-tab heading="User Roles">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-6" ng-repeat="role in vm.roles">
+                            <input type="checkbox" name="role" value="{{role.normalizedName}}" title="{{role.description}}" class="filled-in" id="role-{{role.id}}" ng-model="role.isAssigned" />
+                            <label for="role-{{role.id}}" title="{{role.displayName}}">{{role.name}}</label>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>*@
+    </div>
+    <div class="modal-footer">
+
+
+         <div class=" data_section">
+            <ul>
+                <li>
+                <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+                </li>
+                <li>
+                 <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="edituserterminateform.$invalid">
+            @L("Save")
+        </button>
+                </li>
+            </ul>
+        </div>
+       
+       
+    </div>
+</form>
+
+

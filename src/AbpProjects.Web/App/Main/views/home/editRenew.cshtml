@@ -1,0 +1,60 @@
+﻿<form id="frm_edit_user" name="edituserrenewform" novalidate>
+    <div class="modal-header">
+
+        <h4 class="modal-title">
+            <span>@L("MarkAsRenew")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="dtren" class="form-label highlight">Next Renewal Date<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input class="validate form-control" placeholder="Next Renewaldate"
+                               moment-picker="vm.home.next_Renewaldate"
+                               locale="en"
+                               format="DD/MM/YYYY"
+                               start-view="month"
+                               @*start-date="vm.startDate"*@
+                               required ng-model="vm.home.next_Renewaldate"
+                               value="vm.home.next_Renewaldate" />
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="salarymonth" class="form-label">Monthly Salary<span class="abp_required" style="color:red">*</span> </label>
+                    <div class="form-line focused">
+                        <input id="salarymonth" type="text" name="salary_month" ng-model="vm.home.salary_Month" ng-keypress="vm.CheckNumber()" required maxlength="7" class="validate form-control allow_decimal">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                     <label for="salaryhour" class="form-label">Salary Per Hous<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="salaryhour" type="text" name="salary_hour" ng-model="vm.home.salary_Hour" ng-keypress="vm.CheckNumber()" required maxlength="7" class="validate form-control allow_decimal">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="edituserrenewform.$invalid">
+            @L("Save")
+        </button>
+    </div>
+</form>
+
+

@@ -1,0 +1,243 @@
+﻿    <form id="frm_edit_user" name="edituserform" novalidate >
+    <div class="modal-header">
+       <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditUser")</span>
+        </h4>
+    </div>
+    <div class="modal-body paddingtopnone">
+        <uib-tabset class="tab-container tabbable-line">
+            <uib-tab heading="User Details">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <label for="ddlcom" class="form-label">Beneficiary Company<span class="abp_required" style="color:red">*</span> </label>
+                            <div class="form-line focused">
+                                <select ui-select2 class="form-control" ng-model="vm.user.companyId" required>
+                                    <option value="">-Select Beneficiary Company-</option>
+                                    <option ng-repeat="companys in vm.companylist" value="{{companys.id}}">{{companys.beneficial_Company_Name}}</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="name" class="form-label">@L("Name")<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input id="name" type="text" name="Name" ng-model="vm.user.name" required maxlength="32" class="validate form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="surname" class="form-label">@L("Surname")<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input id="surname" type="text" name="Surname" ng-model="vm.user.surname" required maxlength="32" class="validate form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="email" class="form-label">@L("EmailAddress")<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input id="email" type="email" name="EmailAddress" ng-model="vm.user.emailAddress" maxlength="256" class="validate form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="dtbirth" class="form-label">Birth date<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                @*<datepicker ng-model="vm.user.birthdate" required selected-date="vm.user.birthdate" placeholder="Birth Date" allow-Futuredate="false">
+                        {{vm.user.birthdate | date:'dd/MM/yyyy' }}
+                    </datepicker>*@
+                                <input class="validate form-control" placeholder="Birth Date "
+                                       moment-picker="vm.user.birthdate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       max-date="vm.maxDate"
+                                       required ng-model="vm.user.birthdate"
+                                       value="vm.user.birthdate" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label for="username" class="form-label">@L("UserName")<span class="abp_required" style="color:red">*</span> </label>
+                            <div class="form-line focused">
+                                <input id="username" type="text" name="UserName" ng-model="vm.user.userName" required maxlength="32" minlength="2" class="validate form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label for="salaryhour" class="form-label">Salary/Hour<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                <input id="salaryhour" type="text" name="salary_hour" ng-model="vm.user.salary_Hour" ng-keypress="vm.CheckNumber()" required maxlength="7" class="validate form-control allow_decimal">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label for="salarymonth" class="form-label">Salary/Month<span class="abp_required" style="color:red">*</span> </label>
+                            <div class="form-line focused">
+                                <input id="salarymonth" type="text" name="salary_month" ng-model="vm.user.salary_Month" ng-keypress="vm.CheckNumber()" required maxlength="7" class="validate form-control allow_decimal">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label for="dtjoing" class="form-label">Joining date<span class="abp_required" style="color:red">*</span> </label>
+                            <div class="form-line focused">
+                                @*<datepicker id="dtjoing" required ng-model="vm.user.joiningdate" selected-date="vm.user.joiningdate" placeholder="Joining Date" allow-Futuredate="false">
+                    </datepicker>*@
+                                <input class="validate form-control" placeholder="Joining Date"
+                                       moment-picker="vm.user.joiningdate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       required ng-model="vm.user.joiningdate"
+                                       value="vm.user.joiningdate" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label for="dtren" class="form-label highlight">Next Renewal Date<span class="abp_required" style="color:red">*</span></label>
+                            <div class="form-line focused">
+                                @*<datepicker id="dtren" required ng-model="vm.user.next_Renewaldate" selected-date="vm.user.next_Renewaldate" placeholder="Next_Renewaldate"></datepicker>*@
+                                <input class="validate form-control" placeholder="Next Renewal Date"
+                                       moment-picker="vm.user.next_Renewaldate"
+                                       locale="en"
+                                       format="DD/MM/YYYY"
+                                       start-view="month"
+                                       @*start-date="vm.startDate"*@
+                                       required ng-model="vm.user.next_Renewaldate"
+                                       value="vm.user.next_Renewaldate" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group form-float">
+                            <label class="form-label highlight">Immediate Supervisor</label>
+                            <div class="form-line focused ">
+                                <select class="form-control ddlImm_sup" ui-select2 ng-model="vm.user.immediate_supervisorId">
+                                    <option value="0">-Select Supervisor-</option>
+                                    <option ng-if="vm.user.id != imm_supper.id" ng-repeat="imm_supper in vm.imm_sup" value="{{imm_supper.id}}">
+                                        {{imm_supper.userName}}
+                                    </option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="ddlTeam" class="form-label highlight">Team</label>
+                            <div class="form-line focused">
+                                <select id="ddlTeam" ui-select2 class="form-control" ng-model="vm.user.teamId" ng-change="changeTeam(vm.user.teamId)">
+                                    <option value="0">-Select Team-</option>
+                                    <option ng-repeat="imm_Team in vm.imm_Team" value="{{imm_Team.id}}">{{imm_Team.teamName}}</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" ng-if="vm.user.teamname=='Marketing'">
+                        <div class="form-group form-float">
+                            <label for="targetAmount" class="form-label highlight">Target Amount</label>
+                            <div class="form-line focused">
+                                <input id="targetAmount" type="text" name="targetAmount" ng-model="vm.user.targetAmount"
+                                   step="0.01" class="validate form-control allow_decimal" ng-keypress="vm.CheckNumber()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <label for="leavebalance" class="form-label">@L("LeaveBalance")<span class="abp_required" style="color:red">*</span> </label>
+                            <div class="form-line focused">
+                                <input id="leavebalance" type="text" name="leavebalance" ng-model="vm.user.leaveBalance" step="0.01"
+                                       ng-keypress="vm.CheckNumber()" required maxlength="5" required class="validate form-control allow_alpha">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+               
+                     @*<div class="row clearfix">
+                        <div class="col-sm-12 ">
+                            <div class="form-group form-float">
+                                User Roles <br />
+                                <div class="" ng-repeat="role in vm.roles">
+                                    <input type="checkbox" name="role" value="{{role.name}}" title="{{role.description}}" class="filled-in" id="role-{{role.id}}" checked="checked" ng-model="role.isAssigned" />
+                                    <label for="role-{{role.id}}" title="{{role.displayName}}">{{role.name}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="row clearfix" style="display:none">
+                    <div class="col-sm-12">
+                        <div class="form-group marginbtmnone form-float">
+                            <div class="">
+                                <input id="isactive" type="checkbox" name="IsActive" ng-model="vm.user.isActive" checked class="form-control" />
+                                <label for="isactive" class="form-label">@L("IsActive")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab heading="User Roles">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                    <div class="row">
+                        <div class="col-sm-6" ng-repeat="role in vm.roles">
+                            <input type="checkbox" name="role" value="{{role.normalizedName}}" title="{{role.description}}" class="form-control" id="role-{{role.id}}" ng-model="role.isAssigned" />
+                            <label for="role-{{role.id}}" title="{{role.displayName}}">{{role.name}}</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+
+         <div class=" data_section">
+            <ul>
+                <li>
+                <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">@L("Cancel") </button>
+                </li>
+                <li>
+                <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="edituserform.$invalid || btndisable">
+            @L("Save")
+        </button>
+                </li>
+            </ul>
+        </div>
+        @* <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button> *@
+       
+    </div>
+</form>
+
+

@@ -1,0 +1,114 @@
+﻿<!-- Search Bar -->
+
+
+<div class="search-bar page-header-inner" ng-controller="app.views.layout.topbar as vm">
+    <div class="search-icon">
+        <i class="material-icons">search</i>
+    </div>
+    <input materialInput type="text" placeholder="START TYPING...">
+    <div class="close-search">
+        <i class="material-icons">close</i>
+    </div>
+</div> <!-- #END# Search Bar -->
+<!-- <a class="mobmenu"><i class="fa fa-bars"></i></a> -->
+<nav class="navbar" ng-controller="app.views.layout.topbar as vm">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="javascript:void(0);" class="bars"></a> -->
+            @*<a class="navbar-brand" asp-controller="Home" asp-action="Index">*@
+            <a class="navbar-brand">
+                <!-- <i class="fa fa-cubes"></i>  -->
+                Megh Planning
+            </a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <div class="signoutbox">
+                <ul class="nav navbar-nav pull-right">
+
+                    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li  id="header_notification_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="material-icons">
+                            notifications
+                            </i>
+                            @* <img src="~/App/images/bell.svg"/> *@
+                            <span class="badge badge-danger" ng-if="vm.unreadNotificationCount"> {{vm.unreadNotificationCount}} </span>
+                            <span class="pulse-ring bellring"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="UserNotificationDropdown">
+                            <li class="external notifications-header">
+                               
+                                    <a href="" class="btnsetallread " ng-click="vm.setAllNotificationsAsRead(); $event.preventDefault(); $event.stopPropagation();" ng-if="vm.unreadNotificationCount">@L("SetAllAsRead")</a>
+                                    <a class="pull-right btnsettings " href="" ng-click="vm.openNotificationSettingsModal()"><i class="material-icons">settings</i></a>
+                                
+                            </li>
+                            <li>
+                                <ul ng-repeat="notification in vm.notifications" class="notificationlist">
+                                    <li>
+                                        <a href="{{notification.url}}" class="user-notification-item" ng-class="{'user-notification-item-unread': notification.state=='UNREAD', 'user-notification-item-clickable': notification.url}">
+                                            <span class="details">
+                                                <i class="{{notification.icon}}"></i> {{notification.text}}
+                                            </span>
+                                            <div class="notification_itembox">
+                                                <span class="notification-time" title="{{notification.time | momentFormat:'YYYY-MM-DD HH:mm:ss'}}" am-time-ago="notification.time"></span>
+                                                <span ng-if="notification.state=='UNREAD'"> - <span class="set-as-read-text" ng-click="vm.setNotificationAsRead(notification); $event.preventDefault(); $event.stopPropagation();">@L("SetAsRead")</span></span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="notification-empty-text" ng-if="!vm.notifications.length">
+                                    @L("ThereIsNoNotification")
+                                </div>
+                            </li>
+                            <li class="external notifications-footer" ng-if="vm.notifications.length">
+                                <div class="text-center"><a ui-sref="notifications">@L("SeeAllNotifications")</a></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END NOTIFICATION DROPDOWN -->
+                   <li>|</li>
+
+                    <li>Welcome : {{vm.userName}}</li>
+                    <li>|</li>
+                    <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+                </ul>
+            </div>
+            <!-- <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <i class="{{vm.currentLanguage.icon}}" title="{{vm.currentLanguage.displayName}}"></i>
+                        {{vm.currentLanguage.displayName}}
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="language in vm.languages">
+                            <a ng-if="language.name != currentLanguage.name" href="#" ng-click="vm.changeLanguage(language.name)"><i class="{{language.icon}}"></i> {{language.displayName}}</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+            </ul> -->
+        </div>
+    </div>
+</nav>
+<script>
+    $(document).ready(function () {
+        
+        // window.setTimeout(function(){
+        //     $('body').addClass('ls-closed');
+        // }, 4000); 
+        $('.mobmenu').click(function () {
+            //  alert('');
+            $('body').toggleClass('ls-closed');
+        })
+
+      
+
+    });
+
+</script>

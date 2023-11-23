@@ -1,0 +1,103 @@
+﻿<div class="row clearfix" ng-controller="app.views.client.index as vm">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card main-content">
+            <div class="header data_section">
+                <h2> @L("Client")</h2>
+                <div>
+                    <ul>
+                        <li>
+                            <input type="text" ng-model="vm.searchBox" class="form-control" placeholder="Title...." style="">
+                        </li>
+                        <li> <button type="button" class="btn btn-primary" ng-click="vm.search()"><i class="fa fa-search" aria-hidden="true"></i></button></li>
+                        <li>
+                            <button type="button" class="btn btn-primary" ng-click="vm.clear()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </li>
+                        <li ng-if="vm.addnewdata==0">
+                            @*<button type="button" data-toggle="modal" class="btn btn-primary add " ng-click="vm.openClientCreationModal()">
+                <i class="material-icons">add</i>
+            </button>*@
+                            <button type="button" data-toggle="modal" class="btn btn-primary add " ng-click="vm.openClientCreation()">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div ng-if="vm.addnewdata==1">
+                @*<button ng-click='vm.add()'>Add</button>*@
+                <div class="row">
+                    <label for="clientName" class="form-label">Client Name<span style="color:red" class="req">*</span></label>
+                    <input id="clientName" type="text" name="clientName" ng-model="vm.clientName">
+                    <label for="PANNO" class="form-label">PANNO<span style="color:red" class="req">*</span></label>
+                    <input id="PANNO" type="text" name="PANNO" ng-model="vm.panno">
+                </div>
+
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>Contact Name <span style="color:red" class="req">*</span></th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Country Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                        @*<th>State code</th>*@
+                        <th>Pincode</th>
+                        <th>GSTIN</th>
+                        <th>is default</th>
+                        <th></th>
+                    </tr>
+                    <tbody ng-repeat="m in vm.clientAdd">
+                        <tr>
+                            <td><input type="text" ng-model="m.contactname" /></td>
+                            @* <td></td>*@
+                            <td><input type="text" ng-model="m.email" /></td>
+                            
+                                @*<td></td>*@
+                                <td><textarea ng-model="m.clientaddress" /></td>
+                                @* <td></td>*@
+                                <td><input type="text" ng-model="m.countryName" /></td>
+                                <td><input type="text" ng-model="m.city" /></td>
+
+                                <td><input type="text" ng-model="m.state" /></td>
+
+                                @*<td><input type="text" ng-model="m.statecodeid" /></td>*@
+
+                                <td><input type="text" ng-model="m.pincode" /></td>
+
+                                <td><input type="text" ng-model="m.gstno" /></td>
+
+                                <td><input type="checkbox" ng-model="m.isdefault" style="position:unset;  opacity:1" /></td>
+
+
+                                <td ng-show="vm.editid<2" ><input type="button" ng-click="vm.remove($index)" value="Remove" /></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <button ng-show="vm.editid<2" ng-click='vm.add()'>Add</button>
+
+                <div class="row">
+
+                    <button type="submit" ng-show="vm.editid==0"class="btn btn-primary btnsubmit waves-effect" ng-click="vm.save()">
+                        @L("Save")
+                    </button>
+
+                    <button type="submit" ng-show="vm.editid==1" class="btn btn-primary btnsubmit waves-effect" ng-click="vm.editdata()">
+                        @L("Edit")
+                    </button>
+                    <button type="submit" class="btn btn-primary btnsubmit waves-effect" ng-click="vm.cancle()">
+                        @L("Cancel")
+                    </button>
+                </div>
+            </div>
+
+            <p ng-if="noData" class="alert alert-info"> No record found.</p>
+            <div class="body table-responsive">
+                <!-- ******************************************************** -->
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns full-height-grid dir="ltr" ng-if="!noData"></div>
+                <!-- ******************************************************** -->
+            </div>
+        </div>
+    </div>
+</div>

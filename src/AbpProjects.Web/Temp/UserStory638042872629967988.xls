@@ -1,0 +1,45 @@
+﻿<div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">User Story</th><th scope="col">Project Name</th><th scope="col">Creation Date</th><th scope="col">Developers Hours</th><th scope="col">Expected Hours</th><th scope="col">Actual Hours</th><th scope="col">Status</th>
+		</tr><tr>
+			<td>test user story</td><td>Stock Management System</td><td>2/4/2022 12:32:22 PM</td><td>12.00</td><td>15.00</td><td>5.50</td><td>Pending</td>
+		</tr><tr>
+			<td>Test data story</td><td>DU</td><td>12/14/2021 7:18:55 AM</td><td>12.00</td><td>10.00</td><td>6.00</td><td>Pending</td>
+		</tr><tr>
+			<td>DU User story report test</td><td>DU</td><td>2/22/2022 6:15:54 AM</td><td>5.00</td><td>6.00</td><td>2.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Project - Generate Invoice Request</td><td>DU</td><td>12/13/2021 7:06:42 AM</td><td>8.00</td><td>12.00</td><td>5.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Add Category Module in Knowledge Center</td><td>DU</td><td>12/13/2021 7:06:42 AM</td><td>8.00</td><td>12.00</td><td>8.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Admin/Support: Dashboard</td><td>DU</td><td>12/13/2021 7:06:42 AM</td><td>8.00</td><td>12.00</td><td>5.50</td><td>Pending</td>
+		</tr><tr>
+			<td>Manage Project</td><td>DU</td><td>12/13/2021 7:06:42 AM</td><td>8.00</td><td>12.00</td><td>0.00</td><td>Pending</td>
+		</tr><tr>
+			<td>test data</td><td>Megh Planning</td><td>1/3/2022 12:37:23 PM</td><td>5.00</td><td>10.00</td><td>14.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Megh Invoice - Project Invoice Request Issues</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>5.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Create Document for Moment DateTime Picker</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>1.00</td><td>Pending</td>
+		</tr><tr>
+			<td>As a Bid no Bid creator I should be able to revise price and send for approval</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>1.00</td><td>Pending</td>
+		</tr><tr>
+			<td>Dashboard - Project Stats (Amount)</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>0.54</td><td>Pending</td>
+		</tr><tr>
+			<td>Report - Project Stats (Amount)</td><td>Megh Planning</td><td>12/14/2021 5:37:05 AM</td><td>8.00</td><td>12.00</td><td>239.50</td><td>Pending</td>
+		</tr><tr>
+			<td>Complaint - Request flow</td><td>Task Management System</td><td>2/9/2022 10:04:50 AM</td><td>14.00</td><td>14.00</td><td>35.00</td><td>Pending</td>
+		</tr><tr>
+			<td>clock module</td><td>Xylem Mobile App</td><td>2/5/2022 5:34:32 AM</td><td>7.00</td><td>7.00</td><td>6.50</td><td>Pending</td>
+		</tr><tr>
+			<td>Create new request-complaint module flow</td><td>Check Undefined Problem</td><td>2/5/2022 4:57:03 AM</td><td>40.00</td><td>50.00</td><td>13.00</td><td>Pending</td>
+		</tr><tr>
+			<td>j</td><td>Demo Project Test</td><td>1/20/2022 12:56:53 PM</td><td>2.00</td><td>2.00</td><td>4.00</td><td>Pending</td>
+		</tr><tr>
+			<td>TEst</td><td>ABB Project</td><td>2/4/2022 12:57:18 PM</td><td>2.00</td><td>50.00</td><td>71.50</td><td>Pending</td>
+		</tr><tr>
+			<td>Test</td><td>Project Zero must</td><td>2/4/2022 4:53:34 AM</td><td>4.00</td><td>2.00</td><td>3.00</td><td>Pending</td>
+		</tr>
+	</table>
+</div>

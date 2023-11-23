@@ -1,0 +1,182 @@
+﻿<form id="frm_create_holiday" name="holidayCreateForm" novalidate>
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span ng-show="vm.editid==0">@L("EditClient")</span>
+            <span ng-show="vm.editid >0">@L("ViewClient")</span>
+        </h4>
+    </div>
+    <div class="modal-body  clientformbox">
+
+        <div class="row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="clientName" class="form-label">Client Name<span style="color:red" class="req">*</span></label>
+                    <div class="form-line focused">
+                        <input id="clientName" type="text" name="clientName" ng-model="vm.clientName" required class="validate form-control allow_alpha">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group form-float">
+                    <label for="PANNO" class="form-label">PANNO</label>
+                    <div class="form-line focused">
+                        <input id="PANNO" type="text" name="PANNO" ng-model="vm.panno" class="validate form-control allow_alpha">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="message" class="form-label flex_disply"
+                           style="display: flex; align-items: center; justify-content: space-between;">
+                        <div>
+                            Client Address@*<span class="abp_required" style="color:red">*</span>*@
+                        </div>
+                        <span class="text-right" style="width: 15%;">
+                            <a ng-show="vm.editid==0" class="btn btn-primary add" ng-click="vm.add()">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="formotherdetails" ng-repeat="m in vm.clientAdd">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="conname" class="form-label">Contact Name <span style="color:red" class="req">*</span></label>
+                        <div class="form-line focused">
+                            <input id="conname" type="text" name="conname" ng-model="m.contactname" class="validate form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-float">
+                        <label for="email" class="form-label">Email </label>
+                        <div class="form-line focused">
+                            <input id="email" type="text" name="email" ng-model="m.email" ng-pattern="vm.emailFormat" class="form-control allow_alpha">
+                            <span class="help-block text-danger" ng-show="!holidayCreateForm.email.$valid && holidayCreateForm.email.$dirty">
+                                @L("AdminEmailAddress_Regex_Description")
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-float">
+                        <label for="clientaddress" class="form-label">Address </label>
+                        <div class="form-line focused">
+                            <input id="clientaddress" type="text" name="clientaddress" ng-model="m.clientaddress" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label for="countryname" class="form-label">Country Name</label>
+                        <div class="form-line focused">
+                            <input id="countryname" type="text" name="countryname" ng-model="m.countryName" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label for="cityname" class="form-label">City</label>
+                        <div class="form-line focused">
+                            <input id="cityname" type="text" name="cityname" ng-model="m.city" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label for="statename" class="form-label">State</label>
+                        <div class="form-line focused">
+                            <input id="statename" type="text" name="statename" ng-model="m.state" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <div class="form-line focused">
+                            <input id="pincode" type="text" name="pincode" ng-model="m.pincode" maxlength="7" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label for="gstn" class="form-label">GSTIN</label>
+                        <div class="form-line focused">
+                            <input id="gstn" type="text" name="gstn" ng-model="m.gstno" class="form-control allow_alpha">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <label class="form-label ">Contact No</label>
+                        <div class="form-line focused">
+
+                            <input class="form-control allow_alpha" maxlength="10" type="text" name="contact" ng-model="m.contactno"
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength)">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-float">
+                        <label for="isdefault" class="form-label">is default</label>
+                        <div style="margin-top:12px;">
+                            <input type="checkbox" style="position:unset;  opacity:1" ng-change="isDefaultcheck(m.isdefault,$index)" ng-model="m.isdefault" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <!-- <button ng-click='vm.add()'>Add</button> -->
+                    @*<button ng-show="vm.editid==0" ng-click='vm.add()'>Add</button>*@
+                    <span ng-show="vm.editid==0 && vm.clientAdd.length>1"> <input type="button" ng-click="vm.remove($index)" value="Remove" /></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-footer">
+        <div class=" data_section">
+            <ul>
+                <li>
+                    <button type="button" class="btn btn-default btncancel waves-effect" ng-click="vm.cancel()">
+                        @L("Cancel")
+                    </button>
+                </li>
+                <li>
+                    <button type="submit" ng-show="vm.editid==0" class="btn btn-primary btnsubmit waves-effect" ng-click="vm.save()" ng-disabled="btndisable">
+                        @L("Save")
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+</form>
+

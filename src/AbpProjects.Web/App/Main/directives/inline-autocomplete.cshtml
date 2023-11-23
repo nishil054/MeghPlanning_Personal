@@ -1,0 +1,17 @@
+﻿<div class="edit_activties" ng-form="numberForm">
+    <angucomplete-alt pause="400"
+                      id="serviceNameArabic"
+                      remote-api-handler="searchAPI"
+                      title-field="ServicesNameArebic"
+                      minlength="1"
+                      input-class="form-control"
+                      ng-model="model"
+                      ng-show="editMode" />
+    <button ng-click="cancelAutocomplete()" ng-show="editMode" class="cancelBtnDetail"></button>
+    <button ng-click="saveAutocomplete()" ng-show="editMode" class="saveBtnDetail"></button>
+
+    <span ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false" class="flexbtn">
+        <span ng-hide="editMode" ng-click="editAutocomplete()">{{displayname!=null && displayname!=''?displayname:"-"}}</span>
+        <a ng-show="showEdit" ng-click="editAutocomplete()" class="editDetail"></a>
+    </span>
+</div>

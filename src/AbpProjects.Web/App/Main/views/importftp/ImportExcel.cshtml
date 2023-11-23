@@ -1,0 +1,68 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <h4 class="modal-title">Impotrt Excel</h4>
+</div>
+<form id="frm_create" name="CreateForm" novalidate>
+    <div class="body table-responsive">
+        <div class="modal-body detailmodal">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-float">
+                        <div class="form-groupbox">                           
+                            <a href="#/Import/{{vm.id}}" ng-click="vm.downloadsampleFile()" value="" class="btn btn-primary">
+                                Download Sample File
+                            </a>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="uploadimbbox">
+                        <div class="input-group">
+                            <input type="text" name="Logo" id="logo" class="form-control" placeholder="No file selected" readonly required>
+                            <span class="input-group-btn">
+                                <div class="btn btn-primary btndarkblue  custom-file-uploader">
+                                    <input id="filetoupload" type="file" name="file" onchange="this.form.logo.value = this.files.length ? this.files[0].name : ''" />
+                                    Browse
+                                </div>
+                            </span>
+                        </div>
+                        <button type="submit" button-busy="vm.saving" busy-text="@L(" UploadingWithThreeDot")" class="btn btn-primary blue btnupload" ng-click="vm.uploadFile(myFile)"><span>@L("Upload")</span></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="body table-responsive">
+        <table class="table">
+            <tbody>
+                <tr><div ng-if="vm.rowcount.length > 0">&nbsp;&nbsp;Total rows successfull : {{vm.successrowcount}} and failed : {{vm.rowcount.length}}</div></tr>
+                <tr ng-repeat="item in vm.errorresult track by $index">
+                    <td ng-show="vm.showcolumn">
+                        <div>
+                            <span style="color:red">Error :- {{item}}</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+        @L("Cancel")
+    </button>
+</div>
+
+
+
+

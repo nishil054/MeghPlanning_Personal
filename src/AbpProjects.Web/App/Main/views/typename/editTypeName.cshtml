@@ -1,0 +1,32 @@
+﻿<form id="frm_edit_typename" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditTypeName")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="typename" class="form-label">@L("TypeName")<span class="abp_required" style="color:red">*</span></label>
+                    <div class="form-line focused">
+                        <input id="typename" type="text" name="typename" ng-model="vm.typename.name" required
+                               class="validate form-control" >
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="typenameCreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+</form>

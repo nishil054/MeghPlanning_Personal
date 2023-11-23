@@ -1,0 +1,42 @@
+﻿<form id="frm_edit" name="CreateForm" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.close()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">
+            <span>@L("EditCategory")</span>
+        </h4>
+    </div>
+    <div class="modal-body editform">
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label class="form-label">@L("Team")<span style="color:red;">*</span></label>
+                    <select class="form-control js-example-basic-multiple" ng-model="vm.items.teamId" data-placeholder="Select Team" multiple ui-select2 required>
+                        @*<option value="">Select Team</option>*@
+                        <option ng-repeat="item in  vm.teamList" value="{{item.id}}">
+                            {{item.teamName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <label for="category" class="form-label">@L("Category")<span style="color:red">*</span></label>
+                    <div class="form-line">
+                        <input id="category" type="text" name="category" ng-maxlength="vm.maxlength" ng-model="vm.items.category" required class="validate form-control">
+                        <span style="color:red" ng-show="CreateForm.category.$dirty&&CreateForm.category.$error.maxlength"> Cann't enter more than {{vm.maxlength}} charaters! </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" ng-click="vm.close()">
+            @L("Cancel")
+        </button>
+        <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="CreateForm.$invalid || vm.loading">
+            @L("Save")
+        </button>
+    </div>
+</form>

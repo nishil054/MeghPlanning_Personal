@@ -1,0 +1,1317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props" Condition="Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbpProjects</RootNamespace>
+    <AssemblyName>AbpProjects.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.6.3.0\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.6.3.0\lib\net461\Abp.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.EntityFramework.Common, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.Common.6.3.0\lib\netstandard2.0\Abp.EntityFramework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.6.3.0\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.6.3.0\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.6.3.0\lib\net461\Abp.Zero.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core.AsyncInterceptor, Version=2.0.21.0, Culture=neutral, PublicKeyToken=e33b67d3bb5581e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.AsyncInterceptor.2.0.21-alpha\lib\net45\Castle.Core.AsyncInterceptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.5.1.1\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.5.1.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfigureAwait, Version=3.3.1.0, Culture=neutral, PublicKeyToken=233850a516558a98, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConfigureAwait.Fody.3.3.1\lib\net452\ConfigureAwait.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.2.0.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.3.2.0\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2020.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2020.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.5.0.0\lib\net461\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Interop.WaitHandles, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Interop.WaitHandles.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Interop.WaitHandles.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Oop, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Oop.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Oop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.5.1.0\lib\netstandard2.0\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Cancellation, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Cancellation.1.1.0\lib\netstandard2.0\Nito.Cancellation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.1.0\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.2.2.0\lib\net461\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.5.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=3.4.0.0, Culture=neutral, PublicKeyToken=e20ab7d0d9479841, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.3.4.0\lib\net461\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\AbpProjectsDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\AbpProjectsRepositoryBase.cs" />
+    <Compile Include="AbpProjectsDataModule.cs" />
+    <Compile Include="Migrations\201809270654064_InitialMigrations.cs" />
+    <Compile Include="Migrations\201809270654064_InitialMigrations.Designer.cs">
+      <DependentUpon>201809270654064_InitialMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.cs" />
+    <Compile Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.Designer.cs">
+      <DependentUpon>201810150846132_Upgraded_To_ABP_v3_9_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901110613114_Upgraded_To_ABP_v4_1_0.cs" />
+    <Compile Include="Migrations\201901110613114_Upgraded_To_ABP_v4_1_0.Designer.cs">
+      <DependentUpon>201901110613114_Upgraded_To_ABP_v4_1_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902080730036_Upgrade_ABP_To_4_2_0.cs" />
+    <Compile Include="Migrations\201902080730036_Upgrade_ABP_To_4_2_0.Designer.cs">
+      <DependentUpon>201902080730036_Upgrade_ABP_To_4_2_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905080308372_Upgrade_ABP_To_4_5_0.cs" />
+    <Compile Include="Migrations\201905080308372_Upgrade_ABP_To_4_5_0.Designer.cs">
+      <DependentUpon>201905080308372_Upgrade_ABP_To_4_5_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907021413234_Upgraded_To_Abp_v4_7_0.cs" />
+    <Compile Include="Migrations\201907021413234_Upgraded_To_Abp_v4_7_0.Designer.cs">
+      <DependentUpon>201907021413234_Upgraded_To_Abp_v4_7_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907220636309_Upgrated_To_ABP_4_8_0.cs" />
+    <Compile Include="Migrations\201907220636309_Upgrated_To_ABP_4_8_0.Designer.cs">
+      <DependentUpon>201907220636309_Upgrated_To_ABP_4_8_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910240752449_Upgraded_To_ABP_5_0_0.cs" />
+    <Compile Include="Migrations\201910240752449_Upgraded_To_ABP_5_0_0.designer.cs">
+      <DependentUpon>201910240752449_Upgraded_To_ABP_5_0_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912171340379_Upgraded_To_ABP_5_1_0.cs" />
+    <Compile Include="Migrations\201912171340379_Upgraded_To_ABP_5_1_0.designer.cs">
+      <DependentUpon>201912171340379_Upgraded_To_ABP_5_1_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201201162_Ugraded_To_ABP_5_2_0.cs" />
+    <Compile Include="Migrations\202002201201162_Ugraded_To_ABP_5_2_0.designer.cs">
+      <DependentUpon>202002201201162_Ugraded_To_ABP_5_2_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003201250482_Ugraded_To_ABP_5_4_0.cs" />
+    <Compile Include="Migrations\202003201250482_Ugraded_To_ABP_5_4_0.designer.cs">
+      <DependentUpon>202003201250482_Ugraded_To_ABP_5_4_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009281416152_Upgraded_To_ABP_5_13_0.cs" />
+    <Compile Include="Migrations\202009281416152_Upgraded_To_ABP_5_13_0.designer.cs">
+      <DependentUpon>202009281416152_Upgraded_To_ABP_5_13_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011130726515_Upgraded_To_ABP_6_0.cs" />
+    <Compile Include="Migrations\202011130726515_Upgraded_To_ABP_6_0.designer.cs">
+      <DependentUpon>202011130726515_Upgraded_To_ABP_6_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012180651436_Upgraded_To_ABP_6_1_1.cs" />
+    <Compile Include="Migrations\202012180651436_Upgraded_To_ABP_6_1_1.designer.cs">
+      <DependentUpon>202012180651436_Upgraded_To_ABP_6_1_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.cs" />
+    <Compile Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.designer.cs">
+      <DependentUpon>202103241020465_Upgradd_To_ABP_6_3_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110160657127_add_company.cs" />
+    <Compile Include="Migrations\202110160657127_add_company.designer.cs">
+      <DependentUpon>202110160657127_add_company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110180738309_team.cs" />
+    <Compile Include="Migrations\202110180738309_team.designer.cs">
+      <DependentUpon>202110180738309_team.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110200548017_worktype_projecttype.cs" />
+    <Compile Include="Migrations\202110200548017_worktype_projecttype.designer.cs">
+      <DependentUpon>202110200548017_worktype_projecttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110210442121_project.cs" />
+    <Compile Include="Migrations\202110210442121_project.designer.cs">
+      <DependentUpon>202110210442121_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110261225182_add_document.cs" />
+    <Compile Include="Migrations\202110261225182_add_document.designer.cs">
+      <DependentUpon>202110261225182_add_document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290505373_db.cs" />
+    <Compile Include="Migrations\202110290505373_db.Designer.cs">
+      <DependentUpon>202110290505373_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290605274_tblservices.cs" />
+    <Compile Include="Migrations\202110290605274_tblservices.Designer.cs">
+      <DependentUpon>202110290605274_tblservices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290607589_tblservers.cs" />
+    <Compile Include="Migrations\202110290607589_tblservers.Designer.cs">
+      <DependentUpon>202110290607589_tblservers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290610042_tblmanageservices.cs" />
+    <Compile Include="Migrations\202110290610042_tblmanageservices.Designer.cs">
+      <DependentUpon>202110290610042_tblmanageservices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290658411_projecttype_details.cs" />
+    <Compile Include="Migrations\202110290658411_projecttype_details.Designer.cs">
+      <DependentUpon>202110290658411_projecttype_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290706030_Added_AbpUsers_NewColumn_Add.cs" />
+    <Compile Include="Migrations\202110290706030_Added_AbpUsers_NewColumn_Add.Designer.cs">
+      <DependentUpon>202110290706030_Added_AbpUsers_NewColumn_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110290957317_add_timesheet.cs" />
+    <Compile Include="Migrations\202110290957317_add_timesheet.Designer.cs">
+      <DependentUpon>202110290957317_add_timesheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110291132318_add_timesheet_addCol_date.cs" />
+    <Compile Include="Migrations\202110291132318_add_timesheet_addCol_date.Designer.cs">
+      <DependentUpon>202110291132318_add_timesheet_addCol_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110300620215_MergeBranches_Documentandholiday.cs" />
+    <Compile Include="Migrations\202110300620215_MergeBranches_Documentandholiday.Designer.cs">
+      <DependentUpon>202110300620215_MergeBranches_Documentandholiday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110300645383_Added_UserLogin_LogOut.cs" />
+    <Compile Include="Migrations\202110300645383_Added_UserLogin_LogOut.Designer.cs">
+      <DependentUpon>202110300645383_Added_UserLogin_LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110300840406_Added_ColumnSet_Nullabe.cs" />
+    <Compile Include="Migrations\202110300840406_Added_ColumnSet_Nullabe.Designer.cs">
+      <DependentUpon>202110300840406_Added_ColumnSet_Nullabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111010518393_add_userid_col.cs" />
+    <Compile Include="Migrations\202111010518393_add_userid_col.Designer.cs">
+      <DependentUpon>202111010518393_add_userid_col.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111011035245_NewChangeMigration.cs" />
+    <Compile Include="Migrations\202111011035245_NewChangeMigration.Designer.cs">
+      <DependentUpon>202111011035245_NewChangeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111011310157_increase_width.cs" />
+    <Compile Include="Migrations\202111011310157_increase_width.Designer.cs">
+      <DependentUpon>202111011310157_increase_width.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111020527196_CreateTable_ImportFTPDetails.cs" />
+    <Compile Include="Migrations\202111020527196_CreateTable_ImportFTPDetails.Designer.cs">
+      <DependentUpon>202111020527196_CreateTable_ImportFTPDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111090804508_MergeHRBranches.cs" />
+    <Compile Include="Migrations\202111090804508_MergeHRBranches.designer.cs">
+      <DependentUpon>202111090804508_MergeHRBranches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111090809401_modifyUserTable.cs" />
+    <Compile Include="Migrations\202111090809401_modifyUserTable.designer.cs">
+      <DependentUpon>202111090809401_modifyUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111090903573_MergeSupportBranches.cs" />
+    <Compile Include="Migrations\202111090903573_MergeSupportBranches.designer.cs">
+      <DependentUpon>202111090903573_MergeSupportBranches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111100804553_AddClientIdInProjectTable.cs" />
+    <Compile Include="Migrations\202111100804553_AddClientIdInProjectTable.Designer.cs">
+      <DependentUpon>202111100804553_AddClientIdInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111100808287_change_titlewidth_document.cs" />
+    <Compile Include="Migrations\202111100808287_change_titlewidth_document.Designer.cs">
+      <DependentUpon>202111100808287_change_titlewidth_document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111101125213_tbl_manageservice_cancelflag.cs" />
+    <Compile Include="Migrations\202111101125213_tbl_manageservice_cancelflag.Designer.cs">
+      <DependentUpon>202111101125213_tbl_manageservice_cancelflag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111110723341_AddProjectStatusTable.cs" />
+    <Compile Include="Migrations\202111110723341_AddProjectStatusTable.Designer.cs">
+      <DependentUpon>202111110723341_AddProjectStatusTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111110848083_AddStatusInProjectTable.cs" />
+    <Compile Include="Migrations\202111110848083_AddStatusInProjectTable.designer.cs">
+      <DependentUpon>202111110848083_AddStatusInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111120703511_MergeFTPBranches.cs" />
+    <Compile Include="Migrations\202111120703511_MergeFTPBranches.Designer.cs">
+      <DependentUpon>202111120703511_MergeFTPBranches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111121248429_RemoveValidationInCompanyNameInProjectTable.cs" />
+    <Compile Include="Migrations\202111121248429_RemoveValidationInCompanyNameInProjectTable.designer.cs">
+      <DependentUpon>202111121248429_RemoveValidationInCompanyNameInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111150436101_addnewcolumnHoursInProjectTable.cs" />
+    <Compile Include="Migrations\202111150436101_addnewcolumnHoursInProjectTable.designer.cs">
+      <DependentUpon>202111150436101_addnewcolumnHoursInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111160656484_RemoveNullValidationActualDateInProject.cs" />
+    <Compile Include="Migrations\202111160656484_RemoveNullValidationActualDateInProject.designer.cs">
+      <DependentUpon>202111160656484_RemoveNullValidationActualDateInProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111161023394_holidaymaster_startdate_typechange.cs" />
+    <Compile Include="Migrations\202111161023394_holidaymaster_startdate_typechange.designer.cs">
+      <DependentUpon>202111161023394_holidaymaster_startdate_typechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111170442415_CreateTable_manageKnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111170442415_CreateTable_manageKnowledgeCenter.Designer.cs">
+      <DependentUpon>202111170442415_CreateTable_manageKnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111170444175_CreateTable_KnowledgeDocuments.cs" />
+    <Compile Include="Migrations\202111170444175_CreateTable_KnowledgeDocuments.Designer.cs">
+      <DependentUpon>202111170444175_CreateTable_KnowledgeDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111170536338_AddColumnTable_manageKnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111170536338_AddColumnTable_manageKnowledgeCenter.Designer.cs">
+      <DependentUpon>202111170536338_AddColumnTable_manageKnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111181021167_ChangeDBType_manageKnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111181021167_ChangeDBType_manageKnowledgeCenter.Designer.cs">
+      <DependentUpon>202111181021167_ChangeDBType_manageKnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111191058209_Add_NewColumn_TimesheetCompletion.cs" />
+    <Compile Include="Migrations\202111191058209_Add_NewColumn_TimesheetCompletion.designer.cs">
+      <DependentUpon>202111191058209_Add_NewColumn_TimesheetCompletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111200446251_Change_ColumnNullable_UserLoginData.cs" />
+    <Compile Include="Migrations\202111200446251_Change_ColumnNullable_UserLoginData.designer.cs">
+      <DependentUpon>202111200446251_Change_ColumnNullable_UserLoginData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111200715279_Add_TypeName_Table_service.cs" />
+    <Compile Include="Migrations\202111200715279_Add_TypeName_Table_service.designer.cs">
+      <DependentUpon>202111200715279_Add_TypeName_Table_service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111200836113_alter_datatype_tynename.cs" />
+    <Compile Include="Migrations\202111200836113_alter_datatype_tynename.designer.cs">
+      <DependentUpon>202111200836113_alter_datatype_tynename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111200922083_registrationdate_column_added.cs" />
+    <Compile Include="Migrations\202111200922083_registrationdate_column_added.designer.cs">
+      <DependentUpon>202111200922083_registrationdate_column_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111201121300_adjustmentamount_added_mangeservicetbl.cs" />
+    <Compile Include="Migrations\202111201121300_adjustmentamount_added_mangeservicetbl.designer.cs">
+      <DependentUpon>202111201121300_adjustmentamount_added_mangeservicetbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111201145103_ChangeDataTypeOfIsDocument_manageKnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111201145103_ChangeDataTypeOfIsDocument_manageKnowledgeCenter.Designer.cs">
+      <DependentUpon>202111201145103_ChangeDataTypeOfIsDocument_manageKnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111220710355_servicerequesthistort_tbl.cs" />
+    <Compile Include="Migrations\202111220710355_servicerequesthistort_tbl.designer.cs">
+      <DependentUpon>202111220710355_servicerequesthistort_tbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111221219491_CreateTable_Category.cs" />
+    <Compile Include="Migrations\202111221219491_CreateTable_Category.Designer.cs">
+      <DependentUpon>202111221219491_CreateTable_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111230432456_AddColumn_Category_ManageKnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111230432456_AddColumn_Category_ManageKnowledgeCenter.Designer.cs">
+      <DependentUpon>202111230432456_AddColumn_Category_ManageKnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111231035304_AddColumn_LeaveBalance_AbpUsers.cs" />
+    <Compile Include="Migrations\202111231035304_AddColumn_LeaveBalance_AbpUsers.Designer.cs">
+      <DependentUpon>202111231035304_AddColumn_LeaveBalance_AbpUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240602516_addcol_Reg_Renewdate_tblservicerequest.cs" />
+    <Compile Include="Migrations\202111240602516_addcol_Reg_Renewdate_tblservicerequest.Designer.cs">
+      <DependentUpon>202111240602516_addcol_Reg_Renewdate_tblservicerequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240606168_remove_adjustamt_tblmanageservice.cs" />
+    <Compile Include="Migrations\202111240606168_remove_adjustamt_tblmanageservice.Designer.cs">
+      <DependentUpon>202111240606168_remove_adjustamt_tblmanageservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240612439_add_invoicerequest.cs" />
+    <Compile Include="Migrations\202111240612439_add_invoicerequest.Designer.cs">
+      <DependentUpon>202111240612439_add_invoicerequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240724536_MergeBranches_KnowledgeCenter.cs" />
+    <Compile Include="Migrations\202111240724536_MergeBranches_KnowledgeCenter.Designer.cs">
+      <DependentUpon>202111240724536_MergeBranches_KnowledgeCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240824103_MergeBranches_Service.cs" />
+    <Compile Include="Migrations\202111240824103_MergeBranches_Service.Designer.cs">
+      <DependentUpon>202111240824103_MergeBranches_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111240925015_MergeBranches_ManageLeave.cs" />
+    <Compile Include="Migrations\202111240925015_MergeBranches_ManageLeave.Designer.cs">
+      <DependentUpon>202111240925015_MergeBranches_ManageLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111250448098_Add_NewColumn_EffortsInTimesheet.cs" />
+    <Compile Include="Migrations\202111250448098_Add_NewColumn_EffortsInTimesheet.designer.cs">
+      <DependentUpon>202111250448098_Add_NewColumn_EffortsInTimesheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112010723185_projectid_added_tblinvoicerequest.cs" />
+    <Compile Include="Migrations\202112010723185_projectid_added_tblinvoicerequest.designer.cs">
+      <DependentUpon>202112010723185_projectid_added_tblinvoicerequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112060541522_Added_tbl_User_Story.cs" />
+    <Compile Include="Migrations\202112060541522_Added_tbl_User_Story.designer.cs">
+      <DependentUpon>202112060541522_Added_tbl_User_Story.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112061048525_Changes_tbl_User_Story_ColumnSetNullabe.cs" />
+    <Compile Include="Migrations\202112061048525_Changes_tbl_User_Story_ColumnSetNullabe.designer.cs">
+      <DependentUpon>202112061048525_Changes_tbl_User_Story_ColumnSetNullabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112061234481_Added_New_Column_UserStoryId_Timesheet.cs" />
+    <Compile Include="Migrations\202112061234481_Added_New_Column_UserStoryId_Timesheet.designer.cs">
+      <DependentUpon>202112061234481_Added_New_Column_UserStoryId_Timesheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112070529417_Added_NewColumn_ProjectId_tbl_User_Story.cs" />
+    <Compile Include="Migrations\202112070529417_Added_NewColumn_ProjectId_tbl_User_Story.designer.cs">
+      <DependentUpon>202112070529417_Added_NewColumn_ProjectId_tbl_User_Story.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112070832315_Changes_UserStoryId_SetNullableIn_Timesheet.cs" />
+    <Compile Include="Migrations\202112070832315_Changes_UserStoryId_SetNullableIn_Timesheet.designer.cs">
+      <DependentUpon>202112070832315_Changes_UserStoryId_SetNullableIn_Timesheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112090936372_table_client_migration_issue.cs" />
+    <Compile Include="Migrations\202112090936372_table_client_migration_issue.Designer.cs">
+      <DependentUpon>202112090936372_table_client_migration_issue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112090938127_add_table_client.cs" />
+    <Compile Include="Migrations\202112090938127_add_table_client.Designer.cs">
+      <DependentUpon>202112090938127_add_table_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112150537425_change_datatype_of_totalhours_todecimal.cs" />
+    <Compile Include="Migrations\202112150537425_change_datatype_of_totalhours_todecimal.designer.cs">
+      <DependentUpon>202112150537425_change_datatype_of_totalhours_todecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112290941350_Add_table_Bill.cs" />
+    <Compile Include="Migrations\202112290941350_Add_table_Bill.designer.cs">
+      <DependentUpon>202112290941350_Add_table_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112290947555_Add_table_PerformaInvoice.cs" />
+    <Compile Include="Migrations\202112290947555_Add_table_PerformaInvoice.designer.cs">
+      <DependentUpon>202112290947555_Add_table_PerformaInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112300517308_Add_Table_ Production.cs" />
+    <Compile Include="Migrations\202112300517308_Add_Table_ Production.designer.cs">
+      <DependentUpon>202112300517308_Add_Table_ Production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112300526190_change_Datatype_allownull_isoutexport1_billTable.cs" />
+    <Compile Include="Migrations\202112300526190_change_Datatype_allownull_isoutexport1_billTable.designer.cs">
+      <DependentUpon>202112300526190_change_Datatype_allownull_isoutexport1_billTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112300527263_change_Datatype_allownull_isoutexport1_PerformaInvoiceTable.cs" />
+    <Compile Include="Migrations\202112300527263_change_Datatype_allownull_isoutexport1_PerformaInvoiceTable.designer.cs">
+      <DependentUpon>202112300527263_change_Datatype_allownull_isoutexport1_PerformaInvoiceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112301120223_Add_table_BillPymtRecd.cs" />
+    <Compile Include="Migrations\202112301120223_Add_table_BillPymtRecd.designer.cs">
+      <DependentUpon>202112301120223_Add_table_BillPymtRecd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310444538_Add_field_totalInvoiceAmt_Production_table.cs" />
+    <Compile Include="Migrations\202112310444538_Add_field_totalInvoiceAmt_Production_table.designer.cs">
+      <DependentUpon>202112310444538_Add_field_totalInvoiceAmt_Production_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310859275_Change_production table_type.cs" />
+    <Compile Include="Migrations\202112310859275_Change_production table_type.designer.cs">
+      <DependentUpon>202112310859275_Change_production table_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310907103_Change_Bill table_type.cs" />
+    <Compile Include="Migrations\202112310907103_Change_Bill table_type.designer.cs">
+      <DependentUpon>202112310907103_Change_Bill table_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310908305_Change_PerformaInvoice table_type.cs" />
+    <Compile Include="Migrations\202112310908305_Change_PerformaInvoice table_type.designer.cs">
+      <DependentUpon>202112310908305_Change_PerformaInvoice table_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112310909381_Change_BillpaymentRecipt table_type.cs" />
+    <Compile Include="Migrations\202112310909381_Change_BillpaymentRecipt table_type.designer.cs">
+      <DependentUpon>202112310909381_Change_BillpaymentRecipt table_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201011207346_AddnewthreeColumnInProjectType.cs" />
+    <Compile Include="Migrations\202201011207346_AddnewthreeColumnInProjectType.designer.cs">
+      <DependentUpon>202201011207346_AddnewthreeColumnInProjectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201031226181_typessl_tittle_added_in_manageservice.cs" />
+    <Compile Include="Migrations\202201031226181_typessl_tittle_added_in_manageservice.designer.cs">
+      <DependentUpon>202201031226181_typessl_tittle_added_in_manageservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201040429024_Added_TblProjectMilestone_Table.cs" />
+    <Compile Include="Migrations\202201040429024_Added_TblProjectMilestone_Table.designer.cs">
+      <DependentUpon>202201040429024_Added_TblProjectMilestone_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201040655527_Added_New_Column_ProjectTypeId_TblProjectMilestone.cs" />
+    <Compile Include="Migrations\202201040655527_Added_New_Column_ProjectTypeId_TblProjectMilestone.designer.cs">
+      <DependentUpon>202201040655527_Added_New_Column_ProjectTypeId_TblProjectMilestone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201051050182_Added_FinancialYear_Table.cs" />
+    <Compile Include="Migrations\202201051050182_Added_FinancialYear_Table.designer.cs">
+      <DependentUpon>202201051050182_Added_FinancialYear_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201070619066_Added_GSTData_Table.cs" />
+    <Compile Include="Migrations\202201070619066_Added_GSTData_Table.designer.cs">
+      <DependentUpon>202201070619066_Added_GSTData_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201100847126_add_clientaddresstable.cs" />
+    <Compile Include="Migrations\202201100847126_add_clientaddresstable.Designer.cs">
+      <DependentUpon>202201100847126_add_clientaddresstable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201110538204_add_clientId_clients.cs" />
+    <Compile Include="Migrations\202201110538204_add_clientId_clients.designer.cs">
+      <DependentUpon>202201110538204_add_clientId_clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201171212373_addCol_HostingProvider_ImportFtpDetails.cs" />
+    <Compile Include="Migrations\202201171212373_addCol_HostingProvider_ImportFtpDetails.designer.cs">
+      <DependentUpon>202201171212373_addCol_HostingProvider_ImportFtpDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201180648036_addCol_TargetAmount_Employee.cs" />
+    <Compile Include="Migrations\202201180648036_addCol_TargetAmount_Employee.designer.cs">
+      <DependentUpon>202201180648036_addCol_TargetAmount_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201201234203_remove_requirefld_EnddtTeamEnd_Project.cs" />
+    <Compile Include="Migrations\202201201234203_remove_requirefld_EnddtTeamEnd_Project.designer.cs">
+      <DependentUpon>202201201234203_remove_requirefld_EnddtTeamEnd_Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201210644328_companyid_added_in_companytable.cs" />
+    <Compile Include="Migrations\202201210644328_companyid_added_in_companytable.Designer.cs">
+      <DependentUpon>202201210644328_companyid_added_in_companytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201251129400_priority_field_added_in_projecttbl.cs" />
+    <Compile Include="Migrations\202201251129400_priority_field_added_in_projecttbl.designer.cs">
+      <DependentUpon>202201251129400_priority_field_added_in_projecttbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202011209055_AddNewColumnInManageServiceOfCredits.cs" />
+    <Compile Include="Migrations\202202011209055_AddNewColumnInManageServiceOfCredits.designer.cs">
+      <DependentUpon>202202011209055_AddNewColumnInManageServiceOfCredits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202070850304_tblexpensecategory_added.cs" />
+    <Compile Include="Migrations\202202070850304_tblexpensecategory_added.Designer.cs">
+      <DependentUpon>202202070850304_tblexpensecategory_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202070857064_tblExpense_sub_categoey_added.cs" />
+    <Compile Include="Migrations\202202070857064_tblExpense_sub_categoey_added.Designer.cs">
+      <DependentUpon>202202070857064_tblExpense_sub_categoey_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202071213480_add_chiltbl_category_team.cs" />
+    <Compile Include="Migrations\202202071213480_add_chiltbl_category_team.designer.cs">
+      <DependentUpon>202202071213480_add_chiltbl_category_team.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202080419114_Added_NewColumn_status_tbl_User_story.cs" />
+    <Compile Include="Migrations\202202080419114_Added_NewColumn_status_tbl_User_story.designer.cs">
+      <DependentUpon>202202080419114_Added_NewColumn_status_tbl_User_story.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202080513471_categoryid_added_tblsubcategory.cs" />
+    <Compile Include="Migrations\202202080513471_categoryid_added_tblsubcategory.Designer.cs">
+      <DependentUpon>202202080513471_categoryid_added_tblsubcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202081016386_IsEnableProjectColumnAddInProjectTable.cs" />
+    <Compile Include="Migrations\202202081016386_IsEnableProjectColumnAddInProjectTable.designer.cs">
+      <DependentUpon>202202081016386_IsEnableProjectColumnAddInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202081113332_Added_EmployeeId_AssignToDate_Column_Userstroy_table.cs" />
+    <Compile Include="Migrations\202202081113332_Added_EmployeeId_AssignToDate_Column_Userstroy_table.designer.cs">
+      <DependentUpon>202202081113332_Added_EmployeeId_AssignToDate_Column_Userstroy_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202081159012_tbl_expenseentry_added.cs" />
+    <Compile Include="Migrations\202202081159012_tbl_expenseentry_added.Designer.cs">
+      <DependentUpon>202202081159012_tbl_expenseentry_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202280526197_Add_Category_Master.cs" />
+    <Compile Include="Migrations\202202280526197_Add_Category_Master.Designer.cs">
+      <DependentUpon>202202280526197_Add_Category_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203021138423_addtbl_BulkMaster.cs" />
+    <Compile Include="Migrations\202203021138423_addtbl_BulkMaster.designer.cs">
+      <DependentUpon>202203021138423_addtbl_BulkMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203070705397_SeedingData_AbpSettings.cs" />
+    <Compile Include="Migrations\202203070705397_SeedingData_AbpSettings.designer.cs">
+      <DependentUpon>202203070705397_SeedingData_AbpSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203071016514_CDNSeedingData_AbpSettings.cs" />
+    <Compile Include="Migrations\202203071016514_CDNSeedingData_AbpSettings.designer.cs">
+      <DependentUpon>202203071016514_CDNSeedingData_AbpSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203300916175_addtbl_Notification.cs" />
+    <Compile Include="Migrations\202203300916175_addtbl_Notification.designer.cs">
+      <DependentUpon>202203300916175_addtbl_Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203300932531_addtbl_UserNotification.cs" />
+    <Compile Include="Migrations\202203300932531_addtbl_UserNotification.designer.cs">
+      <DependentUpon>202203300932531_addtbl_UserNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205251031261_add_col_LeaveUpdateDate_InUser_tbl.cs" />
+    <Compile Include="Migrations\202205251031261_add_col_LeaveUpdateDate_InUser_tbl.designer.cs">
+      <DependentUpon>202205251031261_add_col_LeaveUpdateDate_InUser_tbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206010900508_add_twotbl_DocumentMaster_DocumentChild.cs" />
+    <Compile Include="Migrations\202206010900508_add_twotbl_DocumentMaster_DocumentChild.designer.cs">
+      <DependentUpon>202206010900508_add_twotbl_DocumentMaster_DocumentChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206071054554_PendingLeaves_col.cs" />
+    <Compile Include="Migrations\202206071054554_PendingLeaves_col.designer.cs">
+      <DependentUpon>202206071054554_PendingLeaves_col.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206231231253_col_added_databasespace_in_manageservice.cs" />
+    <Compile Include="Migrations\202206231231253_col_added_databasespace_in_manageservice.designer.cs">
+      <DependentUpon>202206231231253_col_added_databasespace_in_manageservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208180600133_add_tbls_LeaveApplication_LeaveType_LeaveStatus.cs" />
+    <Compile Include="Migrations\202208180600133_add_tbls_LeaveApplication_LeaveType_LeaveStatus.designer.cs">
+      <DependentUpon>202208180600133_add_tbls_LeaveApplication_LeaveType_LeaveStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208261039401_BillPymtRecd_add_billid.cs" />
+    <Compile Include="Migrations\202208261039401_BillPymtRecd_add_billid.designer.cs">
+      <DependentUpon>202208261039401_BillPymtRecd_add_billid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211020724175_add_col_AutoRenewalFlag_in_Service.cs" />
+    <Compile Include="Migrations\202211020724175_add_col_AutoRenewalFlag_in_Service.designer.cs">
+      <DependentUpon>202211020724175_add_col_AutoRenewalFlag_in_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211020951499_add_col_InvoiceNote_in_InvoiceRequest.cs" />
+    <Compile Include="Migrations\202211020951499_add_col_InvoiceNote_in_InvoiceRequest.designer.cs">
+      <DependentUpon>202211020951499_add_col_InvoiceNote_in_InvoiceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211021209597_add_col_InvoiceNote_in_ServiceRequestHistory.cs" />
+    <Compile Include="Migrations\202211021209597_add_col_InvoiceNote_in_ServiceRequestHistory.designer.cs">
+      <DependentUpon>202211021209597_add_col_InvoiceNote_in_ServiceRequestHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211030839014_add_col_Term_in_Service.cs" />
+    <Compile Include="Migrations\202211030839014_add_col_Term_in_Service.designer.cs">
+      <DependentUpon>202211030839014_add_col_Term_in_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211110828555_add_col_Period_TblServiceRequest.cs" />
+    <Compile Include="Migrations\202211110828555_add_col_Period_TblServiceRequest.designer.cs">
+      <DependentUpon>202211110828555_add_col_Period_TblServiceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211110830515_add_col_Period_InvoiceRequest.cs" />
+    <Compile Include="Migrations\202211110830515_add_col_Period_InvoiceRequest.designer.cs">
+      <DependentUpon>202211110830515_add_col_Period_InvoiceRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211160809208_CallCategory.cs" />
+    <Compile Include="Migrations\202211160809208_CallCategory.designer.cs">
+      <DependentUpon>202211160809208_CallCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211160815299_OpportunityTable.cs" />
+    <Compile Include="Migrations\202211160815299_OpportunityTable.designer.cs">
+      <DependentUpon>202211160815299_OpportunityTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211160819108_InterestedOpportunity.cs" />
+    <Compile Include="Migrations\202211160819108_InterestedOpportunity.designer.cs">
+      <DependentUpon>202211160819108_InterestedOpportunity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211180843573_add_col_IsMarkAsConfirm.cs" />
+    <Compile Include="Migrations\202211180843573_add_col_IsMarkAsConfirm.designer.cs">
+      <DependentUpon>202211180843573_add_col_IsMarkAsConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211181025104_Add_OpportunityFollowUp_Tables.cs" />
+    <Compile Include="Migrations\202211181025104_Add_OpportunityFollowUp_Tables.designer.cs">
+      <DependentUpon>202211181025104_Add_OpportunityFollowUp_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211181103032_ChangeDataTypeopportunityId.cs" />
+    <Compile Include="Migrations\202211181103032_ChangeDataTypeopportunityId.designer.cs">
+      <DependentUpon>202211181103032_ChangeDataTypeopportunityId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211280628518_AddActionDateAndRemark_Opportunity.cs" />
+    <Compile Include="Migrations\202211280628518_AddActionDateAndRemark_Opportunity.designer.cs">
+      <DependentUpon>202211280628518_AddActionDateAndRemark_Opportunity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211281105305_OpportunityidAddInProjectTable.cs" />
+    <Compile Include="Migrations\202211281105305_OpportunityidAddInProjectTable.designer.cs">
+      <DependentUpon>202211281105305_OpportunityidAddInProjectTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212020832379_Change_PerformaInv_FullAuditedEntity.cs" />
+    <Compile Include="Migrations\202212020832379_Change_PerformaInv_FullAuditedEntity.designer.cs">
+      <DependentUpon>202212020832379_Change_PerformaInv_FullAuditedEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302101113110_AddColumnInOpportunityOpportOwner.cs" />
+    <Compile Include="Migrations\202302101113110_AddColumnInOpportunityOpportOwner.designer.cs">
+      <DependentUpon>202302101113110_AddColumnInOpportunityOpportOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303100831531_added_new_column_exchangerate_bill.cs" />
+    <Compile Include="Migrations\202303100831531_added_new_column_exchangerate_bill.designer.cs">
+      <DependentUpon>202303100831531_added_new_column_exchangerate_bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303100927552_added_exchangerate_column_performainvoice.cs" />
+    <Compile Include="Migrations\202303100927552_added_exchangerate_column_performainvoice.designer.cs">
+      <DependentUpon>202303100927552_added_exchangerate_column_performainvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303131132224_Test.cs" />
+    <Compile Include="Migrations\202303131132224_Test.designer.cs">
+      <DependentUpon>202303131132224_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305091058296_opportunity_projectvalue.cs" />
+    <Compile Include="Migrations\202305091058296_opportunity_projectvalue.designer.cs">
+      <DependentUpon>202305091058296_opportunity_projectvalue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306211037575_modify_tbl_Opportunity_add_Col_BeneficiaryCompanyId.cs" />
+    <Compile Include="Migrations\202306211037575_modify_tbl_Opportunity_add_Col_BeneficiaryCompanyId.designer.cs">
+      <DependentUpon>202306211037575_modify_tbl_Opportunity_add_Col_BeneficiaryCompanyId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306230830179_add_table_FollowupType.cs" />
+    <Compile Include="Migrations\202306230830179_add_table_FollowupType.designer.cs">
+      <DependentUpon>202306230830179_add_table_FollowupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306230839358_add_Col_Followuptypeid_in_tbl_OpportunityFollowUp.cs" />
+    <Compile Include="Migrations\202306230839358_add_Col_Followuptypeid_in_tbl_OpportunityFollowUp.designer.cs">
+      <DependentUpon>202306230839358_add_Col_Followuptypeid_in_tbl_OpportunityFollowUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultLanguagesCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultSettingsCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTenantCreator.cs" />
+    <Compile Include="Migrations\SeedData\HostRoleAndUserCreator.cs" />
+    <Compile Include="Migrations\SeedData\InitialHostDbBuilder.cs" />
+    <Compile Include="Migrations\SeedData\TenantRoleAndUserBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbpProjects.Core\AbpProjects.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>AbpProjects.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809270654064_InitialMigrations.resx">
+      <DependentUpon>201809270654064_InitialMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.resx">
+      <DependentUpon>201810150846132_Upgraded_To_ABP_v3_9_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901110613114_Upgraded_To_ABP_v4_1_0.resx">
+      <DependentUpon>201901110613114_Upgraded_To_ABP_v4_1_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902080730036_Upgrade_ABP_To_4_2_0.resx">
+      <DependentUpon>201902080730036_Upgrade_ABP_To_4_2_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905080308372_Upgrade_ABP_To_4_5_0.resx">
+      <DependentUpon>201905080308372_Upgrade_ABP_To_4_5_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907021413234_Upgraded_To_Abp_v4_7_0.resx">
+      <DependentUpon>201907021413234_Upgraded_To_Abp_v4_7_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907220636309_Upgrated_To_ABP_4_8_0.resx">
+      <DependentUpon>201907220636309_Upgrated_To_ABP_4_8_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910240752449_Upgraded_To_ABP_5_0_0.resx">
+      <DependentUpon>201910240752449_Upgraded_To_ABP_5_0_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912171340379_Upgraded_To_ABP_5_1_0.resx">
+      <DependentUpon>201912171340379_Upgraded_To_ABP_5_1_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201201162_Ugraded_To_ABP_5_2_0.resx">
+      <DependentUpon>202002201201162_Ugraded_To_ABP_5_2_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003201250482_Ugraded_To_ABP_5_4_0.resx">
+      <DependentUpon>202003201250482_Ugraded_To_ABP_5_4_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009281416152_Upgraded_To_ABP_5_13_0.resx">
+      <DependentUpon>202009281416152_Upgraded_To_ABP_5_13_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011130726515_Upgraded_To_ABP_6_0.resx">
+      <DependentUpon>202011130726515_Upgraded_To_ABP_6_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012180651436_Upgraded_To_ABP_6_1_1.resx">
+      <DependentUpon>202012180651436_Upgraded_To_ABP_6_1_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103241020465_Upgradd_To_ABP_6_3_0.resx">
+      <DependentUpon>202103241020465_Upgradd_To_ABP_6_3_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110160657127_add_company.resx">
+      <DependentUpon>202110160657127_add_company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110180738309_team.resx">
+      <DependentUpon>202110180738309_team.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110200548017_worktype_projecttype.resx">
+      <DependentUpon>202110200548017_worktype_projecttype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110210442121_project.resx">
+      <DependentUpon>202110210442121_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110261225182_add_document.resx">
+      <DependentUpon>202110261225182_add_document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290505373_db.resx">
+      <DependentUpon>202110290505373_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290605274_tblservices.resx">
+      <DependentUpon>202110290605274_tblservices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290607589_tblservers.resx">
+      <DependentUpon>202110290607589_tblservers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290610042_tblmanageservices.resx">
+      <DependentUpon>202110290610042_tblmanageservices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290658411_projecttype_details.resx">
+      <DependentUpon>202110290658411_projecttype_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290706030_Added_AbpUsers_NewColumn_Add.resx">
+      <DependentUpon>202110290706030_Added_AbpUsers_NewColumn_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110290957317_add_timesheet.resx">
+      <DependentUpon>202110290957317_add_timesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110291132318_add_timesheet_addCol_date.resx">
+      <DependentUpon>202110291132318_add_timesheet_addCol_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110300620215_MergeBranches_Documentandholiday.resx">
+      <DependentUpon>202110300620215_MergeBranches_Documentandholiday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110300645383_Added_UserLogin_LogOut.resx">
+      <DependentUpon>202110300645383_Added_UserLogin_LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110300840406_Added_ColumnSet_Nullabe.resx">
+      <DependentUpon>202110300840406_Added_ColumnSet_Nullabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111010518393_add_userid_col.resx">
+      <DependentUpon>202111010518393_add_userid_col.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111011035245_NewChangeMigration.resx">
+      <DependentUpon>202111011035245_NewChangeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111011310157_increase_width.resx">
+      <DependentUpon>202111011310157_increase_width.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111020527196_CreateTable_ImportFTPDetails.resx">
+      <DependentUpon>202111020527196_CreateTable_ImportFTPDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111090804508_MergeHRBranches.resx">
+      <DependentUpon>202111090804508_MergeHRBranches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111090809401_modifyUserTable.resx">
+      <DependentUpon>202111090809401_modifyUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111090903573_MergeSupportBranches.resx">
+      <DependentUpon>202111090903573_MergeSupportBranches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111100804553_AddClientIdInProjectTable.resx">
+      <DependentUpon>202111100804553_AddClientIdInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111100808287_change_titlewidth_document.resx">
+      <DependentUpon>202111100808287_change_titlewidth_document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111101125213_tbl_manageservice_cancelflag.resx">
+      <DependentUpon>202111101125213_tbl_manageservice_cancelflag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111110723341_AddProjectStatusTable.resx">
+      <DependentUpon>202111110723341_AddProjectStatusTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111110848083_AddStatusInProjectTable.resx">
+      <DependentUpon>202111110848083_AddStatusInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111120703511_MergeFTPBranches.resx">
+      <DependentUpon>202111120703511_MergeFTPBranches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111121248429_RemoveValidationInCompanyNameInProjectTable.resx">
+      <DependentUpon>202111121248429_RemoveValidationInCompanyNameInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111150436101_addnewcolumnHoursInProjectTable.resx">
+      <DependentUpon>202111150436101_addnewcolumnHoursInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111160656484_RemoveNullValidationActualDateInProject.resx">
+      <DependentUpon>202111160656484_RemoveNullValidationActualDateInProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111161023394_holidaymaster_startdate_typechange.resx">
+      <DependentUpon>202111161023394_holidaymaster_startdate_typechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111170442415_CreateTable_manageKnowledgeCenter.resx">
+      <DependentUpon>202111170442415_CreateTable_manageKnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111170444175_CreateTable_KnowledgeDocuments.resx">
+      <DependentUpon>202111170444175_CreateTable_KnowledgeDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111170536338_AddColumnTable_manageKnowledgeCenter.resx">
+      <DependentUpon>202111170536338_AddColumnTable_manageKnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111181021167_ChangeDBType_manageKnowledgeCenter.resx">
+      <DependentUpon>202111181021167_ChangeDBType_manageKnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111191058209_Add_NewColumn_TimesheetCompletion.resx">
+      <DependentUpon>202111191058209_Add_NewColumn_TimesheetCompletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111200446251_Change_ColumnNullable_UserLoginData.resx">
+      <DependentUpon>202111200446251_Change_ColumnNullable_UserLoginData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111200715279_Add_TypeName_Table_service.resx">
+      <DependentUpon>202111200715279_Add_TypeName_Table_service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111200836113_alter_datatype_tynename.resx">
+      <DependentUpon>202111200836113_alter_datatype_tynename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111200922083_registrationdate_column_added.resx">
+      <DependentUpon>202111200922083_registrationdate_column_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111201121300_adjustmentamount_added_mangeservicetbl.resx">
+      <DependentUpon>202111201121300_adjustmentamount_added_mangeservicetbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111201145103_ChangeDataTypeOfIsDocument_manageKnowledgeCenter.resx">
+      <DependentUpon>202111201145103_ChangeDataTypeOfIsDocument_manageKnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111220710355_servicerequesthistort_tbl.resx">
+      <DependentUpon>202111220710355_servicerequesthistort_tbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111221219491_CreateTable_Category.resx">
+      <DependentUpon>202111221219491_CreateTable_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230432456_AddColumn_Category_ManageKnowledgeCenter.resx">
+      <DependentUpon>202111230432456_AddColumn_Category_ManageKnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111231035304_AddColumn_LeaveBalance_AbpUsers.resx">
+      <DependentUpon>202111231035304_AddColumn_LeaveBalance_AbpUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240602516_addcol_Reg_Renewdate_tblservicerequest.resx">
+      <DependentUpon>202111240602516_addcol_Reg_Renewdate_tblservicerequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240606168_remove_adjustamt_tblmanageservice.resx">
+      <DependentUpon>202111240606168_remove_adjustamt_tblmanageservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240612439_add_invoicerequest.resx">
+      <DependentUpon>202111240612439_add_invoicerequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240724536_MergeBranches_KnowledgeCenter.resx">
+      <DependentUpon>202111240724536_MergeBranches_KnowledgeCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240824103_MergeBranches_Service.resx">
+      <DependentUpon>202111240824103_MergeBranches_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111240925015_MergeBranches_ManageLeave.resx">
+      <DependentUpon>202111240925015_MergeBranches_ManageLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111250448098_Add_NewColumn_EffortsInTimesheet.resx">
+      <DependentUpon>202111250448098_Add_NewColumn_EffortsInTimesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112010723185_projectid_added_tblinvoicerequest.resx">
+      <DependentUpon>202112010723185_projectid_added_tblinvoicerequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112060541522_Added_tbl_User_Story.resx">
+      <DependentUpon>202112060541522_Added_tbl_User_Story.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112061048525_Changes_tbl_User_Story_ColumnSetNullabe.resx">
+      <DependentUpon>202112061048525_Changes_tbl_User_Story_ColumnSetNullabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112061234481_Added_New_Column_UserStoryId_Timesheet.resx">
+      <DependentUpon>202112061234481_Added_New_Column_UserStoryId_Timesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112070529417_Added_NewColumn_ProjectId_tbl_User_Story.resx">
+      <DependentUpon>202112070529417_Added_NewColumn_ProjectId_tbl_User_Story.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112070832315_Changes_UserStoryId_SetNullableIn_Timesheet.resx">
+      <DependentUpon>202112070832315_Changes_UserStoryId_SetNullableIn_Timesheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112090936372_table_client_migration_issue.resx">
+      <DependentUpon>202112090936372_table_client_migration_issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112090938127_add_table_client.resx">
+      <DependentUpon>202112090938127_add_table_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112150537425_change_datatype_of_totalhours_todecimal.resx">
+      <DependentUpon>202112150537425_change_datatype_of_totalhours_todecimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112290941350_Add_table_Bill.resx">
+      <DependentUpon>202112290941350_Add_table_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112290947555_Add_table_PerformaInvoice.resx">
+      <DependentUpon>202112290947555_Add_table_PerformaInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112300517308_Add_Table_ Production.resx">
+      <DependentUpon>202112300517308_Add_Table_ Production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112300526190_change_Datatype_allownull_isoutexport1_billTable.resx">
+      <DependentUpon>202112300526190_change_Datatype_allownull_isoutexport1_billTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112300527263_change_Datatype_allownull_isoutexport1_PerformaInvoiceTable.resx">
+      <DependentUpon>202112300527263_change_Datatype_allownull_isoutexport1_PerformaInvoiceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112301120223_Add_table_BillPymtRecd.resx">
+      <DependentUpon>202112301120223_Add_table_BillPymtRecd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310444538_Add_field_totalInvoiceAmt_Production_table.resx">
+      <DependentUpon>202112310444538_Add_field_totalInvoiceAmt_Production_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310859275_Change_production table_type.resx">
+      <DependentUpon>202112310859275_Change_production table_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310907103_Change_Bill table_type.resx">
+      <DependentUpon>202112310907103_Change_Bill table_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310908305_Change_PerformaInvoice table_type.resx">
+      <DependentUpon>202112310908305_Change_PerformaInvoice table_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112310909381_Change_BillpaymentRecipt table_type.resx">
+      <DependentUpon>202112310909381_Change_BillpaymentRecipt table_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201011207346_AddnewthreeColumnInProjectType.resx">
+      <DependentUpon>202201011207346_AddnewthreeColumnInProjectType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201031226181_typessl_tittle_added_in_manageservice.resx">
+      <DependentUpon>202201031226181_typessl_tittle_added_in_manageservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201040429024_Added_TblProjectMilestone_Table.resx">
+      <DependentUpon>202201040429024_Added_TblProjectMilestone_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201040655527_Added_New_Column_ProjectTypeId_TblProjectMilestone.resx">
+      <DependentUpon>202201040655527_Added_New_Column_ProjectTypeId_TblProjectMilestone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201051050182_Added_FinancialYear_Table.resx">
+      <DependentUpon>202201051050182_Added_FinancialYear_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201070619066_Added_GSTData_Table.resx">
+      <DependentUpon>202201070619066_Added_GSTData_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201100847126_add_clientaddresstable.resx">
+      <DependentUpon>202201100847126_add_clientaddresstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201110538204_add_clientId_clients.resx">
+      <DependentUpon>202201110538204_add_clientId_clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201171212373_addCol_HostingProvider_ImportFtpDetails.resx">
+      <DependentUpon>202201171212373_addCol_HostingProvider_ImportFtpDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201180648036_addCol_TargetAmount_Employee.resx">
+      <DependentUpon>202201180648036_addCol_TargetAmount_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201201234203_remove_requirefld_EnddtTeamEnd_Project.resx">
+      <DependentUpon>202201201234203_remove_requirefld_EnddtTeamEnd_Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201210644328_companyid_added_in_companytable.resx">
+      <DependentUpon>202201210644328_companyid_added_in_companytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251129400_priority_field_added_in_projecttbl.resx">
+      <DependentUpon>202201251129400_priority_field_added_in_projecttbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202011209055_AddNewColumnInManageServiceOfCredits.resx">
+      <DependentUpon>202202011209055_AddNewColumnInManageServiceOfCredits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202070850304_tblexpensecategory_added.resx">
+      <DependentUpon>202202070850304_tblexpensecategory_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202070857064_tblExpense_sub_categoey_added.resx">
+      <DependentUpon>202202070857064_tblExpense_sub_categoey_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202071213480_add_chiltbl_category_team.resx">
+      <DependentUpon>202202071213480_add_chiltbl_category_team.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202080419114_Added_NewColumn_status_tbl_User_story.resx">
+      <DependentUpon>202202080419114_Added_NewColumn_status_tbl_User_story.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202080513471_categoryid_added_tblsubcategory.resx">
+      <DependentUpon>202202080513471_categoryid_added_tblsubcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081016386_IsEnableProjectColumnAddInProjectTable.resx">
+      <DependentUpon>202202081016386_IsEnableProjectColumnAddInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081113332_Added_EmployeeId_AssignToDate_Column_Userstroy_table.resx">
+      <DependentUpon>202202081113332_Added_EmployeeId_AssignToDate_Column_Userstroy_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202081159012_tbl_expenseentry_added.resx">
+      <DependentUpon>202202081159012_tbl_expenseentry_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202280526197_Add_Category_Master.resx">
+      <DependentUpon>202202280526197_Add_Category_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203021138423_addtbl_BulkMaster.resx">
+      <DependentUpon>202203021138423_addtbl_BulkMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203070705397_SeedingData_AbpSettings.resx">
+      <DependentUpon>202203070705397_SeedingData_AbpSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203071016514_CDNSeedingData_AbpSettings.resx">
+      <DependentUpon>202203071016514_CDNSeedingData_AbpSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203300916175_addtbl_Notification.resx">
+      <DependentUpon>202203300916175_addtbl_Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203300932531_addtbl_UserNotification.resx">
+      <DependentUpon>202203300932531_addtbl_UserNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205251031261_add_col_LeaveUpdateDate_InUser_tbl.resx">
+      <DependentUpon>202205251031261_add_col_LeaveUpdateDate_InUser_tbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206010900508_add_twotbl_DocumentMaster_DocumentChild.resx">
+      <DependentUpon>202206010900508_add_twotbl_DocumentMaster_DocumentChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071054554_PendingLeaves_col.resx">
+      <DependentUpon>202206071054554_PendingLeaves_col.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206231231253_col_added_databasespace_in_manageservice.resx">
+      <DependentUpon>202206231231253_col_added_databasespace_in_manageservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208180600133_add_tbls_LeaveApplication_LeaveType_LeaveStatus.resx">
+      <DependentUpon>202208180600133_add_tbls_LeaveApplication_LeaveType_LeaveStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208261039401_BillPymtRecd_add_billid.resx">
+      <DependentUpon>202208261039401_BillPymtRecd_add_billid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211020724175_add_col_AutoRenewalFlag_in_Service.resx">
+      <DependentUpon>202211020724175_add_col_AutoRenewalFlag_in_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211020951499_add_col_InvoiceNote_in_InvoiceRequest.resx">
+      <DependentUpon>202211020951499_add_col_InvoiceNote_in_InvoiceRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211021209597_add_col_InvoiceNote_in_ServiceRequestHistory.resx">
+      <DependentUpon>202211021209597_add_col_InvoiceNote_in_ServiceRequestHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211030839014_add_col_Term_in_Service.resx">
+      <DependentUpon>202211030839014_add_col_Term_in_Service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211110828555_add_col_Period_TblServiceRequest.resx">
+      <DependentUpon>202211110828555_add_col_Period_TblServiceRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211110830515_add_col_Period_InvoiceRequest.resx">
+      <DependentUpon>202211110830515_add_col_Period_InvoiceRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211160809208_CallCategory.resx">
+      <DependentUpon>202211160809208_CallCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211160815299_OpportunityTable.resx">
+      <DependentUpon>202211160815299_OpportunityTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211160819108_InterestedOpportunity.resx">
+      <DependentUpon>202211160819108_InterestedOpportunity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211180843573_add_col_IsMarkAsConfirm.resx">
+      <DependentUpon>202211180843573_add_col_IsMarkAsConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211181025104_Add_OpportunityFollowUp_Tables.resx">
+      <DependentUpon>202211181025104_Add_OpportunityFollowUp_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211181103032_ChangeDataTypeopportunityId.resx">
+      <DependentUpon>202211181103032_ChangeDataTypeopportunityId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211280628518_AddActionDateAndRemark_Opportunity.resx">
+      <DependentUpon>202211280628518_AddActionDateAndRemark_Opportunity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211281105305_OpportunityidAddInProjectTable.resx">
+      <DependentUpon>202211281105305_OpportunityidAddInProjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212020832379_Change_PerformaInv_FullAuditedEntity.resx">
+      <DependentUpon>202212020832379_Change_PerformaInv_FullAuditedEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302101113110_AddColumnInOpportunityOpportOwner.resx">
+      <DependentUpon>202302101113110_AddColumnInOpportunityOpportOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303100831531_added_new_column_exchangerate_bill.resx">
+      <DependentUpon>202303100831531_added_new_column_exchangerate_bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303100927552_added_exchangerate_column_performainvoice.resx">
+      <DependentUpon>202303100927552_added_exchangerate_column_performainvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303131132224_Test.resx">
+      <DependentUpon>202303131132224_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305091058296_opportunity_projectvalue.resx">
+      <DependentUpon>202305091058296_opportunity_projectvalue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211037575_modify_tbl_Opportunity_add_Col_BeneficiaryCompanyId.resx">
+      <DependentUpon>202306211037575_modify_tbl_Opportunity_add_Col_BeneficiaryCompanyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306230830179_add_table_FollowupType.resx">
+      <DependentUpon>202306230830179_add_table_FollowupType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306230839358_add_Col_Followuptypeid_in_tbl_OpportunityFollowUp.resx">
+      <DependentUpon>202306230839358_add_Col_Followuptypeid_in_tbl_OpportunityFollowUp.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.0.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ConfigureAwait.Fody.3.3.1\build\ConfigureAwait.Fody.props'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Fody.6.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.2\build\Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
